@@ -43,7 +43,7 @@ function vlKiesStem() {
   function score(v) {
     var n = v.name.toLowerCase(), s = 0;
     voorkeur.forEach(function(w, i){ if (n.indexOf(w) >= 0) s += (voorkeur.length - i) * 3; });
-    if (v.lang === 'nl-NL') s += 2;
+    if (v.lang === 'nl-NL') s += 10; // altijd Nederlands-Nederlandse stem boven Vlaamse
     return s;
   }
   stemmen.sort(function(a, b){ return score(b) - score(a); });
@@ -65,7 +65,7 @@ function vlSchoon(t) {
 function vlVoegToe(tekst, pauzeNa) {
   var zinnen = vlSchoon(tekst).split(/(?<=[.!?:])\s+/).filter(function(z){ return z.length > 1; });
   zinnen.forEach(function(z, i) {
-    vlQueue.push({ tekst: z, pauze: (i === zinnen.length - 1) ? (pauzeNa || 350) : 200 });
+    vlQueue.push({ tekst: z, pauze: (i === zinnen.length - 1) ? (pauzeNa || 450) : 300 });
   });
 }
 
@@ -100,7 +100,7 @@ function vlSpreekVolgende() {
   var item = vlQueue.shift();
   var u = new SpeechSynthesisUtterance(item.tekst);
   u.lang = 'nl-NL';
-  u.rate = 0.98;
+  u.rate = 0.85; // rustig tempo, goed te volgen
   u.pitch = 1.0;
   var stem = vlKiesStem();
   if (stem) u.voice = stem;
