@@ -100,7 +100,7 @@ function vlSpreekVolgende() {
   var item = vlQueue.shift();
   var u = new SpeechSynthesisUtterance(item.tekst);
   u.lang = 'nl-NL';
-  u.rate = 0.85; // rustig tempo, goed te volgen
+  u.rate = 0.92; // rustig maar vlot tempo
   u.pitch = 1.0;
   var stem = vlKiesStem();
   if (stem) u.voice = stem;
