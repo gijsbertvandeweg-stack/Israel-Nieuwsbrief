@@ -32,44 +32,96 @@
 </header>
 
 <script>
-var vlQueue = [], vlActief = false, vlGepauzeerd = false;
+// Voorleesfunctie in nieuwslezer-stijl
+var vlQueue = [], vlActief = false, vlGepauzeerd = false, vlTimer = null;
 
-function vlVerzamelTekst() {
-  var stukken = [];
-  var intro = document.querySelector('.intro');
-  if (intro) stukken.push('In het kort. ' + intro.querySelector('p').textContent);
-  document.querySelectorAll('section').forEach(function(sec) {
+// Kies de meest natuurlijke Nederlandse stem die beschikbaar is
+function vlKiesStem() {
+  var stemmen = speechSynthesis.getVoices().filter(function(v){ return v.lang && v.lang.toLowerCase().indexOf('nl') === 0; });
+  if (!stemmen.length) return null;
+  var voorkeur = ['siri','natural','neural','premium','enhanced','google','fenna','colette','claire','xander','ellen'];
+  function score(v) {
+    var n = v.name.toLowerCase(), s = 0;
+    voorkeur.forEach(function(w, i){ if (n.indexOf(w) >= 0) s += (voorkeur.length - i) * 3; });
+    if (v.lang === 'nl-NL') s += 2;
+    return s;
+  }
+  stemmen.sort(function(a, b){ return score(b) - score(a); });
+  return stemmen[0];
+}
+
+// Maak tekst voorlees-vriendelijk
+function vlSchoon(t) {
+  return t
+    .replace(/[\u{1F000}-\u{1FAFF}\u{2600}-\u{27BF}\u{FE0F}\u{2000}-\u{206F}]/gu, ' ')
+    .replace(/\bVS\b/g, 'Verenigde Staten')
+    .replace(/&/g, ' en ')
+    .replace(/\bNIS\s+(\d+)/g, '$1 sjekel')
+    .replace(/\$(\d+(?:[.,]\d+)?)\s*(miljoen|miljard)?/g, function(m, n, e){ return n + ' ' + (e ? e + ' ' : '') + 'dollar'; })
+    .replace(/\s+/g, ' ').trim();
+}
+
+// Splits in zinnen en zet ze in de wachtrij met een natuurlijke pauze erna (ms)
+function vlVoegToe(tekst, pauzeNa) {
+  var zinnen = vlSchoon(tekst).split(/(?<=[.!?:])\s+/).filter(function(z){ return z.length > 1; });
+  zinnen.forEach(function(z, i) {
+    vlQueue.push({ tekst: z, pauze: (i === zinnen.length - 1) ? (pauzeNa || 350) : 200 });
+  });
+}
+
+function vlVerzamel() {
+  vlQueue = [];
+  var datum = document.querySelector('.datum');
+  var datumTekst = datum ? datum.textContent.split('·')[0].trim() : '';
+  vlVoegToe('Goedemorgen. Dit is de Israël Nieuwsbrief van ' + datumTekst + '.', 700);
+  var intro = document.querySelector('.intro p');
+  if (intro) {
+    vlVoegToe('Eerst het nieuws in het kort.', 500);
+    vlVoegToe(intro.textContent, 900);
+  }
+  document.querySelectorAll('section').forEach(function(sec, si) {
     var kop = sec.querySelector('h2');
-    if (kop) stukken.push(kop.textContent.replace(/[^\p{L}\p{N}\s&]/gu, '').trim() + '.');
+    if (kop) {
+      var kopTekst = vlSchoon(kop.textContent);
+      vlVoegToe((si === 0 ? 'Dan nu het blok ' : 'We gaan verder met het blok ') + kopTekst + '.', 600);
+    }
     sec.querySelectorAll('article').forEach(function(art) {
       var h = art.querySelector('h3');
-      if (h) stukken.push(h.textContent + '.');
-      art.querySelectorAll('p:not(.bron)').forEach(function(p) { stukken.push(p.textContent); });
+      if (h) vlVoegToe(h.textContent + '.', 450);
+      art.querySelectorAll('p:not(.bron)').forEach(function(p){ vlVoegToe(p.textContent, 650); });
     });
   });
-  return stukken;
+  vlVoegToe('Tot zover deze nieuwsbrief. Bedankt voor het luisteren, en tot morgen.', 0);
 }
 
 function vlSpreekVolgende() {
+  if (!vlActief) return;
   if (!vlQueue.length) { stopVoorlezen(); return; }
-  var u = new SpeechSynthesisUtterance(vlQueue.shift());
+  var item = vlQueue.shift();
+  var u = new SpeechSynthesisUtterance(item.tekst);
   u.lang = 'nl-NL';
-  u.rate = 1.0;
-  var stem = speechSynthesis.getVoices().filter(function(v){ return v.lang && v.lang.indexOf('nl') === 0; })[0];
+  u.rate = 0.98;
+  u.pitch = 1.0;
+  var stem = vlKiesStem();
   if (stem) u.voice = stem;
-  u.onend = function() { if (vlActief) vlSpreekVolgende(); };
+  u.onend = function() {
+    if (!vlActief) return;
+    vlTimer = setTimeout(vlSpreekVolgende, vlGepauzeerd ? 0 : item.pauze);
+  };
+  u.onerror = function() { if (vlActief) vlSpreekVolgende(); };
   speechSynthesis.speak(u);
 }
 
 function toggleVoorlezen() {
   var knop = document.getElementById('voorleesKnop');
   if (!vlActief) {
-    vlQueue = vlVerzamelTekst();
+    vlVerzamel();
     vlActief = true; vlGepauzeerd = false;
     knop.textContent = '⏸ Pauzeer';
     document.getElementById('stopKnop').style.display = 'inline-block';
     speechSynthesis.cancel();
-    vlSpreekVolgende();
+    // Stemmen laden soms asynchroon; korte vertraging voor de beste stem
+    setTimeout(vlSpreekVolgende, 150);
   } else if (!vlGepauzeerd) {
     speechSynthesis.pause(); vlGepauzeerd = true;
     knop.textContent = '▶ Hervat';
@@ -81,13 +133,20 @@ function toggleVoorlezen() {
 
 function stopVoorlezen() {
   vlActief = false; vlGepauzeerd = false;
+  if (vlTimer) clearTimeout(vlTimer);
   speechSynthesis.cancel();
   document.getElementById('voorleesKnop').textContent = '🔊 Lees voor';
   document.getElementById('stopKnop').style.display = 'none';
 }
 
-if (window.speechSynthesis) { speechSynthesis.getVoices(); }
-else { document.addEventListener('DOMContentLoaded', function(){ document.getElementById('voorleesKnop').style.display='none'; }); }
+if (window.speechSynthesis) {
+  speechSynthesis.getVoices();
+  if (typeof speechSynthesis.onvoiceschanged !== 'undefined') {
+    speechSynthesis.onvoiceschanged = function(){ speechSynthesis.getVoices(); };
+  }
+} else {
+  document.addEventListener('DOMContentLoaded', function(){ document.getElementById('voorleesKnop').style.display = 'none'; });
+}
 </script>
 
 <div class="intro">
