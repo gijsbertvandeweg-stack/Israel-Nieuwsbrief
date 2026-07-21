@@ -4,7 +4,7 @@ en werkt index.html, edities/ en gebruikte-items.txt bij. Bedoeld voor GitHub Ac
 import os, re, sys, json, html as htmllib, datetime, urllib.request
 
 API_KEY = os.environ["ANTHROPIC_API_KEY"]
-MODEL = os.environ.get("ANTHROPIC_MODEL", "claude-sonnet-4-5-20250929")
+MODEL = os.environ.get("ANTHROPIC_MODEL", "claude-sonnet-5")
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 MAANDEN = ["januari","februari","maart","april","mei","juni","juli","augustus",
