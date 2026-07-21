@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Israël Nieuwsbrief – {{DATUM_LANG}}</title>
+<style>
+  body { font-family: Georgia, 'Times New Roman', serif; max-width: 760px; margin: 0 auto; padding: 24px 20px; color: #1a1a2e; background: #fdfcf8; line-height: 1.6; }
+  header { border-bottom: 3px solid #0038b8; padding-bottom: 14px; margin-bottom: 24px; }
+  h1 { margin: 0; font-size: 1.9em; color: #0038b8; }
+  .datum { color: #666; font-size: 0.95em; margin-top: 4px; }
+  .intro { background: #eef3ff; border-left: 4px solid #0038b8; padding: 14px 18px; border-radius: 0 8px 8px 0; margin-bottom: 28px; }
+  .intro h2 { margin: 0 0 8px; font-size: 1.1em; color: #0038b8; }
+  section { margin-bottom: 32px; }
+  h2.blok { font-size: 1.35em; border-bottom: 2px solid #d9d4c5; padding-bottom: 6px; color: #22223b; }
+  article { margin-bottom: 18px; }
+  h3 { margin: 0 0 4px; font-size: 1.08em; }
+  p { margin: 0; }
+  .bron { font-size: 0.85em; color: #777; }
+  .bron a { color: #0038b8; text-decoration: none; }
+  footer { border-top: 1px solid #d9d4c5; margin-top: 30px; padding-top: 12px; font-size: 0.85em; color: #888; }
+</style>
+</head>
+<body>
+<header>
+  <h1>🇮🇱 Israël Nieuwsbrief</h1>
+  <div class="datum">{{DATUM_KAP}} · Editie {{EDITIE}}</div>
+  <div style="margin-top:10px;">
+    <button id="voorleesKnop" onclick="toggleVoorlezen()" style="background:#0038b8;color:#fff;border:none;border-radius:20px;padding:9px 20px;font-size:15px;cursor:pointer;font-family:inherit;">🔊 Lees voor</button>
+    <button id="stopKnop" onclick="stopVoorlezen()" style="display:none;background:#888;color:#fff;border:none;border-radius:20px;padding:9px 20px;font-size:15px;cursor:pointer;font-family:inherit;margin-left:6px;">⏹ Stop</button>
+  </div>
+</header>
+
+<script>
+// Voorleesfunctie in nieuwslezer-stijl
+var vlQueue = [], vlActief = false, vlGepauzeerd = false, vlTimer = null;
+
+// Kies de meest natuurlijke Nederlandse stem die beschikbaar is
+function vlKiesStem() {
+  var stemmen = speechSynthesis.getVoices().filter(function(v){ return v.lang && v.lang.toLowerCase().indexOf('nl') === 0; });
+  if (!stemmen.length) return null;
+  var voorkeur = ['siri','natural','neural','premium','enhanced','google','fenna','colette','claire','xander','ellen'];
+  function score(v) {
+    var n = v.name.toLowerCase(), s = 0;
+    voorkeur.forEach(function(w, i){ if (n.indexOf(w) >= 0) s += (voorkeur.length - i) * 3; });
+    if (v.lang === 'nl-NL') s += 10; // altijd Nederlands-Nederlandse stem boven Vlaamse
+    return s;
+  }
+  stemmen.sort(function(a, b){ return score(b) - score(a); });
+  return stemmen[0];
+}
+
+// Maak tekst voorlees-vriendelijk
+function vlSchoon(t) {
+  return t
+    .replace(/[\u{1F000}-\u{1FAFF}\u{2600}-\u{27BF}\u{FE0F}\u{2000}-\u{206F}]/gu, ' ')
+    .replace(/\bVS\b/g, 'Verenigde Staten')
+    .replace(/&/g, ' en ')
+    .replace(/\bNIS\s+(\d+)/g, '$1 sjekel')
+    .replace(/\$(\d+(?:[.,]\d+)?)\s*(miljoen|miljard)?/g, function(m, n, e){ return n + ' ' + (e ? e + ' ' : '') + 'dollar'; })
+    .replace(/\s+/g, ' ').trim();
+}
+
+// Splits in zinnen en zet ze in de wachtrij met een natuurlijke pauze erna (ms)
+function vlVoegToe(tekst, pauzeNa) {
+  var zinnen = vlSchoon(tekst).split(/(?<=[.!?:])\s+/).filter(function(z){ return z.length > 1; });
+  zinnen.forEach(function(z, i) {
+    vlQueue.push({ tekst: z, pauze: (i === zinnen.length - 1) ? (pauzeNa || 450) : 300 });
+  });
+}
+
+function vlVerzamel() {
+  vlQueue = [];
+  var datum = document.querySelector('.datum');
+  var datumTekst = datum ? datum.textContent.split('·')[0].trim() : '';
+  vlVoegToe('Goedemorgen. Dit is de Israël Nieuwsbrief van ' + datumTekst + '.', 700);
+  var intro = document.querySelector('.intro p');
+  if (intro) {
+    vlVoegToe('Eerst het nieuws in het kort.', 500);
+    vlVoegToe(intro.textContent, 900);
+  }
+  document.querySelectorAll('section').forEach(function(sec, si) {
+    var kop = sec.querySelector('h2');
+    if (kop) {
+      var kopTekst = vlSchoon(kop.textContent);
+      vlVoegToe((si === 0 ? 'Dan nu het blok ' : 'We gaan verder met het blok ') + kopTekst + '.', 600);
+    }
+    sec.querySelectorAll('article').forEach(function(art) {
+      var h = art.querySelector('h3');
+      if (h) vlVoegToe(h.textContent + '.', 450);
+      art.querySelectorAll('p:not(.bron)').forEach(function(p){ vlVoegToe(p.textContent, 650); });
+    });
+  });
+  vlVoegToe('Tot zover deze nieuwsbrief. Bedankt voor het luisteren, en tot morgen.', 0);
+}
+
+function vlSpreekVolgende() {
+  if (!vlActief) return;
+  if (!vlQueue.length) { stopVoorlezen(); return; }
+  var item = vlQueue.shift();
+  var u = new SpeechSynthesisUtterance(item.tekst);
+  u.lang = 'nl-NL';
+  u.rate = 0.92; // rustig maar vlot tempo
+  u.pitch = 1.0;
+  var stem = vlKiesStem();
+  if (stem) u.voice = stem;
+  u.onend = function() {
+    if (!vlActief) return;
+    vlTimer = setTimeout(vlSpreekVolgende, vlGepauzeerd ? 0 : item.pauze);
+  };
+  u.onerror = function() { if (vlActief) vlSpreekVolgende(); };
+  speechSynthesis.speak(u);
+}
+
+function toggleVoorlezen() {
+  var knop = document.getElementById('voorleesKnop');
+  if (!vlActief) {
+    vlVerzamel();
+    vlActief = true; vlGepauzeerd = false;
+    knop.textContent = '⏸ Pauzeer';
+    document.getElementById('stopKnop').style.display = 'inline-block';
+    speechSynthesis.cancel();
+    // Stemmen laden soms asynchroon; korte vertraging voor de beste stem
+    setTimeout(vlSpreekVolgende, 150);
+  } else if (!vlGepauzeerd) {
+    speechSynthesis.pause(); vlGepauzeerd = true;
+    knop.textContent = '▶ Hervat';
+  } else {
+    speechSynthesis.resume(); vlGepauzeerd = false;
+    knop.textContent = '⏸ Pauzeer';
+  }
+}
+
+function stopVoorlezen() {
+  vlActief = false; vlGepauzeerd = false;
+  if (vlTimer) clearTimeout(vlTimer);
+  speechSynthesis.cancel();
+  document.getElementById('voorleesKnop').textContent = '🔊 Lees voor';
+  document.getElementById('stopKnop').style.display = 'none';
+}
+
+if (window.speechSynthesis) {
+  speechSynthesis.getVoices();
+  if (typeof speechSynthesis.onvoiceschanged !== 'undefined') {
+    speechSynthesis.onvoiceschanged = function(){ speechSynthesis.getVoices(); };
+  }
+} else {
+  document.addEventListener('DOMContentLoaded', function(){ document.getElementById('voorleesKnop').style.display = 'none'; });
+}
+</script>
+
+{{CONTENT}}
+</body>
+</html>
