@@ -1,0 +1,44 @@
+name: Dagelijkse Israel-nieuwsbrief
+
+on:
+  schedule:
+    # 06:08 UTC = 08:08 zomertijd (CEST) / 07:08 wintertijd (CET) in Nederland
+    - cron: "8 6 * * *"
+  workflow_dispatch:   # handmatig starten via de Actions-tab
+
+permissions:
+  contents: write      # nodig om de nieuwe editie terug te pushen
+
+concurrency:
+  group: nieuwsbrief
+  cancel-in-progress: false
+
+jobs:
+  genereer:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repo uitchecken
+        uses: actions/checkout@v4
+
+      - name: Python opzetten
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Nieuwsbrief genereren
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ANTHROPIC_MODEL: ${{ vars.ANTHROPIC_MODEL }}
+        run: python scripts/generate_newsletter.py
+
+      - name: Publiceren (commit + push)
+        run: |
+          git config user.email "gijsbertvandeweg@gmail.com"
+          git config user.name "Nieuwsbrief-bot"
+          if [ -n "$(git status --porcelain)" ]; then
+            git add -A
+            git commit -m "Editie $(date +%F) (automatisch via GitHub Actions)"
+            git push
+          else
+            echo "Geen wijzigingen om te publiceren."
+          fi
