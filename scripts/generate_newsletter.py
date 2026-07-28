@@ -80,7 +80,7 @@ def main():
         "Je zoekt op het web naar het meest recente nieuws en levert uitsluitend geldige JSON.")
     prompt = f"""Stel de nieuwsbrief samen voor {lang}.
 
-Zoek met de web search tool naar het belangrijkste Israël-nieuws van de afgelopen 24 uur tot maximaal 5 dagen oud. Gebruik bronnen als Times of Israel, Haaretz, Jerusalem Post, JNS, i24news, CNN, BBC, israelnieuws.nl en israeltoday.nl.
+Zoek met de web search tool naar het belangrijkste Israël-nieuws van de afgelopen 24 uur tot maximaal 5 dagen oud. Gebruik bronnen als Times of Israel, Haaretz, Jerusalem Post, JNS, i24news, CNN, BBC, israelnieuws.nl, israeltoday.nl, Israel Hayom, Axios, Al Jazeera (voor het Palestijnse perspectief bij Westoever-incidenten), Reuters en AP. Gebruik voor het blok Techniek & Economie bij voorkeur CTech/Calcalist en Globes. Gebruik voor het blok Religieus Nieuws bij voorkeur JTA, Aish.com en Chabad.org. Gebruik voor het blok Positief Nieuws bij voorkeur Israel21c en NoCamels.
 
 SELECTIEREGELS (strikt):
 - GEEN HERHALING: gebruik geen URL of nieuwsfeit dat al voorkomt in de lijst hieronder met eerder gebruikte items. Alleen een wezenlijk nieuwe ontwikkeling mag opnieuw; benoem dan wat nieuw is.
