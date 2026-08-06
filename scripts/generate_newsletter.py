@@ -36,19 +36,29 @@ def anthropic_call(messages, system):
     url = "https://api.anthropic.com/v1/messages"
     tools = [{"type":"web_search_20250305","name":"web_search","max_uses":8}]
     while True:
-        body = {"model":MODEL,"max_tokens":8000,"system":system,
+        body = {"model":MODEL,"max_tokens":16000,"system":system,
                 "messages":messages,"tools":tools}
         req = urllib.request.Request(url, data=json.dumps(body).encode(),
             headers={"x-api-key":API_KEY,"anthropic-version":"2023-06-01",
                      "content-type":"application/json"})
-        with urllib.request.urlopen(req, timeout=300) as r:
-            resp = json.load(r)
+        try:
+            with urllib.request.urlopen(req, timeout=300) as r:
+                resp = json.load(r)
+        except urllib.error.HTTPError as e:
+            body_txt = e.read().decode(errors="replace")
+            print(f"FOUT: Anthropic API gaf HTTP {e.code}: {body_txt}", file=sys.stderr)
+            raise
         if resp.get("stop_reason") == "pause_turn":
             # Vervolg de beurt: hang de assistant-content aan en herhaal.
             messages.append({"role":"assistant","content":resp["content"]})
             messages.append({"role":"user","content":"Ga verder."})
             continue
-        text = "".join(b.get("text","") for b in resp["content"] if b.get("type")=="text")
+        if resp.get("stop_reason") == "max_tokens":
+            print("WAARSCHUWING: max_tokens bereikt, response is mogelijk afgekapt", file=sys.stderr)
+        text = "".join(b.get("text","") for b in resp.get("content",[]) if b.get("type")=="text")
+        if not text.strip():
+            print(f"FOUT: lege tekstrespons van de API. stop_reason={resp.get('stop_reason')!r}", file=sys.stderr)
+            print(f"Volledige response: {json.dumps(resp)[:3000]}", file=sys.stderr)
         return text
 
 def esc(s):
@@ -105,7 +115,15 @@ Eerder gebruikte items (JJJJ-MM-DD URL), NIET opnieuw gebruiken:
     m = re.search(r"<<<JSON(.*?)JSON>>>", text, re.S)
     raw = m.group(1).strip() if m else text.strip()
     raw = re.sub(r"^```(?:json)?|```$","",raw,flags=re.M).strip()
-    data = json.loads(raw)
+    if not raw:
+        print("FOUT: geen JSON gevonden in de API-respons. Zie hierboven voor details.", file=sys.stderr)
+        sys.exit(1)
+    try:
+        data = json.loads(raw)
+    except json.JSONDecodeError as e:
+        print(f"FOUT: kon JSON niet parsen: {e}", file=sys.stderr)
+        print(f"Ontvangen tekst (eerste 3000 tekens): {raw[:3000]}", file=sys.stderr)
+        sys.exit(1)
 
     tmpl = open(os.path.join(ROOT,"scripts","template.html"),encoding="utf-8").read()
     page = (tmpl.replace("{{DATUM_LANG}}",esc(lang))
