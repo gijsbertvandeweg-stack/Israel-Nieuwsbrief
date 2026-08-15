@@ -7,7 +7,7 @@ of er ergens een pc aanstaat.
 ## Werking
 1. `scripts/generate_newsletter.py` roept de Anthropic API aan met de web search tool,
    verzamelt het nieuws van de afgelopen dagen en levert JSON.
-2. Het script vult `scripts/template.html` (met behoud van styling én de voorleesknop)
+2. Het script vult `scripts/template.html` (met behoud van styling; géén voorleesknop)
    tot een volledige `index.html`, bewaart een kopie in `edities/` en werkt
    `edities/gebruikte-items.txt` bij (nieuwe URL's toevoegen, ouder dan 14 dagen wissen).
 3. De workflow commit en pusht; GitHub Pages publiceert automatisch.
