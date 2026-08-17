@@ -40,8 +40,10 @@
 
 <div id="stale">
   <strong>Let op: dit is niet de editie van vandaag.</strong><br>
-  Je leest de editie van <span id="staleDatum"></span>. De nieuwe editie is nog niet gepubliceerd,
-  of je telefoon toont een opgeslagen versie.
+  Je leest de editie van <span id="staleDatum"></span>. Twee mogelijke oorzaken: de nieuwe editie
+  is vanmorgen niet gemaakt (staat de Mac aan?), of je telefoon toont nog een opgeslagen versie.
+  Druk eerst op de knop hieronder; verschijnt daarna nog steeds een oude datum, dan is er
+  vanmorgen echt geen editie gepubliceerd.
   <br><button onclick="location.replace(location.pathname + '?v=' + Date.now())">Opnieuw ophalen</button>
 </div>
 
