@@ -2,12 +2,22 @@ name: Dagelijkse Israel-nieuwsbrief
 
 on:
   schedule:
-    # 06:08 UTC = 08:08 zomertijd (CEST) / 07:08 wintertijd (CET) in Nederland
-    - cron: "8 6 * * *"
-  workflow_dispatch:   # handmatig starten via de Actions-tab
+    # Vier pogingen per dag. GitHub kan cron-jobs tot een uur vertragen, daarom
+    # ruime marge vóór 8:00 Nederlandse tijd. Elke poging slaat zichzelf over
+    # als de editie van vandaag al gepubliceerd is.
+    - cron: "40 3 * * *"    # 05:40 CEST / 04:40 CET
+    - cron: "40 4 * * *"    # 06:40 CEST / 05:40 CET
+    - cron: "40 5 * * *"    # 07:40 CEST / 06:40 CET
+    - cron: "10 10 * * *"   # 12:10 CEST - laatste vangnet als de ochtend faalde
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Opnieuw genereren, ook als de editie van vandaag al bestaat"
+        type: boolean
+        default: false
 
 permissions:
-  contents: write      # nodig om de nieuwe editie terug te pushen
+  contents: write
 
 concurrency:
   group: nieuwsbrief
@@ -25,20 +35,51 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Al gepubliceerd vandaag?
+        id: check
+        run: |
+          BESTAND="edities/israel-nieuwsbrief-$(date -u +%F).html"
+          if [ "${{ inputs.force }}" = "true" ]; then
+            echo "Handmatig geforceerd; opnieuw genereren."
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          elif [ -f "$BESTAND" ]; then
+            echo "$BESTAND bestaat al; niets te doen."
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "Nog geen editie voor vandaag; genereren."
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: API-sleutel aanwezig?
+        if: steps.check.outputs.skip != 'true'
+        run: |
+          if [ -z "${{ secrets.ANTHROPIC_API_KEY }}" ]; then
+            echo "::error::De repository-secret ANTHROPIC_API_KEY ontbreekt. Zet hem via Settings -> Secrets and variables -> Actions."
+            exit 1
+          fi
+
       - name: Nieuwsbrief genereren
+        if: steps.check.outputs.skip != 'true'
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           ANTHROPIC_MODEL: ${{ vars.ANTHROPIC_MODEL }}
         run: python scripts/generate_newsletter.py
 
       - name: Publiceren (commit + push)
+        if: steps.check.outputs.skip != 'true'
         run: |
           git config user.email "gijsbertvandeweg@gmail.com"
           git config user.name "Nieuwsbrief-bot"
           if [ -n "$(git status --porcelain)" ]; then
             git add -A
-            git commit -m "Editie $(date +%F) (automatisch via GitHub Actions)"
-            git push
+            git commit -m "Editie $(date -u +%F) (automatisch via GitHub Actions)"
+            for poging in 1 2 3; do
+              git pull --rebase --autostash -q && git push -q && echo "Gepusht." && exit 0
+              echo "Push-poging $poging mislukt, opnieuw over 10s."
+              sleep 10
+            done
+            echo "::error::Publiceren naar GitHub is na 3 pogingen niet gelukt."
+            exit 1
           else
             echo "Geen wijzigingen om te publiceren."
           fi
