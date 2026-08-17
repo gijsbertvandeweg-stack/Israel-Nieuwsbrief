@@ -1,9 +1,16 @@
 #!/usr/bin/env python3
 """Genereert de dagelijkse Israël-nieuwsbrief via de Anthropic API (met web search)
 en werkt index.html, edities/ en gebruikte-items.txt bij. Bedoeld voor GitHub Actions."""
-import os, re, sys, json, html as htmllib, datetime, urllib.request
+import os, re, sys, json, time, html as htmllib, datetime, urllib.request, urllib.error
 
-API_KEY = os.environ["ANTHROPIC_API_KEY"]
+API_KEY = os.environ.get("ANTHROPIC_API_KEY", "").strip()
+if not API_KEY:
+    sys.exit("FOUT: de omgevingsvariabele ANTHROPIC_API_KEY is leeg of ontbreekt. "
+             "Zet hem als repository-secret via Settings -> Secrets and variables -> Actions.")
+
+# Herkansingen bij tijdelijke storingen (rate limit, overbelasting, netwerk).
+POGINGEN = 4
+WACHT = [20, 60, 150]  # seconden tussen de pogingen
 MODEL = os.environ.get("ANTHROPIC_MODEL", "claude-sonnet-5")
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -41,13 +48,28 @@ def anthropic_call(messages, system):
         req = urllib.request.Request(url, data=json.dumps(body).encode(),
             headers={"x-api-key":API_KEY,"anthropic-version":"2023-06-01",
                      "content-type":"application/json"})
-        try:
-            with urllib.request.urlopen(req, timeout=300) as r:
-                resp = json.load(r)
-        except urllib.error.HTTPError as e:
-            body_txt = e.read().decode(errors="replace")
-            print(f"FOUT: Anthropic API gaf HTTP {e.code}: {body_txt}", file=sys.stderr)
-            raise
+        resp = None
+        for poging in range(1, POGINGEN + 1):
+            try:
+                with urllib.request.urlopen(req, timeout=300) as r:
+                    resp = json.load(r)
+                break
+            except urllib.error.HTTPError as e:
+                body_txt = e.read().decode(errors="replace")
+                tijdelijk = e.code in (408, 409, 425, 429, 500, 502, 503, 504, 529)
+                print(f"Poging {poging}/{POGINGEN}: Anthropic API gaf HTTP {e.code}: {body_txt[:800]}",
+                      file=sys.stderr)
+                if not tijdelijk or poging == POGINGEN:
+                    print("FOUT: de API-aanroep is definitief mislukt.", file=sys.stderr)
+                    raise
+            except (urllib.error.URLError, TimeoutError, json.JSONDecodeError) as e:
+                print(f"Poging {poging}/{POGINGEN}: netwerk- of leesfout: {e}", file=sys.stderr)
+                if poging == POGINGEN:
+                    print("FOUT: de API-aanroep is definitief mislukt.", file=sys.stderr)
+                    raise
+            time.sleep(WACHT[min(poging - 1, len(WACHT) - 1)])
+        if resp is None:
+            raise RuntimeError("Geen respons van de Anthropic API na alle pogingen.")
         if resp.get("stop_reason") == "pause_turn":
             # Vervolg de beurt: hang de assistant-content aan en herhaal.
             messages.append({"role":"assistant","content":resp["content"]})
@@ -129,6 +151,9 @@ Eerder gebruikte items (JJJJ-MM-DD URL), NIET opnieuw gebruiken:
     page = (tmpl.replace("{{DATUM_LANG}}",esc(lang))
                 .replace("{{DATUM_KAP}}",esc(kap))
                 .replace("{{EDITIE}}",str(editie))
+                .replace("{{DATUM_ISO}}",vandaag.isoformat())
+                .replace("{{GEGENEREERD}}",datetime.datetime.now(datetime.timezone.utc)
+                         .strftime("%d-%m-%Y %H:%M UTC"))
                 .replace("{{CONTENT}}",bouw_content(data)))
 
     open(os.path.join(ROOT,"index.html"),"w",encoding="utf-8").write(page)

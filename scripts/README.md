@@ -23,6 +23,22 @@ of er ergens een pc aanstaat.
 ## Testen
 Actions-tab → "Dagelijkse Israel-nieuwsbrief" → **Run workflow**.
 
-## Tijdstip
-De cron staat op `8 6 * * *` (06:08 UTC). Dat is 08:08 in de Nederlandse zomertijd
-en 07:08 in de wintertijd. Pas de cron aan als je een vast lokaal tijdstip wilt.
+## Tijdstip en betrouwbaarheid
+De workflow probeert het **vier keer per dag**: 03:40, 04:40 en 05:40 UTC (dus tussen
+05:40 en 07:40 Nederlandse tijd) en als laatste vangnet 10:10 UTC. Elke poging kijkt
+eerst of `edities/israel-nieuwsbrief-<vandaag>.html` al bestaat en stopt dan meteen,
+dus er komt nooit een dubbele editie. GitHub kan cron-jobs tot een uur vertragen;
+daarom die marge vóór 8:00.
+
+Binnen het script zitten **vier pogingen** met oplopende wachttijd bij tijdelijke
+API-fouten (rate limit, overbelasting, netwerkfout). De push wordt drie keer
+geprobeerd met `git pull --rebase` ertussen.
+
+## Zichtbaar als het toch misgaat
+De pagina bevat een datumstempel ("Bijgewerkt: ...") en een oranje waarschuwingsbalk
+die verschijnt zodra de editie niet van vandaag is. Zo zie je op je telefoon direct
+dat er iets hapert in plaats van ongemerkt oud nieuws te lezen.
+
+## Handmatig draaien
+Actions-tab -> "Dagelijkse Israel-nieuwsbrief" -> **Run workflow**. Vink `force` aan
+om een bestaande editie van vandaag te overschrijven.

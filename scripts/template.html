@@ -24,16 +24,44 @@
   p { margin: 0; }
   .bron { font-size: 0.85em; color: #777; }
   .bron a { color: #0038b8; text-decoration: none; }
+  .verssig { font-size: 0.8em; color: #999; margin-top: 6px; }
+  #stale { display: none; background: #fff4e5; border-left: 4px solid #d9822b; color: #7a4a12; padding: 12px 16px; border-radius: 0 8px 8px 0; margin-bottom: 20px; font-size: 0.92em; }
+  #stale strong { color: #b35c00; }
+  #stale button { margin-top: 8px; font: inherit; background: #0038b8; color: #fff; border: 0; border-radius: 6px; padding: 7px 14px; cursor: pointer; }
   footer { border-top: 1px solid #d9d4c5; margin-top: 30px; padding-top: 12px; font-size: 0.85em; color: #888; }
 </style>
 </head>
-<body>
+<body data-editie-datum="{{DATUM_ISO}}">
 <header>
   <h1>🇮🇱 Israël Nieuwsbrief</h1>
   <div class="datum">{{DATUM_KAP}} · Editie {{EDITIE}}</div>
+  <div class="verssig">Bijgewerkt: {{GEGENEREERD}}</div>
 </header>
+
+<div id="stale">
+  <strong>Let op: dit is niet de editie van vandaag.</strong><br>
+  Je leest de editie van <span id="staleDatum"></span>. De nieuwe editie is nog niet gepubliceerd,
+  of je telefoon toont een opgeslagen versie.
+  <br><button onclick="location.replace(location.pathname + '?v=' + Date.now())">Opnieuw ophalen</button>
+</div>
+
 
 
 {{CONTENT}}
+<script>
+(function () {
+  var editie = document.body.getAttribute('data-editie-datum');
+  if (!editie) return;
+  var nu = new Date();
+  var vandaag = nu.getFullYear() + '-' +
+                String(nu.getMonth() + 1).padStart(2, '0') + '-' +
+                String(nu.getDate()).padStart(2, '0');
+  if (editie < vandaag) {
+    var d = editie.split('-');
+    document.getElementById('staleDatum').textContent = d[2] + '-' + d[1] + '-' + d[0];
+    document.getElementById('stale').style.display = 'block';
+  }
+})();
+</script>
 </body>
 </html>
