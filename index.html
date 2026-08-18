@@ -28,6 +28,8 @@
   #stale { display: none; background: #fff4e5; border-left: 4px solid #d9822b; color: #7a4a12; padding: 12px 16px; border-radius: 0 8px 8px 0; margin-bottom: 20px; font-size: 0.92em; }
   #stale strong { color: #b35c00; }
   #stale button { margin-top: 8px; font: inherit; background: #0038b8; color: #fff; border: 0; border-radius: 6px; padding: 7px 14px; cursor: pointer; }
+  #staleMelding { display: none; margin-top: 8px; font-weight: 500; color: #7a4a12; }
+  #stale button:disabled { opacity: .6; cursor: default; }
   footer { border-top: 1px solid #d9d4c5; margin-top: 30px; padding-top: 12px; font-size: 0.85em; color: #888; }
 </style>
 </head>
@@ -40,14 +42,11 @@
 
 <div id="stale">
   <strong>Let op: dit is niet de editie van vandaag.</strong><br>
-  Je leest de editie van <span id="staleDatum"></span>. Twee mogelijke oorzaken: de nieuwe editie
-  is vanmorgen niet gemaakt (staat de Mac aan?), of je telefoon toont nog een opgeslagen versie.
-  Druk eerst op de knop hieronder; verschijnt daarna nog steeds een oude datum, dan is er
-  vanmorgen echt geen editie gepubliceerd.
-  <br><button onclick="location.replace(location.pathname + '?v=' + Date.now())">Opnieuw ophalen</button>
+  Je leest de editie van <span id="staleDatum"></span>. De nieuwe editie is nog niet gepubliceerd,
+  of je telefoon toont een opgeslagen versie.
+  <div id="staleMelding"></div>
+  <button id="refreshBtn" type="button">Opnieuw ophalen</button>
 </div>
-
-
 
 <div class="intro">
   <h2>In het kort</h2>
@@ -120,14 +119,46 @@
 (function () {
   var editie = document.body.getAttribute('data-editie-datum');
   if (!editie) return;
+
   var nu = new Date();
   var vandaag = nu.getFullYear() + '-' +
                 String(nu.getMonth() + 1).padStart(2, '0') + '-' +
                 String(nu.getDate()).padStart(2, '0');
+
+  var balk = document.getElementById('stale');
+  var knop = document.getElementById('refreshBtn');
+  var melding = document.getElementById('staleMelding');
+
+  var netGeprobeerd = false;
+  try {
+    netGeprobeerd = sessionStorage.getItem('nbRefresh') === '1';
+    sessionStorage.removeItem('nbRefresh');
+  } catch (e) {}
+
   if (editie < vandaag) {
     var d = editie.split('-');
-    document.getElementById('staleDatum').textContent = d[2] + '-' + d[1] + '-' + d[0];
-    document.getElementById('stale').style.display = 'block';
+    var leesbaar = d[2] + '-' + d[1] + '-' + d[0];
+    document.getElementById('staleDatum').textContent = leesbaar;
+    balk.style.display = 'block';
+    if (netGeprobeerd && melding) {
+      melding.textContent = 'Opnieuw opgehaald: er is nog geen nieuwere editie gepubliceerd. ' +
+                            'De laatste blijft die van ' + leesbaar + '.';
+      melding.style.display = 'block';
+    }
+  } else if (netGeprobeerd && balk) {
+    balk.style.display = 'none';
+  }
+
+  if (knop) {
+    knop.addEventListener('click', function () {
+      knop.disabled = true;
+      knop.textContent = 'Bezig met ophalen\u2026';
+      if (melding) { melding.textContent = ''; melding.style.display = 'none'; }
+      try { sessionStorage.setItem('nbRefresh', '1'); } catch (e) {}
+      var url = location.pathname + '?v=' + Date.now();
+      setTimeout(function () { location.replace(url); }, 150);
+      setTimeout(function () { location.reload(); }, 2500);
+    });
   }
 })();
 </script>
