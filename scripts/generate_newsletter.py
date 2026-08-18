@@ -2,6 +2,8 @@
 """Genereert de dagelijkse Israël-nieuwsbrief via de Anthropic API (met web search)
 en werkt index.html, edities/ en gebruikte-items.txt bij. Bedoeld voor GitHub Actions."""
 import os, re, sys, json, time, html as htmllib, datetime, urllib.request, urllib.error
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import firecrawl_verrijk
 
 API_KEY = os.environ.get("ANTHROPIC_API_KEY", "").strip()
 if not API_KEY:
@@ -37,11 +39,12 @@ def lees_gebruikte():
         return open(p,encoding="utf-8").read()
     return ""
 
-def anthropic_call(messages, system):
-    """Voert een Messages-request uit met de server-side web search tool en
-    handelt pause_turn af tot het model klaar is. Retourneert de finale tekst."""
+def anthropic_call(messages, system, met_zoeken=True):
+    """Voert een Messages-request uit en handelt pause_turn af tot het model
+    klaar is. Met met_zoeken=False draait de call zonder web search; dat is
+    goedkoper en gebruiken we voor het herschrijven op basis van scrapes."""
     url = "https://api.anthropic.com/v1/messages"
-    tools = [{"type":"web_search_20250305","name":"web_search","max_uses":8}]
+    tools = [{"type":"web_search_20250305","name":"web_search","max_uses":8}] if met_zoeken else []
     while True:
         body = {"model":MODEL,"max_tokens":16000,"system":system,
                 "messages":messages,"tools":tools}
@@ -83,6 +86,87 @@ def anthropic_call(messages, system):
             print(f"Volledige response: {json.dumps(resp)[:3000]}", file=sys.stderr)
         return text
 
+def parse_json_antwoord(text, wat):
+    """Haalt het JSON-blok uit een modelantwoord. None bij mislukking."""
+    m = re.search(r"<<<JSON(.*?)JSON>>>", text, re.S)
+    raw = m.group(1).strip() if m else text.strip()
+    raw = re.sub(r"^```(?:json)?|```$", "", raw, flags=re.M).strip()
+    if not raw:
+        print(f"FOUT: geen JSON gevonden in de respons ({wat}).", file=sys.stderr)
+        return None
+    try:
+        return json.loads(raw)
+    except json.JSONDecodeError as e:
+        print(f"FOUT: kon JSON niet parsen ({wat}): {e}", file=sys.stderr)
+        print(f"Ontvangen tekst (eerste 3000 tekens): {raw[:3000]}", file=sys.stderr)
+        return None
+
+
+def strip_intern(data):
+    """Verwijdert de _velden die alleen voor de verrijking dienden."""
+    for sec in data.get("secties", []):
+        for a in sec.get("artikelen", []):
+            for sleutel in [k for k in a if k.startswith("_")]:
+                a.pop(sleutel, None)
+    return data
+
+
+def herschrijf_met_bronteksten(data, lang):
+    """Tweede modelcall: samenvattingen baseren op de echte artikeltekst."""
+    voer = []
+    for sec in data.get("secties", []):
+        for a in sec.get("artikelen", []):
+            if a.get("_tekst"):
+                voer.append({"kop": a["kop"], "status": a.get("_status", "ok"),
+                             "datum": a.get("_datum"), "brontekst": a["_tekst"]})
+    if not voer:
+        print("Verrijking: geen bronteksten opgehaald, samenvattingen blijven ongewijzigd.")
+        return data
+
+    schoon = strip_intern(json.loads(json.dumps(data)))
+    prompt = f"""Hieronder staat de conceptnieuwsbrief voor {lang} en daarnaast de
+werkelijke artikelteksten die zijn opgehaald bij de bronnen.
+
+Herschrijf per artikel het veld "tekst" zodat het klopt met de brontekst: 2-4 zinnen
+Nederlands, feitelijk, met concrete cijfers, namen en data uit het bronartikel in
+plaats van algemeenheden. Laat "kop" en "bronnen" ongemoeid, tenzij de kop de lading
+aantoonbaar niet dekt.
+
+Verwijder een artikel volledig als uit de brontekst blijkt dat het ouder is dan 5 dagen,
+dat het feit al in een eerdere editie stond, of dat het inhoudelijk hetzelfde is als een
+ander artikel in deze editie. Werk in dat laatste geval de bronnen samen tot één artikel.
+Pas de intro aan als er artikelen wegvallen.
+
+CONCEPT:
+{json.dumps(schoon, ensure_ascii=False)}
+
+BRONTEKSTEN:
+{json.dumps(voer, ensure_ascii=False)}
+
+Lever UITSLUITEND JSON terug tussen de markers <<<JSON en JSON>>>, in exact hetzelfde
+schema als het concept."""
+    try:
+        antwoord = anthropic_call(
+            [{"role": "user", "content": prompt}],
+            "Je bent eindredacteur van een Nederlandstalige nieuwsbrief over Israel. "
+            "Je baseert je uitsluitend op de aangeleverde bronteksten en levert geldige JSON.",
+            met_zoeken=False)
+    except Exception as e:                                   # noqa: BLE001
+        print(f"WAARSCHUWING: herschrijven mislukt ({e}); concept blijft staan.", file=sys.stderr)
+        return data
+    nieuw = parse_json_antwoord(antwoord, "herschrijven")
+    if not nieuw or not nieuw.get("secties"):
+        print("WAARSCHUWING: herschrijven gaf geen bruikbare JSON; concept blijft staan.",
+              file=sys.stderr)
+        return data
+    aantal = sum(len(s.get("artikelen", [])) for s in nieuw["secties"])
+    if aantal == 0:
+        print("WAARSCHUWING: herschrijven liet geen artikelen over; concept blijft staan.",
+              file=sys.stderr)
+        return data
+    return nieuw
+
+
 def esc(s):
     return htmllib.escape(s, quote=True)
 
@@ -118,6 +202,9 @@ SELECTIEREGELS (strikt):
 - GEEN HERHALING: gebruik geen URL of nieuwsfeit dat al voorkomt in de lijst hieronder met eerder gebruikte items. Alleen een wezenlijk nieuwe ontwikkeling mag opnieuw; benoem dan wat nieuw is.
 - MAX 5 DAGEN OUD, geef voorrang aan de laatste 24 uur. Twijfel je over de datum, laat het item weg.
 - Dedupliceer: hetzelfde feit uit meerdere bronnen = één item met meerdere bronlinks.
+- LINK NAAR HET ARTIKEL ZELF, nooit naar een overzichts- of liveblogpagina. Dus niet
+  /latest/, niet /liveblog-.../ en niet de homepage, maar de directe artikel-URL. Kom je
+  een feit alleen tegen in een liveblog, zoek dan het losse artikel erbij of laat het weg.
 
 Verdeel het nieuws over deze blokken (laat een blok weg als er geen nieuws is):
 🏛️ Politiek | ⚔️ Oorlog & Veiligheid | 💻 Techniek & Economie | ✡️ Religieus Nieuws | 🌟 Positief Nieuws
@@ -134,17 +221,34 @@ Eerder gebruikte items (JJJJ-MM-DD URL), NIET opnieuw gebruiken:
 {gebruikte}
 """
     text = anthropic_call([{"role":"user","content":prompt}], system)
-    m = re.search(r"<<<JSON(.*?)JSON>>>", text, re.S)
-    raw = m.group(1).strip() if m else text.strip()
-    raw = re.sub(r"^```(?:json)?|```$","",raw,flags=re.M).strip()
-    if not raw:
-        print("FOUT: geen JSON gevonden in de API-respons. Zie hierboven voor details.", file=sys.stderr)
+    data = parse_json_antwoord(text, "concept")
+    if not data:
         sys.exit(1)
-    try:
-        data = json.loads(raw)
-    except json.JSONDecodeError as e:
-        print(f"FOUT: kon JSON niet parsen: {e}", file=sys.stderr)
-        print(f"Ontvangen tekst (eerste 3000 tekens): {raw[:3000]}", file=sys.stderr)
+    voor = sum(len(s.get("artikelen", [])) for s in data.get("secties", []))
+    print(f"Fase 1 (web search): {voor} kandidaat-items.")
+
+    # --- Fase 2: bronartikelen echt uitlezen via Firecrawl ---
+    if firecrawl_verrijk.beschikbaar():
+        try:
+            data, stats = firecrawl_verrijk.verrijk(data, vandaag)
+            print("Fase 2 (Firecrawl): " + ", ".join(f"{k}={v}" for k, v in stats.items()))
+            na = sum(len(s.get("artikelen", [])) for s in data.get("secties", []))
+            if na == 0:
+                print("WAARSCHUWING: verrijking liet geen items over; run afgebroken.", file=sys.stderr)
+                sys.exit(1)
+            # --- Fase 3: samenvattingen herschrijven op basis van de brontekst ---
+            data = herschrijf_met_bronteksten(data, lang)
+        except SystemExit:
+            raise
+        except Exception as e:                               # noqa: BLE001
+            print(f"WAARSCHUWING: verrijking overgeslagen door fout: {e}", file=sys.stderr)
+    else:
+        print("Fase 2 overgeslagen: FIRECRAWL_API_KEY ontbreekt, "
+              "de brief draait op alleen web search.")
+
+    data = strip_intern(data)
+    if not any(s.get("artikelen") for s in data.get("secties", [])):
+        print("FOUT: geen artikelen over om te publiceren.", file=sys.stderr)
         sys.exit(1)
 
     tmpl = open(os.path.join(ROOT,"scripts","template.html"),encoding="utf-8").read()
