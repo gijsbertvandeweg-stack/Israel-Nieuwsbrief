@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0038b8">
+<meta name="color-scheme" content="light">
+<meta name="apple-mobile-web-app-title" content="Israël Nieuwsbrief">
+<meta name="format-detection" content="telephone=no">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23fff'/%3E%3Crect y='8' width='64' height='7' fill='%230038b8'/%3E%3Crect y='49' width='64' height='7' fill='%230038b8'/%3E%3Cpath d='M32 20l10 17H22z' fill='none' stroke='%230038b8' stroke-width='4'/%3E%3Cpath d='M32 44L22 27h20z' fill='none' stroke='%230038b8' stroke-width='4'/%3E%3C/svg%3E">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Israël Nieuwsbrief – woensdag 14 oktober 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'M PLUS 1p', 'Leelawadee UI', Leelawadee, Arial, sans-serif; max-width: 760px; margin: 0 auto; padding: 24px 20px; color: #1a1a2e; background: #fdfcf8; line-height: 1.6; }
+  header { border-bottom: 3px solid #0038b8; padding-bottom: 14px; margin-bottom: 24px; }
+  h1 { margin: 0; font-size: 1.9em; color: #0038b8; }
+  .datum { color: #666; font-size: 0.95em; margin-top: 4px; }
+  .intro { background: #eef3ff; border-left: 4px solid #0038b8; padding: 14px 18px; border-radius: 0 8px 8px 0; margin-bottom: 28px; }
+  .intro h2 { margin: 0 0 8px; font-size: 1.1em; color: #0038b8; }
+  section { margin-bottom: 32px; }
+  h2.blok { font-size: 1.35em; border-bottom: 2px solid #d9d4c5; padding-bottom: 6px; color: #22223b; }
+  article { margin-bottom: 18px; }
+  h3 { margin: 0 0 4px; font-size: 1.08em; }
+  p { margin: 0; }
+  .bron { font-size: 0.85em; color: #777; }
+  .bron a { color: #0038b8; text-decoration: none; }
+  .verssig { font-size: 0.8em; color: #999; margin-top: 6px; }
+  #stale { display: none; background: #fff4e5; border-left: 4px solid #d9822b; color: #7a4a12; padding: 12px 16px; border-radius: 0 8px 8px 0; margin-bottom: 20px; font-size: 0.92em; }
+  #stale strong { color: #b35c00; }
+  #stale button { margin-top: 8px; font: inherit; background: #0038b8; color: #fff; border: 0; border-radius: 6px; padding: 7px 14px; cursor: pointer; }
+  #staleMelding { display: none; margin-top: 8px; font-weight: 500; color: #7a4a12; }
+  #stale button:disabled { opacity: .6; cursor: default; }
+  .acties { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: -8px 0 26px; }
+  .acties button { font: inherit; font-size: 0.92em; background: #fff; color: #0038b8; border: 1.5px solid #0038b8; border-radius: 6px; padding: 8px 14px; cursor: pointer; }
+  .acties button:hover { background: #0038b8; color: #fff; }
+  .acties .hint { font-size: 0.8em; color: #999; }
+  footer { border-top: 1px solid #d9d4c5; margin-top: 30px; padding-top: 12px; font-size: 0.85em; color: #888; }
+
+
+/* --- Mobiel (iPhone) --- */
+html { -webkit-text-size-adjust: 100%; }
+body { overflow-wrap: break-word; }
+a { overflow-wrap: break-word; }
+button { min-height: 44px; touch-action: manipulation; }
+
+@media (max-width: 640px) {
+  body {
+    font-size: 17px;
+    padding: 16px max(16px, env(safe-area-inset-right)) calc(28px + env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+  }
+  h1 { font-size: 1.45em; line-height: 1.25; }
+  .datum { font-size: 0.9em; }
+  h2.blok { font-size: 1.18em; }
+  h3 { font-size: 1.03em; line-height: 1.35; }
+  .intro { padding: 12px 14px; }
+  section { margin-bottom: 26px; }
+  article { margin-bottom: 22px; }
+  .acties { flex-direction: column; align-items: stretch; margin: 0 0 24px; }
+  .acties button { width: 100%; padding: 13px 16px; font-size: 1em; }
+  .acties .hint { font-size: 0.78em; text-align: center; }
+  #stale button { width: 100%; padding: 13px 16px; }
+  .bron { font-size: 0.82em; }
+}
+
+@media print {
+  @page { margin: 16mm 14mm; }
+  body { background: #fff; max-width: none; margin: 0; padding: 0; font-size: 10.5pt; line-height: 1.45; }
+  #stale, .acties { display: none !important; }
+  header { border-bottom: 2px solid #0038b8; }
+  h1 { font-size: 1.5em; }
+  .intro { background: #fff; border-left: 3px solid #0038b8; }
+  a { color: #0038b8; text-decoration: none; }
+  article, .intro, footer { break-inside: avoid; page-break-inside: avoid; }
+  h2.blok { break-after: avoid; page-break-after: avoid; }
+}
+</style>
+</head>
+<body data-editie-datum="2026-10-14">
+<header>
+  <h1>🇮🇱 Israël Nieuwsbrief</h1>
+  <div class="datum">Woensdag 14 oktober 2026 · Editie 78</div>
+  <div class="verssig">Bijgewerkt: 14-10-2026 05:04</div>
+</header>
+
+<div id="stale">
+  <strong>Let op: dit is niet de editie van vandaag.</strong><br>
+  Je leest de editie van <span id="staleDatum"></span>. De nieuwe editie is nog niet gepubliceerd,
+  of je telefoon toont een opgeslagen versie.
+  <div id="staleMelding"></div>
+  <button id="refreshBtn" type="button">Opnieuw ophalen</button>
+</div>
+
+<div class="acties">
+  <button id="pdfBtn" type="button">📄 Opslaan als pdf</button>
+  <span class="hint">Kies in het printvenster &lsquo;Bewaar als pdf&rsquo; &mdash; daarna kun je hem doorsturen.</span>
+</div>
+
+
+<div class="intro">
+<h2>In het kort</h2>
+<p>Over twee weken zijn de Israëlische verkiezingen, en de politiek domineert het nieuws. Israëlische media melden dat Netanyahu Trump heeft gevraagd de strijd tegen Iran vóór de verkiezingen te hervatten; de premierskantoor ontkent dat. Netanyahu bevestigt dat de Egyptische inlichtingenchef vlak voor 7 oktober 2023 geheim in Israël was. Het leger heeft volgens Netanyahu een plan voor het geval de Palestijnse veiligheidsdiensten zich tegen Israël keren. Verder begint een Amerikaanse blokkade van Iraanse havens volgens ABC7 maandag, en toont Israël op de AUSA-conferentie in Washington zijn bewezen defensietechnologie.</p>
+</div>
+
+<section>
+<h2 class="blok">🏛️ Politiek</h2>
+
+<article>
+<h3>Netanyahu zou Trump hebben gevraagd Iran vóór de verkiezingen opnieuw aan te pakken</h3>
+<p>Israëlische televisie meldde dinsdag dat Netanyahu Trump drong om de strijd tegen Iran te hervatten vóór de Israëlische verkiezing van 27 oktober en de Amerikaanse tussentijdse verkiezingen een week later. Volgens een Israëlische functionaris leek Trump eerst akkoord te gaan, maar hij kwam er later op terug. Axios meldt dat beiden een mogelijke grootschalige nieuwe operatie tegen Iran bespraken; het Witte Huis ontkent dat er plannen zijn. Het Witte Huis en het Netanyahu-kantoor hebben de berichten dus tegengesproken. Trump zegt dat hij binnenkort een besluit over Iran neemt.</p>
+<p class="bron">Bronnen: <a href="https://www.timesofisrael.com/netanyahu-reportedly-pressed-trump-to-renew-iran-fighting-before-israeli-and-us-elections/">Times of Israel</a> · <a href="https://www.iranintl.com/en/202610139450">Iran International</a> · <a href="https://www.aa.com.tr/en/americas/trump-netanyahu-weigh-new-iran-strikes-before-elections-despite-white-house-denial-report/4087919">Anadolu</a></p>
+</article>
+
+<article>
+<h3>Lieberman waarschuwt: Netanyahu zou vóór de verkiezing militair optreden</h3>
+<p>Oud-defensieminister Avigdor Lieberman zegt dat hij er "geen twijfel over heeft" dat Netanyahu actief zoekt naar een militaire zet vóór de verkiezing, tegen Iran, Hezbollah of Hamas. </p>
+<p class="bron">Bron: <a href="https://www.aa.com.tr/en/middle-east/netanyahu-may-launch-military-operation-before-election-to-stay-in-power-israeli-opposition-leader/4087920">Anadolu</a></p>
+</article>
+
+<article>
+<h3>Netanyahu bevestigt bezoek Egyptische inlichtingenchef vóór 7 oktober</h3>
+<p>Netanyahu bevestigde in een tv-interview dat de Egyptische inlichtingenchef Abbas Kamel dagen voor de Hamas-aanval van 7 oktober 2023 geheim naar Israël vloog. Hij zegt Kamel niet te hebben ontmoet en wijst de schuld voor het uitblijven van waarschuwingen op de veiligheidstop. Oppositieleider Eisenkot noemt Netanyahu "een leugenaar" die "gevaarlijk is voor Israël" en spreekt van paniek in zijn kamp.</p>
+<p class="bron">Bronnen: <a href="https://www.timesofisrael.com/netanyahu-egyptian-intel-chief-was-in-israel-before-oct-7-he-didnt-meet-with-me/">Times of Israel</a> · <a href="https://www.timesofisrael.com/liveblog_entry/eisenkot-netanyahu-is-a-liar-and-dangerous-to-israel/">Times of Israel</a></p>
+</article>
+
+</section>
+
+<section>
+<h2 class="blok">⚔️ Oorlog &amp; Veiligheid</h2>
+
+<article>
+<h3>IDF heeft plan voor scenario waarin Palestijnse veiligheidsdiensten zich tegen Israël keren</h3>
+<p>Netanyahu zegt dat het leger tien dagen geleden een "krachtig" plan presenteerde voor het geval de veiligheidsdiensten van de Palestijnse Autoriteit op de Westelijke Jordaanoever hun wapens tegen Israël richten. Bij nodig gebruik wil Israël "massale kracht" inzetten, maar nu niet, omdat hij zegt niet van politiek gemotiveerde oorlog beschuldigd te willen worden. Hij zegt ook dat het doel in Gaza is "Hamas uit te schakelen".</p>
+<p class="bron">Bron: <a href="https://www.timesofisrael.com/liveblog_entry/netanyahu-idf-presented-plan-for-situation-in-which-pa-turns-its-weapons-against-israel/">Times of Israel</a></p>
+</article>
+
+<article>
+<h3>VS zet blokkade van Iraanse havens in de Straat van Hormuz op</h3>
+<p>Volgens ABC7 begint maandag een Amerikaanse blokkade van Iraanse havens in de Straat van Hormuz. Netanyahu zei eerder dat hij het staakt-het-vuren met Iran steunt, maar dat Libanon er niet onder valt. Iran dreigde eerder de blokkade van de straat aan te scherpen.</p>
+<p class="bron">Bron: <a href="https://abc7news.com/live-updates/iran-war-strait-hormuz-ceasefire-trump-stock-market/18847792/">ABC7 News</a></p>
+</article>
+
+</section>
+
+<section>
+<h2 class="blok">💻 Techniek &amp; Economie</h2>
+
+<article>
+<h3>Israël toont op AUSA 2026 bewezen technologie in Washington</h3>
+<p>Het Israëlische nationale paviljoen op de AUSA-conferentie in Washington laat oplossingen zien die al in de praktijk zijn getest, waaronder systemen die drones met netten onderscheppen.</p>
+<p class="bron">Bron: <a href="https://www.israelnieuws.nl/post/isra%C3%ABl-bewijst-bewezen-technologie-op-de-ausa-2026-in-washington">Israël Nieuws</a></p>
+</article>
+
+</section>
+
+<section>
+<h2 class="blok">✡️ Religieus Nieuws</h2>
+
+<article>
+<h3>Drie jaar na 7 oktober: joodse betrokkenheid op een "verhoogd nieuw normaal"</h3>
+<p>Een onderzoek van de Jewish Federations of North America meldt dat joodse betrokkenheid sinds 7 oktober is gestegen. Joden die meer betrokken raakten, steunen Israël ook vaker. Veel joden voelen zich echter niet thuis in joodse gemeenschappen omdat ze het oneens zijn over Israël, in welke richting dan ook. Chabad is na de synagoge de op één na populairste vorm van betrokkenheid.</p>
+<p class="bron">Bron: <a href="https://www.jewishtimes.com/jfna-says-jewish-engagement-has-reached-an-elevated-new-normal/">JTA / Jewish Times</a></p>
+</article>
+
+<article>
+<h3>Chabad groeit in Afrika, met nieuwe joodse gemeenschappen door komst Israëliërs</h3>
+<p>Chabad-rabbijnen in Afrika zien hun gemeenschappen groeien, onder meer door duizenden Israëliërs die zich er vestigen. De rabbijnen krijgen ook te maken met criminaliteit en moeilijke omstandigheden.</p>
+<p class="bron">Bron: <a href="https://www.timesofisrael.com/as-chabad-grows-in-africa-hardy-rabbis-encounter-spirituality-and-crime/">Times of Israel</a></p>
+</article>
+
+</section>
+
+<section>
+<h2 class="blok">🌟 Positief Nieuws</h2>
+
+<article>
+<h3>Archeologen vinden 300 meter van oud aquaduct in Jeruzalem</h3>
+<p>Israëlische archeologen hebben een sectie van 300 meter van het oude Lagere Aquaduct van Jeruzalem blootgelegd.</p>
+<p class="bron">Bron: <a href="https://www.jewishexponent.com/archaeologists-uncover-a-300-meter-section-of-ancient-aqueduct-in-jerusalem/">JTA / Jewish Exponent</a></p>
+</article>
+
+</section>
+
+<script>
+(function () {
+  var editie = document.body.getAttribute('data-editie-datum');
+  if (!editie) return;
+
+  var nu = new Date();
+  var vandaag = nu.getFullYear() + '-' +
+                String(nu.getMonth() + 1).padStart(2, '0') + '-' +
+                String(nu.getDate()).padStart(2, '0');
+
+  var balk = document.getElementById('stale');
+  var knop = document.getElementById('refreshBtn');
+  var melding = document.getElementById('staleMelding');
+
+  var netGeprobeerd = false;
+  try {
+    netGeprobeerd = sessionStorage.getItem('nbRefresh') === '1';
+    sessionStorage.removeItem('nbRefresh');
+  } catch (e) {}
+
+  if (editie < vandaag) {
+    var d = editie.split('-');
+    var leesbaar = d[2] + '-' + d[1] + '-' + d[0];
+    document.getElementById('staleDatum').textContent = leesbaar;
+    balk.style.display = 'block';
+    if (netGeprobeerd && melding) {
+      melding.textContent = 'Opnieuw opgehaald: er is nog geen nieuwere editie gepubliceerd. ' +
+                            'De laatste blijft die van ' + leesbaar + '.';
+      melding.style.display = 'block';
+    }
+  } else if (netGeprobeerd && balk) {
+    balk.style.display = 'none';
+  }
+
+  if (knop) {
+    knop.addEventListener('click', function () {
+      knop.disabled = true;
+      knop.textContent = 'Bezig met ophalen\u2026';
+      if (melding) { melding.textContent = ''; melding.style.display = 'none'; }
+      try { sessionStorage.setItem('nbRefresh', '1'); } catch (e) {}
+      var url = location.pathname + '?v=' + Date.now();
+      setTimeout(function () { location.replace(url); }, 150);
+      setTimeout(function () { location.reload(); }, 2500);
+    });
+  }
+})();
+</script>
+<script>
+(function () {
+  var knop = document.getElementById('pdfBtn');
+  if (!knop) return;
+  knop.addEventListener('click', function () {
+    var titel = document.title;
+    var datum = document.body.getAttribute('data-editie-datum') || '';
+    if (datum) { document.title = 'Israel-Nieuwsbrief-' + datum; }
+    window.print();
+    setTimeout(function () { document.title = titel; }, 1000);
+  });
+})();
+</script>
+</body>
+</html>
