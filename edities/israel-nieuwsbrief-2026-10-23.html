@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0038b8">
+<meta name="color-scheme" content="light">
+<meta name="apple-mobile-web-app-title" content="Israël Nieuwsbrief">
+<meta name="format-detection" content="telephone=no">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23fff'/%3E%3Crect y='8' width='64' height='7' fill='%230038b8'/%3E%3Crect y='49' width='64' height='7' fill='%230038b8'/%3E%3Cpath d='M32 20l10 17H22z' fill='none' stroke='%230038b8' stroke-width='4'/%3E%3Cpath d='M32 44L22 27h20z' fill='none' stroke='%230038b8' stroke-width='4'/%3E%3C/svg%3E">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Israël Nieuwsbrief – vrijdag 23 oktober 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'M PLUS 1p', 'Leelawadee UI', Leelawadee, Arial, sans-serif; max-width: 760px; margin: 0 auto; padding: 24px 20px; color: #1a1a2e; background: #fdfcf8; line-height: 1.6; }
+  header { border-bottom: 3px solid #0038b8; padding-bottom: 14px; margin-bottom: 24px; }
+  h1 { margin: 0; font-size: 1.9em; color: #0038b8; }
+  .datum { color: #666; font-size: 0.95em; margin-top: 4px; }
+  .intro { background: #eef3ff; border-left: 4px solid #0038b8; padding: 14px 18px; border-radius: 0 8px 8px 0; margin-bottom: 28px; }
+  .intro h2 { margin: 0 0 8px; font-size: 1.1em; color: #0038b8; }
+  section { margin-bottom: 32px; }
+  h2.blok { font-size: 1.35em; border-bottom: 2px solid #d9d4c5; padding-bottom: 6px; color: #22223b; }
+  article { margin-bottom: 18px; }
+  h3 { margin: 0 0 4px; font-size: 1.08em; }
+  p { margin: 0; }
+  .bron { font-size: 0.85em; color: #777; }
+  .bron a { color: #0038b8; text-decoration: none; }
+  .verssig { font-size: 0.8em; color: #999; margin-top: 6px; }
+  #stale { display: none; background: #fff4e5; border-left: 4px solid #d9822b; color: #7a4a12; padding: 12px 16px; border-radius: 0 8px 8px 0; margin-bottom: 20px; font-size: 0.92em; }
+  #stale strong { color: #b35c00; }
+  #stale button { margin-top: 8px; font: inherit; background: #0038b8; color: #fff; border: 0; border-radius: 6px; padding: 7px 14px; cursor: pointer; }
+  #staleMelding { display: none; margin-top: 8px; font-weight: 500; color: #7a4a12; }
+  #stale button:disabled { opacity: .6; cursor: default; }
+  .acties { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: -8px 0 26px; }
+  .acties button { font: inherit; font-size: 0.92em; background: #fff; color: #0038b8; border: 1.5px solid #0038b8; border-radius: 6px; padding: 8px 14px; cursor: pointer; }
+  .acties button:hover { background: #0038b8; color: #fff; }
+  .acties .hint { font-size: 0.8em; color: #999; }
+  footer { border-top: 1px solid #d9d4c5; margin-top: 30px; padding-top: 12px; font-size: 0.85em; color: #888; }
+
+
+/* --- Mobiel (iPhone) --- */
+html { -webkit-text-size-adjust: 100%; }
+body { overflow-wrap: break-word; }
+a { overflow-wrap: break-word; }
+button { min-height: 44px; touch-action: manipulation; }
+
+@media (max-width: 640px) {
+  body {
+    font-size: 17px;
+    padding: 16px max(16px, env(safe-area-inset-right)) calc(28px + env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+  }
+  h1 { font-size: 1.45em; line-height: 1.25; }
+  .datum { font-size: 0.9em; }
+  h2.blok { font-size: 1.18em; }
+  h3 { font-size: 1.03em; line-height: 1.35; }
+  .intro { padding: 12px 14px; }
+  section { margin-bottom: 26px; }
+  article { margin-bottom: 22px; }
+  .acties { flex-direction: column; align-items: stretch; margin: 0 0 24px; }
+  .acties button { width: 100%; padding: 13px 16px; font-size: 1em; }
+  .acties .hint { font-size: 0.78em; text-align: center; }
+  #stale button { width: 100%; padding: 13px 16px; }
+  .bron { font-size: 0.82em; }
+}
+
+@media print {
+  @page { margin: 16mm 14mm; }
+  body { background: #fff; max-width: none; margin: 0; padding: 0; font-size: 10.5pt; line-height: 1.45; }
+  #stale, .acties { display: none !important; }
+  header { border-bottom: 2px solid #0038b8; }
+  h1 { font-size: 1.5em; }
+  .intro { background: #fff; border-left: 3px solid #0038b8; }
+  a { color: #0038b8; text-decoration: none; }
+  article, .intro, footer { break-inside: avoid; page-break-inside: avoid; }
+  h2.blok { break-after: avoid; page-break-after: avoid; }
+}
+</style>
+</head>
+<body data-editie-datum="2026-10-23">
+<header>
+  <h1>🇮🇱 Israël Nieuwsbrief</h1>
+  <div class="datum">Vrijdag 23 oktober 2026 · Editie 79</div>
+  <div class="verssig">Bijgewerkt: 23-10-2026 10:55 UTC</div>
+</header>
+
+<div id="stale">
+  <strong>Let op: dit is niet de editie van vandaag.</strong><br>
+  Je leest de editie van <span id="staleDatum"></span>. De nieuwe editie is nog niet gepubliceerd,
+  of je telefoon toont een opgeslagen versie.
+  <div id="staleMelding"></div>
+  <button id="refreshBtn" type="button">Opnieuw ophalen</button>
+</div>
+
+<div class="acties">
+  <button id="pdfBtn" type="button">📄 Opslaan als pdf</button>
+  <span class="hint">Kies in het printvenster &lsquo;Bewaar als pdf&rsquo; &mdash; daarna kun je hem doorsturen.</span>
+</div>
+
+<div class="intro"><h2>In het kort</h2><p>Vier dagen voor de Knesset-verkiezingen van dinsdag 27 oktober wijzen peilingen op een nek-aan-nekrace tussen het blok van Netanyahu en dat van Eisenkot, zonder duidelijke meerderheid. Op de Westbank vielen bij een schietaanval bij Hebron gewonden; twee schutters werden doodgeschoten. Rond Iran blijft het onzeker: de IDF-chef zou geen noodzaak voor een aanval vóór de stemming zien, terwijl tankers in de Straat van Hormuz worden geraakt. Ook meldt Israël aan de VS dat Hamas zich herbewapent en niet wil ontwapenen.</p></div>
+<section>
+<h2 class="blok">🏛️ Politiek</h2>
+<article><h3>Verkiezingen: Netanyahu en Eisenkot in een dode hoek, vier dagen voor de stemming</h3><p>De laatste peiling van The Times of Israel (veldwerk 14–15 oktober) laat beide kampen op 51 zetels uitkomen, met 14 zetels voor de Arabische lijsten en 4 voor Reservisten. Yashar van Eisenkot is met 23 zetels de grootste partij, Likud volgt met 21; Ofer Winters Volk van Israël haalt de kiesdrempel niet. Andere peilingen zien Eisenkots blok eveneens vooruit, maar zonder meerderheid. De Shin Bet meldt dat samen met justitie en de kiescommissie profielen zijn verwijderd die bij een ‘buitenlandse beïnvloedingscampagne’ hoorden; details gaf de dienst niet.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/netanyahu-and-eisenkot-in-dead-heat-five-days-before-election-final-toi-poll-shows/">Times of Israel</a> · <a href="https://www.haaretz.com/israel-news/elections/2026-10-22/ty-article/new-polls-show-eisenkot-bloc-leading-netanyahus-but-short-of-majority/000001a1-61de-d3a9-a9bb-69ff31b00000">Haaretz</a> · <a href="https://www.jpost.com/israel-election-2026/article-912371">JPost</a></p></article>
+<article><h3>Smotrich lokt Winter met ministerspost; Hanegbi stemt Liberman</h3><p>Winter zegt dat hij er mogelijk verkeerd aan deed steun aan de premier toe te zeggen, terwijl Smotrich hem een ministerspost aanbiedt als hij zich terugtrekt. Verder maakte oud-Netanyahu-bondgenoot en Likud-veteraan Tzachi Hanegbi bekend op Liberman te stemmen.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/winter-says-may-have-erred-pledging-support-for-pm-smotrich-offers-him-minister-role-to-quit/">Times of Israel</a> · <a href="https://www.timesofisrael.com/ex-netanyahu-ally-hanegbi-longtime-likud-stalwart-announces-hes-voting-for-liberman/">Times of Israel</a></p></article>
+<article><h3>Hooggerechtshof: geen realtime stemmentracking door partijen</h3><p>Het Hooggerechtshof oordeelde met 2–1 dat functionarissen in stembureaus op verkiezingsdag geen gegevens over wie al gestemd heeft aan partijen mogen doorgeven. Dat blokkeert een door Likud gesteunde digitale telling.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/high-court-rules-polling-station-officials-cant-transmit-voter-data-to-parties-on-election-day/">Times of Israel</a> · <a href="https://www.jpost.com/israel-news/article-912615">JPost</a></p></article>
+<article><h3>Fles richting konvooi van Netanyahu op Mahane Yehuda</h3><p>Tijdens een verkiezingsbezoek aan de markt in Jeruzalem is een glazen fles in de richting van het konvooi van de premier gegooid. Beelden zijn verschenen; het kamp-Netanyahu sprak van ‘ernstige opruiing’. Over de dader en eventuele gewonden was bij het schrijven weinig bekend.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/liveblog_entry/video-shows-glass-bottle-thrown-toward-netanyahus-motorcade-at-jerusalems-mahane-yehuda/">Times of Israel</a> · <a href="https://www.jpost.com/israel-news/article-912634">JPost</a></p></article>
+<article><h3>Libië keurt zeegrensakkoord met Turkije goed; Israël veroordeelt</h3><p>Israël veroordeelt de goedkeuring door Libië van een maritiem akkoord met Turkije. Een Italiaans bedrijf trok zich daarnaast terug uit het omstreden Jeruzalemse kabelbaanproject, het vijfde bedrijf dat dat doet.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/israel-condemns-libyas-approval-of-maritime-agreement-with-turkey/">Times of Israel</a> · <a href="https://www.timesofisrael.com/italian-firm-withdraws-from-contentious-jerusalem-cable-car-project-5th-company-to-do-so/">Times of Israel</a></p></article>
+</section>
+<section>
+<h2 class="blok">⚔️ Oorlog &amp; Veiligheid</h2>
+<article><h3>Schietaanval op de Westelijke Jordaanoever: gewonden, schutters doodgeschoten</h3><p>Bij een schietaanval bij Judea Junction nabij Hebron zijn meerdere mensen gewond geraakt; het IDF startte een klopjacht en zette wegversperringen neer. Volgens de laatste stand van The Times of Israel zijn 4 mensen gewond, 2 ervan ernstig, en zijn twee schutters doodgeschoten. Vroege berichten spraken nog van twee gewonden.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/liveblog_entry/wounded-toll-in-west-bank-shooting-attack-rises-to-4-with-2-of-them-in-serious-condition/">Times of Israel</a> · <a href="https://www.jpost.com/israel-news/defense-news/article-912642">JPost</a></p></article>
+<article><h3>Iran: IDF-chef ziet geen noodzaak voor aanval vóór de verkiezingen</h3><p>Volgens Kanaal 13 zei stafchef Eyal Zamir in een besloten overleg dat er geen operationele noodzaak is Iran vóór de stemming aan te vallen, al zou het leger handelen als dat nodig blijkt. Netanyahu ontkent dat hij de oorlog wil hervatten om de verkiezing te beïnvloeden. Nieuw: zeven olietankers raakten volgens Teheran in de Straat van Hormuz in brand of beschadigd door Iraanse aanvallen of zeemijnen, en een rapport stelt dat Netanyahu eerder deze maand een aanval plande die Trump tegenhield.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/report-idf-chief-says-no-need-for-strike-on-iran-before-israeli-election/">Times of Israel</a> · <a href="https://www.timesofisrael.com/netanyahu-planned-attack-on-iran-earlier-this-month-but-trump-opposed-it-report/">Times of Israel</a></p></article>
+<article><h3>Israël aan VS: Hamas wil niet ontwapenen en bouwt zich weer op</h3><p>Israëlische militaire leiders hebben Amerikaanse collega’s laten weten dat Hamas niet vrijwillig zijn wapens zal inleveren en alleen militair te ontwapenen is. Het IDF schat dat Hamas 30.000 tot 40.000 strijders heeft, een groot deel van het tunnelnetwerk heeft hersteld en zijn bestuur in Gaza opnieuw heeft gevestigd.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/report-israel-tells-us-hamas-doesnt-plan-to-disarm-and-is-rebuilding-its-forces/">Times of Israel</a></p></article>
+<article><h3>Defensie sanctioneert Brits bedrijf wegens brandstof voor Hezbollah</h3><p>Het ministerie van Defensie legt sancties op aan een in het Verenigd Koninkrijk geregistreerd bedrijf na een brandstoftransfer naar een bedrijf in handen van Hezbollah. Volgens het ministerie verschaft dat de organisatie middelen om terreur tegen Israël vol te houden.</p><p class="bron">Bron: <a href="https://www.jpost.com/israel-news/article-912601">Jerusalem Post</a></p></article>
+<article><h3>Spanning rond olijfoogst: Israël wil elf buitenlandse activisten uitzetten</h3><p>Israël gaat elf buitenlandse activisten uitzetten die volgens de autoriteiten meededen aan een niet-gecoördineerde olijfoogst op de Westbank. Het IDF zegt dat de eerdere aanhouding van een Amerikaanse congreskandidaat en 90 vrijwilligers ‘complex’ was; Rabbis for Human Rights stelt dat het om coördinatie met het leger had gevraagd, wat Israël eerder ontkende. Ook zijn beelden verschenen van extremistische kolonisten die met geweren dansen op een bruiloft op een anti-zionistisch lied.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/liveblog-october-23-2026/">Times of Israel</a> · <a href="https://www.jpost.com/israel-news/article-912609">JPost</a> · <a href="https://www.timesofisrael.com/rifle-wielding-settler-extremists-filmed-dancing-at-wedding-to-anti-zionist-anthem/">Times of Israel</a></p></article>
+<article><h3>Onrust in Frankrijk: Netanyahu spreekt van ‘extremistische islam’</h3><p>Netanyahu legt de onrust in Frankrijk bij een ‘invasie van extremistische islam’, terwijl Frankrijk troepen wil inzetten en betogingen in grote steden verbiedt. De Shin Bet-chef zou Frankrijk bezoeken voor veiligheidsoverleg. Een waakhond meldt dat antisemitische complottheorieën over de rellen zich verspreiden op sociale media.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/netanyahu-blames-french-unrest-on-invasion-of-extremist-islam-france-set-to-deploy-troops/">Times of Israel</a> · <a href="https://www.timesofisrael.com/france-bans-protests-in-major-cities-as-authorities-brace-for-new-unrest/">Times of Israel</a></p></article>
+</section>
+<section>
+<h2 class="blok">💻 Techniek &amp; Economie</h2>
+<article><h3>Mave haalt 28 miljoen dollar op voor AI-cyberonderzoek</h3><p>Het door twee oud-8200-militairen in 2025 opgerichte Mave bouwt een AI-systeem dat aansluit op beveiligingstools van organisaties, gegevens kruist en cyberaanvallen automatisch onderzoekt. In totaal haalde het bedrijf 34 miljoen dollar op en wil het zijn personeel verdubbelen.</p><p class="bron">Bron: <a href="https://www.calcalist.co.il/calcalistech/article/b1nxcwv3fx">Calcalist (Hebreeuws)</a></p></article>
+<article><h3>Modelio: 17 miljoen dollar voor vertrouwelijke AI-cloud</h3><p>Modelio, opgericht in 2024, ontwikkelt een platform waarmee organisaties cloud- en AI-diensten kunnen gebruiken terwijl ze de controle houden over data en encryptiesleutels, ook tijdens verwerking. De ronde werd geleid door het Amerikaanse OlivTree.</p><p class="bron">Bron: <a href="https://www.calcalist.co.il/calcalistech/article/hyesvov3mg">Calcalist (Hebreeuws)</a></p></article>
+<article><h3>Netanyahu bij Leviathan: NIS 350 miljard aan gasinkomsten verwacht</h3><p>Tijdens een bezoek aan het Leviathan-gasplatform noemde Netanyahu aardgas een strategisch bezit en wees hij op miljarden aan staatsinkomsten, besparingen voor gezinnen en diplomatieke voordelen. Een verkiezingsgetint bezoek: de stemming is dinsdag.</p><p class="bron">Bron: <a href="https://www.jpost.com/israel-news/article-912599">Jerusalem Post</a></p></article>
+<article><h3>Energieministerie: Israël moet nu instappen in de kernfusiewedloop</h3><p>Het ministerie van Energie waarschuwt dat Israël snel moet handelen om een plek te verzekeren in de wereldwijde race naar kernfusie.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/energy-ministry-says-israel-must-act-now-to-ensure-place-in-global-nuclear-fusion-race/">Times of Israel</a></p></article>
+</section>
+<section>
+<h2 class="blok">✡️ Religieus Nieuws</h2>
+<article><h3>Orthodoxe Jood gestoken in Manhattan</h3><p>In het centrum van Manhattan is een orthodoxe Joodse man neergestoken; de NYPD onderzoekt een vermoedelijk antisemitisch motief.</p><p class="bron">Bron: <a href="https://www.jta.org/2026/10/22/ny/orthodox-jewish-man-stabbed-in-midtown-manhattan">JTA</a> · <a href="https://www.timesofisrael.com/nypd-investigating-suspected-antisemitic-stabbing/">Times of Israel</a></p></article>
+<article><h3>VK neemt ingrijpend plan tegen antisemitisme op scholen aan</h3><p>De Britse regering neemt een omvangrijk pakket maatregelen tegen antisemitisme in het onderwijs aan; een lerarenbond verzet zich. Eerder bleek dat bijna 3 op de 5 Joodse studenten in Engeland antisemitisme meemaakten.</p><p class="bron">Bron: <a href="https://www.jta.org/2026/10/22/global/uk-adopts-sweeping-measures-against-antisemitism-in-schools">JTA</a> · <a href="https://www.timesofisrael.com/uk-adopts-sweeping-plan-against-antisemitism-in-schools-teachers-union-pushes-back/">Times of Israel</a></p></article>
+<article><h3>AIPAC stopt met directe campagnebijdragen en steunbetuigingen</h3><p>De Amerikaanse pro-Israëllobby AIPAC stopt met directe campagnebijdragen en het steunen van kandidaten. Critici juichen; verdedigers wijzen erop dat de super-PAC blijft opereren en de invloed blijft.</p><p class="bron">Bron: <a href="https://www.jta.org/2026/10/22/politics/while-aipacs-critics-rejoice-as-lobby-shifts-strategy-its-defenders-push-back">JTA</a></p></article>
+</section>
+<section>
+<h2 class="blok">🌟 Positief Nieuws</h2>
+<article><h3>Oud-gijzelaar Elkana Bohbot: geloof en gezin hielden mij overeind</h3><p>In een interview vertelt de vrijgelaten Elkana Bohbot hoe zijn geloof en zijn familie hem door de gevangenschap bij Hamas heen hielpen.</p><p class="bron">Bron: <a href="https://www.jpost.com/israel-news/article-912632">Jerusalem Post</a></p></article>
+<article><h3>Herzog in Hongarije voor eerste topgesprekken sinds het vertrek van Orbán</h3><p>President Herzog bezoekt Hongarije voor de eerste hooggeplaatste gesprekken tussen beide landen sinds Orbáns vertrek.</p><p class="bron">Bron: <a href="https://www.jta.org/2026/10/20/global/israeli-president-in-hungary-for-first-high-level-talks-since-orbans-ouster">JTA</a></p></article>
+<article><h3>Basketbal: Hapoel Tel Aviv komt terug in Euroleague, Hapoel Jeruzalem blijft foutloos</h3><p>Hapoel Tel Aviv won na een comeback met 90–81 van Virtus Bologna, en Hapoel Jeruzalem bleef ongeslagen in de EuroCup met 100–64 tegen Riga Zelli.</p><p class="bron">Bron: <a href="https://www.jpost.com/israel-news/sports/article-912626">Jerusalem Post</a></p></article>
+</section>
+<footer>Samengesteld uit openbare nieuwsbronnen. Bij tegenstrijdige berichtgeving zijn beide lezingen genoemd.</footer>
+
+<script>
+(function () {
+  var editie = document.body.getAttribute('data-editie-datum');
+  if (!editie) return;
+
+  var nu = new Date();
+  var vandaag = nu.getFullYear() + '-' +
+                String(nu.getMonth() + 1).padStart(2, '0') + '-' +
+                String(nu.getDate()).padStart(2, '0');
+
+  var balk = document.getElementById('stale');
+  var knop = document.getElementById('refreshBtn');
+  var melding = document.getElementById('staleMelding');
+
+  var netGeprobeerd = false;
+  try {
+    netGeprobeerd = sessionStorage.getItem('nbRefresh') === '1';
+    sessionStorage.removeItem('nbRefresh');
+  } catch (e) {}
+
+  if (editie < vandaag) {
+    var d = editie.split('-');
+    var leesbaar = d[2] + '-' + d[1] + '-' + d[0];
+    document.getElementById('staleDatum').textContent = leesbaar;
+    balk.style.display = 'block';
+    if (netGeprobeerd && melding) {
+      melding.textContent = 'Opnieuw opgehaald: er is nog geen nieuwere editie gepubliceerd. ' +
+                            'De laatste blijft die van ' + leesbaar + '.';
+      melding.style.display = 'block';
+    }
+  } else if (netGeprobeerd && balk) {
+    balk.style.display = 'none';
+  }
+
+  if (knop) {
+    knop.addEventListener('click', function () {
+      knop.disabled = true;
+      knop.textContent = 'Bezig met ophalen\u2026';
+      if (melding) { melding.textContent = ''; melding.style.display = 'none'; }
+      try { sessionStorage.setItem('nbRefresh', '1'); } catch (e) {}
+      var url = location.pathname + '?v=' + Date.now();
+      setTimeout(function () { location.replace(url); }, 150);
+      setTimeout(function () { location.reload(); }, 2500);
+    });
+  }
+})();
+</script>
+<script>
+(function () {
+  var knop = document.getElementById('pdfBtn');
+  if (!knop) return;
+  knop.addEventListener('click', function () {
+    var titel = document.title;
+    var datum = document.body.getAttribute('data-editie-datum') || '';
+    if (datum) { document.title = 'Israel-Nieuwsbrief-' + datum; }
+    window.print();
+    setTimeout(function () { document.title = titel; }, 1000);
+  });
+})();
+</script>
+</body>
+</html>
