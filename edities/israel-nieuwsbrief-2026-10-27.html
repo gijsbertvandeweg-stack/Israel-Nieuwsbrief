@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0038b8">
+<meta name="color-scheme" content="light">
+<meta name="apple-mobile-web-app-title" content="Israël Nieuwsbrief">
+<meta name="format-detection" content="telephone=no">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23fff'/%3E%3Crect y='8' width='64' height='7' fill='%230038b8'/%3E%3Crect y='49' width='64' height='7' fill='%230038b8'/%3E%3Cpath d='M32 20l10 17H22z' fill='none' stroke='%230038b8' stroke-width='4'/%3E%3Cpath d='M32 44L22 27h20z' fill='none' stroke='%230038b8' stroke-width='4'/%3E%3C/svg%3E">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Israël Nieuwsbrief – dinsdag 27 oktober 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'M PLUS 1p', 'Leelawadee UI', Leelawadee, Arial, sans-serif; max-width: 760px; margin: 0 auto; padding: 24px 20px; color: #1a1a2e; background: #fdfcf8; line-height: 1.6; }
+  header { border-bottom: 3px solid #0038b8; padding-bottom: 14px; margin-bottom: 24px; }
+  h1 { margin: 0; font-size: 1.9em; color: #0038b8; }
+  .datum { color: #666; font-size: 0.95em; margin-top: 4px; }
+  .intro { background: #eef3ff; border-left: 4px solid #0038b8; padding: 14px 18px; border-radius: 0 8px 8px 0; margin-bottom: 28px; }
+  .intro h2 { margin: 0 0 8px; font-size: 1.1em; color: #0038b8; }
+  section { margin-bottom: 32px; }
+  h2.blok { font-size: 1.35em; border-bottom: 2px solid #d9d4c5; padding-bottom: 6px; color: #22223b; }
+  article { margin-bottom: 18px; }
+  h3 { margin: 0 0 4px; font-size: 1.08em; }
+  p { margin: 0; }
+  .bron { font-size: 0.85em; color: #777; }
+  .bron a { color: #0038b8; text-decoration: none; }
+  .verssig { font-size: 0.8em; color: #999; margin-top: 6px; }
+  #stale { display: none; background: #fff4e5; border-left: 4px solid #d9822b; color: #7a4a12; padding: 12px 16px; border-radius: 0 8px 8px 0; margin-bottom: 20px; font-size: 0.92em; }
+  #stale strong { color: #b35c00; }
+  #stale button { margin-top: 8px; font: inherit; background: #0038b8; color: #fff; border: 0; border-radius: 6px; padding: 7px 14px; cursor: pointer; }
+  #staleMelding { display: none; margin-top: 8px; font-weight: 500; color: #7a4a12; }
+  #stale button:disabled { opacity: .6; cursor: default; }
+  .acties { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: -8px 0 26px; }
+  .acties button { font: inherit; font-size: 0.92em; background: #fff; color: #0038b8; border: 1.5px solid #0038b8; border-radius: 6px; padding: 8px 14px; cursor: pointer; }
+  .acties button:hover { background: #0038b8; color: #fff; }
+  .acties .hint { font-size: 0.8em; color: #999; }
+  footer { border-top: 1px solid #d9d4c5; margin-top: 30px; padding-top: 12px; font-size: 0.85em; color: #888; }
+
+
+/* --- Mobiel (iPhone) --- */
+html { -webkit-text-size-adjust: 100%; }
+body { overflow-wrap: break-word; }
+a { overflow-wrap: break-word; }
+button { min-height: 44px; touch-action: manipulation; }
+
+@media (max-width: 640px) {
+  body {
+    font-size: 17px;
+    padding: 16px max(16px, env(safe-area-inset-right)) calc(28px + env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+  }
+  h1 { font-size: 1.45em; line-height: 1.25; }
+  .datum { font-size: 0.9em; }
+  h2.blok { font-size: 1.18em; }
+  h3 { font-size: 1.03em; line-height: 1.35; }
+  .intro { padding: 12px 14px; }
+  section { margin-bottom: 26px; }
+  article { margin-bottom: 22px; }
+  .acties { flex-direction: column; align-items: stretch; margin: 0 0 24px; }
+  .acties button { width: 100%; padding: 13px 16px; font-size: 1em; }
+  .acties .hint { font-size: 0.78em; text-align: center; }
+  #stale button { width: 100%; padding: 13px 16px; }
+  .bron { font-size: 0.82em; }
+}
+
+@media print {
+  @page { margin: 16mm 14mm; }
+  body { background: #fff; max-width: none; margin: 0; padding: 0; font-size: 10.5pt; line-height: 1.45; }
+  #stale, .acties { display: none !important; }
+  header { border-bottom: 2px solid #0038b8; }
+  h1 { font-size: 1.5em; }
+  .intro { background: #fff; border-left: 3px solid #0038b8; }
+  a { color: #0038b8; text-decoration: none; }
+  article, .intro, footer { break-inside: avoid; page-break-inside: avoid; }
+  h2.blok { break-after: avoid; page-break-after: avoid; }
+}
+</style>
+</head>
+<body data-editie-datum="2026-10-27">
+<header>
+  <h1>🇮🇱 Israël Nieuwsbrief</h1>
+  <div class="datum">Dinsdag 27 oktober 2026 · Editie 81</div>
+  <div class="verssig">Bijgewerkt: 27-10-2026 06:08 UTC</div>
+</header>
+
+<div id="stale">
+  <strong>Let op: dit is niet de editie van vandaag.</strong><br>
+  Je leest de editie van <span id="staleDatum"></span>. De nieuwe editie is nog niet gepubliceerd,
+  of je telefoon toont een opgeslagen versie.
+  <div id="staleMelding"></div>
+  <button id="refreshBtn" type="button">Opnieuw ophalen</button>
+</div>
+
+<div class="acties">
+  <button id="pdfBtn" type="button">📄 Opslaan als pdf</button>
+  <span class="hint">Kies in het printvenster &lsquo;Bewaar als pdf&rsquo; &mdash; daarna kun je hem doorsturen.</span>
+</div>
+
+<div class="intro"><h2>In het kort</h2><p>Vandaag gaat Israël naar de stembus voor de eerste verkiezingen sinds 7 oktober; de peilingen laten geen duidelijke winnaar zien. De campagne eindigde met ophef over Netanyahu's AI-beeld van een kernaanval en berichten over druk om Iran aan te vallen. Intussen is de Jordaanoever dicht, loopt de Hebron-operatie door en blijven Gaza en Iran gespannen. Economisch houdt de centrale bank de rente op 3,25%.</p></div>
+<section><h2 class="blok">🏛️ Politiek</h2>
+<article><h3>Israël stemt: 7,3 miljoen kiezers, 20.000 agenten</h3><p>Vandaag (27 oktober) zijn de eerste Knesset-verkiezingen sinds 7 oktober 2023. Er zijn zo'n 12.000 stembureaus en 18.000 stembussen; de politie zet "alle beschikbare kracht" in en cyberteams bestrijden desinformatie. Geen van beide blokken haalt volgens de peilingen 61 zetels: Netanyahu's blok zit rond de 50, het kamp van oud-legerchef Gadi Eisenkot (Yashar) staat er iets beter voor maar blijft ook onder de meerderheid.</p><p class="bron">Bron: <a href="https://www.jta.org/2026/10/26/israel/israelis-head-to-the-polls-in-countrys-most-consequential-election-in-decades">JTA</a> · <a href="https://www.timesofisrael.com/police-chief-vows-to-deploy-full-strength-to-protect-integrity-of-election/">Times of Israel</a></p></article>
+<article><h3>Netanyahu plaatst AI-beeld van kernaanval op Tel Aviv</h3><p>Op 25 oktober waarschuwde de premier met een AI-afbeelding van een atoomexplosie boven Tel Aviv voor een "tweede Holocaust" als hij niet wordt herkozen. Eisenkot noemde dit "hysterisch"; Golan zei dat Netanyahu "het kwijt is". Critici wijzen erop dat dit botst met Netanyahu's eigen eerdere claim dat Irans nucleaire programma "verwoest" is.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/pm-posts-ai-image-of-nuke-hitting-tel-aviv-warns-of-2nd-holocaust-if-hes-not-elected/">Times of Israel</a></p></article>
+<article><h3>Ophef over Iran-order: CNN en Kanaal 12 versus kantoor premier</h3><p>CNN meldt dat Netanyahu vóór de verkiezingen een aanval op Iran wilde, maar dat Trump weigerde en wel "gezamenlijke actie binnenkort" zou hebben aangegeven. Kanaal 12 schrijft dat stafchef Eyal Zamir zich verzette tegen een Iran-gerelateerd bevel; het kantoor van de premier ontkent en noemt het "onzin". Trump bevestigde intussen zijn steun: "We have to finish the job".</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/liveblog-october-26-2026/">Times of Israel</a> · <a href="https://www.timesofisrael.com/we-have-to-finish-the-job-trump-doubles-down-on-netanyahu-support-after-pms-reported-request/">Times of Israel</a></p></article>
+<article><h3>Beveiliging oppositieleiders en zorgen over onrust</h3><p>De Shin Bet beveiligt drie oppositieleiders vanwege toegenomen dreigingen, en analisten waarschuwen voor mogelijke botsingen rond de stembus. De verkiezingscommissie stond een overleg toe tussen de politiechef, Netanyahu en Ben Gvir ondanks bezwaar van de procureur-generaal.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/shin-bet-to-provide-security-for-three-opposition-party-leaders-amid-rising-threats/">Times of Israel</a> · <a href="https://www.timesofisrael.com/election-panel-chair-allows-meeting-of-police-chief-netanyahu-ben-gvir-over-ag-objection/">Times of Israel</a></p></article>
+</section>
+<section><h2 class="blok">⚔️ Oorlog & Veiligheid</h2>
+<article><h3>Hebron: nasleep van dodelijke schietaanval</h3><p>Na de aanval van 23 oktober waarbij twee soldaten omkwamen, zegelde het leger de huizen van de daders af voor sloop; volgens minister Katz zijn zo'n 2.000 mensen ontheemd. Vredesgroepen bekritiseren de avondklokken en vertragingen bij ziekenhuizen. Netanyahu beloofde de Palestijnse Autoriteit een "grote verrassing". Ook werd een verdachte van een geplande aanslag gearresteerd.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/idf-op-in-hebron-after-soldiers-killing-said-to-displace-1500-pm-vows-big-surprise-for-pa/">Times of Israel</a> · <a href="https://www.jpost.com/middle-east/iran-news/2026-10-25/live-updates-912732">Jerusalem Post</a></p></article>
+<article><h3>Westelijke Jordaanoever in lockdown tijdens verkiezingen</h3><p>Het leger beperkt tijdens de stemming het verkeer en de toegang van Palestijnse arbeiders tot Israël.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/idf-to-impose-lockdown-on-west-bank-during-israels-election/">Times of Israel</a></p></article>
+<article><h3>Gaza: luchtaanval op universiteit, Hamas dreigt</h3><p>Bij een Israëlische aanval op een gebouw van de Islamitische Universiteit zouden drie doden zijn gevallen; het leger zegt de aanval te hebben omgeleid toen omstanders zichtbaar werden. Volgens berichten dreigt Hamas met een aanval in de stijl van 7 oktober vanwege de Israëlische opmars en het geannuleerde Palestijnse verkiezingen.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/three-reportedly-killed-in-idf-strike-targeting-hamas-terrorist-at-gaza-university/">Times of Israel</a> · <a href="https://www.timesofisrael.com/hamas-said-to-threaten-oct-7-style-attack-over-idf-advance-in-gaza-pas-nixed-election/">Times of Israel</a></p></article>
+<article><h3>Iran: dreiging tegen Amerikaanse functionarissen</h3><p>Amerikaanse inlichtingendiensten waarschuwen dat Iran zijn pogingen om Amerikaanse functionarissen te doden "aanzienlijk" heeft opgevoerd. Teheran zegt dat de Israëlische verkiezingsuitslag "geen verschil maakt". Het staakt-het-vuren van 8 april houdt formeel nog stand; Iraanse bronnen zeggen detailplannen te hebben om onderzeese kabels in de Golf te raken als de oorlog hervat wordt.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/us-intel-warns-iran-has-substantially-increased-efforts-to-kill-american-officials/">Times of Israel</a> · <a href="https://www.timesofisrael.com/iran-says-outcome-of-israeli-elections-makes-no-difference-to-it/">Times of Israel</a></p></article>
+</section>
+<section><h2 class="blok">💻 Techniek & Economie</h2>
+<article><h3>Bank of Israel laat rente ongemoeid op 3,25%</h3><p>Op 21 oktober hield de centrale bank de rente gelijk. De prognose: groei van 3,4% in 2026 en 5,1% in 2027, inflatie 1,5% in 2026 en een begrotingstekort van 4,4% van het bbp. De dollar staat rond de 3,11 sjekel; in juni was de sjekel met zo'n 2,80 per dollar op het sterkst sinds 1993, wat de techsector onder druk zet.</p><p class="bron">Bron: <a href="https://israelinvestmentreport.substack.com/p/israel-investment-report-week-ending-641">Israel Investment Report</a></p></article>
+<article><h3>Denemarken koopt raketten van Covenant (Anthem)</h3><p>Denemarken kondigde zijn eerste aankoop van precisieraketten met groot bereik aan, waaronder de Anthem van Covenant, een Amerikaans bedrijf met een fabriek in Noord-Israël en een geschatte waarde van meer dan $1 miljard. Aantallen en prijs zijn niet bekendgemaakt.</p><p class="bron">Bron: <a href="https://israelinvestmentreport.substack.com/p/israel-investment-report-week-ending-641">Israel Investment Report</a></p></article>
+</section>
+<section><h2 class="blok">✡️ Religieus Nieuws</h2>
+<article><h3>Jonge eerste-keer-kiezers kunnen verkiezing beïnvloeden</h3><p>JTA belicht de eerste-keer-kiezers, die vaak sterk door de oorlog zijn gevormd. Een ander stuk vraagt waarom Israëls verslechterende internationale imago geen groter campagne-thema is.</p><p class="bron">Bron: <a href="https://www.jta.org/2026/10/25/israel/who-are-the-first-time-voters-who-could-sway-israels-election">JTA</a> · <a href="https://www.jta.org/2026/10/25/israel/israels-global-image-is-deteriorating-why-isnt-it-a-bigger-issue-in-the-election">JTA</a></p></article>
+</section>
+
+<script>
+(function () {
+  var editie = document.body.getAttribute('data-editie-datum');
+  if (!editie) return;
+
+  var nu = new Date();
+  var vandaag = nu.getFullYear() + '-' +
+                String(nu.getMonth() + 1).padStart(2, '0') + '-' +
+                String(nu.getDate()).padStart(2, '0');
+
+  var balk = document.getElementById('stale');
+  var knop = document.getElementById('refreshBtn');
+  var melding = document.getElementById('staleMelding');
+
+  var netGeprobeerd = false;
+  try {
+    netGeprobeerd = sessionStorage.getItem('nbRefresh') === '1';
+    sessionStorage.removeItem('nbRefresh');
+  } catch (e) {}
+
+  if (editie < vandaag) {
+    var d = editie.split('-');
+    var leesbaar = d[2] + '-' + d[1] + '-' + d[0];
+    document.getElementById('staleDatum').textContent = leesbaar;
+    balk.style.display = 'block';
+    if (netGeprobeerd && melding) {
+      melding.textContent = 'Opnieuw opgehaald: er is nog geen nieuwere editie gepubliceerd. ' +
+                            'De laatste blijft die van ' + leesbaar + '.';
+      melding.style.display = 'block';
+    }
+  } else if (netGeprobeerd && balk) {
+    balk.style.display = 'none';
+  }
+
+  if (knop) {
+    knop.addEventListener('click', function () {
+      knop.disabled = true;
+      knop.textContent = 'Bezig met ophalen\u2026';
+      if (melding) { melding.textContent = ''; melding.style.display = 'none'; }
+      try { sessionStorage.setItem('nbRefresh', '1'); } catch (e) {}
+      var url = location.pathname + '?v=' + Date.now();
+      setTimeout(function () { location.replace(url); }, 150);
+      setTimeout(function () { location.reload(); }, 2500);
+    });
+  }
+})();
+</script>
+<script>
+(function () {
+  var knop = document.getElementById('pdfBtn');
+  if (!knop) return;
+  knop.addEventListener('click', function () {
+    var titel = document.title;
+    var datum = document.body.getAttribute('data-editie-datum') || '';
+    if (datum) { document.title = 'Israel-Nieuwsbrief-' + datum; }
+    window.print();
+    setTimeout(function () { document.title = titel; }, 1000);
+  });
+})();
+</script>
+</body>
+</html>
