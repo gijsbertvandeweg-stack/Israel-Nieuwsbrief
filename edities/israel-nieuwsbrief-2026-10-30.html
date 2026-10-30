@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0038b8">
+<meta name="color-scheme" content="light">
+<meta name="apple-mobile-web-app-title" content="Israël Nieuwsbrief">
+<meta name="format-detection" content="telephone=no">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23fff'/%3E%3Crect y='8' width='64' height='7' fill='%230038b8'/%3E%3Crect y='49' width='64' height='7' fill='%230038b8'/%3E%3Cpath d='M32 20l10 17H22z' fill='none' stroke='%230038b8' stroke-width='4'/%3E%3Cpath d='M32 44L22 27h20z' fill='none' stroke='%230038b8' stroke-width='4'/%3E%3C/svg%3E">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Israël Nieuwsbrief – vrijdag 30 oktober 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'M PLUS 1p', 'Leelawadee UI', Leelawadee, Arial, sans-serif; max-width: 760px; margin: 0 auto; padding: 24px 20px; color: #1a1a2e; background: #fdfcf8; line-height: 1.6; }
+  header { border-bottom: 3px solid #0038b8; padding-bottom: 14px; margin-bottom: 24px; }
+  h1 { margin: 0; font-size: 1.9em; color: #0038b8; }
+  .datum { color: #666; font-size: 0.95em; margin-top: 4px; }
+  .intro { background: #eef3ff; border-left: 4px solid #0038b8; padding: 14px 18px; border-radius: 0 8px 8px 0; margin-bottom: 28px; }
+  .intro h2 { margin: 0 0 8px; font-size: 1.1em; color: #0038b8; }
+  section { margin-bottom: 32px; }
+  h2.blok { font-size: 1.35em; border-bottom: 2px solid #d9d4c5; padding-bottom: 6px; color: #22223b; }
+  article { margin-bottom: 18px; }
+  h3 { margin: 0 0 4px; font-size: 1.08em; }
+  p { margin: 0; }
+  .bron { font-size: 0.85em; color: #777; }
+  .bron a { color: #0038b8; text-decoration: none; }
+  .verssig { font-size: 0.8em; color: #999; margin-top: 6px; }
+  #stale { display: none; background: #fff4e5; border-left: 4px solid #d9822b; color: #7a4a12; padding: 12px 16px; border-radius: 0 8px 8px 0; margin-bottom: 20px; font-size: 0.92em; }
+  #stale strong { color: #b35c00; }
+  #stale button { margin-top: 8px; font: inherit; background: #0038b8; color: #fff; border: 0; border-radius: 6px; padding: 7px 14px; cursor: pointer; }
+  #staleMelding { display: none; margin-top: 8px; font-weight: 500; color: #7a4a12; }
+  #stale button:disabled { opacity: .6; cursor: default; }
+  .acties { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: -8px 0 26px; }
+  .acties button { font: inherit; font-size: 0.92em; background: #fff; color: #0038b8; border: 1.5px solid #0038b8; border-radius: 6px; padding: 8px 14px; cursor: pointer; }
+  .acties button:hover { background: #0038b8; color: #fff; }
+  .acties .hint { font-size: 0.8em; color: #999; }
+  footer { border-top: 1px solid #d9d4c5; margin-top: 30px; padding-top: 12px; font-size: 0.85em; color: #888; }
+
+
+/* --- Mobiel (iPhone) --- */
+html { -webkit-text-size-adjust: 100%; }
+body { overflow-wrap: break-word; }
+a { overflow-wrap: break-word; }
+button { min-height: 44px; touch-action: manipulation; }
+
+@media (max-width: 640px) {
+  body {
+    font-size: 17px;
+    padding: 16px max(16px, env(safe-area-inset-right)) calc(28px + env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+  }
+  h1 { font-size: 1.45em; line-height: 1.25; }
+  .datum { font-size: 0.9em; }
+  h2.blok { font-size: 1.18em; }
+  h3 { font-size: 1.03em; line-height: 1.35; }
+  .intro { padding: 12px 14px; }
+  section { margin-bottom: 26px; }
+  article { margin-bottom: 22px; }
+  .acties { flex-direction: column; align-items: stretch; margin: 0 0 24px; }
+  .acties button { width: 100%; padding: 13px 16px; font-size: 1em; }
+  .acties .hint { font-size: 0.78em; text-align: center; }
+  #stale button { width: 100%; padding: 13px 16px; }
+  .bron { font-size: 0.82em; }
+}
+
+@media print {
+  @page { margin: 16mm 14mm; }
+  body { background: #fff; max-width: none; margin: 0; padding: 0; font-size: 10.5pt; line-height: 1.45; }
+  #stale, .acties { display: none !important; }
+  header { border-bottom: 2px solid #0038b8; }
+  h1 { font-size: 1.5em; }
+  .intro { background: #fff; border-left: 3px solid #0038b8; }
+  a { color: #0038b8; text-decoration: none; }
+  article, .intro, footer { break-inside: avoid; page-break-inside: avoid; }
+  h2.blok { break-after: avoid; page-break-after: avoid; }
+}
+</style>
+</head>
+<body data-editie-datum="2026-10-30">
+<header>
+  <h1>🇮🇱 Israël Nieuwsbrief</h1>
+  <div class="datum">Vrijdag 30 oktober 2026 · Editie 83</div>
+  <div class="verssig">Bijgewerkt: 30-10-2026 06:15 UTC</div>
+</header>
+
+<div id="stale">
+  <strong>Let op: dit is niet de editie van vandaag.</strong><br>
+  Je leest de editie van <span id="staleDatum"></span>. De nieuwe editie is nog niet gepubliceerd,
+  of je telefoon toont een opgeslagen versie.
+  <div id="staleMelding"></div>
+  <button id="refreshBtn" type="button">Opnieuw ophalen</button>
+</div>
+
+<div class="acties">
+  <button id="pdfBtn" type="button">📄 Opslaan als pdf</button>
+  <span class="hint">Kies in het printvenster &lsquo;Bewaar als pdf&rsquo; &mdash; daarna kun je hem doorsturen.</span>
+</div>
+
+<div class="intro"><h2>In het kort</h2><p>De verkiezingen zijn uitgelopen op een patstelling: 53 zetels voor het blok van Netanyahu, 48 voor dat van Eisenkot en 19 voor de Arabische partijen. Een coalitie, eenheidsregering of nieuwe verkiezingen liggen open, en de impasse dreigt de begroting te raken. Intussen blijft een hervatting van de Iran-oorlog op tafel liggen. Verder: een Intel-fabriek in Kiryat Gat kampt met miljoenenschade, en in Belarus gaat een historische jesjiwa weer open.</p></div>
+<section><h2 class="blok">🏛️ Politiek</h2>
+<article><h3>Verkiezingen eindigen in patstelling: 53 – 48 – 19</h3><p>Na telling van alle stemmen komt het blok van Netanyahu uit op 53 zetels, het blok van Eisenkot op 48 en de twee Arabische partijen samen op 19; 61 is nodig voor een meerderheid. Likud is met 27 zetels de grootste partij, Eisenkots Yashar! heeft er 21. De officiële uitslag moet uiterlijk 4 november gepubliceerd zijn; daarna heeft president Herzog zeven dagen om een formateur aan te wijzen, die 28 dagen krijgt (verlengbaar met 14). De nieuwe Knesset komt op 10 november bijeen.</p><div class="bron">Bron: <a href="https://www.calcalistech.com/ctechnews/article/bkkzoebtgl">Calcalist</a> · <a href="https://www.ynetnews.com/article/hjnatbkaml">Ynet</a></div></article>
+<article><h3>Drie scenario’s voor de regeringsvorming</h3><p>Volgens JTA zijn er drie wegen: een regering van de oppositie met steun (van binnen of buiten) van Arabische partijen, wat Lieberman afwijst; een eenheidsregering, waarbij de oppositie eist dat Netanyahu een extreemrechtse of ultraorthodoxe partner laat vallen; of nieuwe verkiezingen. Analisten achten dat laatste misschien het meest waarschijnlijk, met Netanyahu intussen als interim-premier.</p><div class="bron">Bron: <a href="https://www.jta.org/2026/10/28/israel/israels-election-deadlock-3-scenarios-for-what-comes-next">JTA</a></div></article>
+<article><h3>Trump wil Ben-Gvir niet in volgende regering</h3><p>Volgens bronnen die door Israëlische media worden aangehaald wil de Amerikaanse president Trump Itamar Ben-Gvir buiten de volgende regering van Netanyahu houden. Bevestigd is dat niet; er is nog geen coalitieakkoord of eenheidsregeling.</p><div class="bron">Bron: <a href="https://www.israelnieuws.nl/post/bronnen-melden-dat-trump-ben-gvir-uit-de-volgende-regering-van-netanyahu-wil-hebben">Israelnieuws</a></div></article>
+<article><h3>Nederland trekt zich weer terug uit Songfestival</h3><p>De Nederlandse omroep stapt na een eerdere draai opnieuw uit het Eurovisie Songfestival 2027 en wijst op “gevoeligheden” rond de Israëlische deelname.</p><div class="bron">Bron: <a href="https://www.jta.org/2026/10/28/global/netherlands-reverses-course-will-sit-out-eurovision-again-over-israels-participation">JTA</a></div></article></section>
+<section><h2 class="blok">⚔️ Oorlog & Veiligheid</h2>
+<article><h3>Hervatting van de Iran-oorlog “aanstaande”, volgens analyse</h3><p>Een analyse van The Times of Israel stelt dat na maanden van dreigementen van Trump een hervatting van de oorlog met Iran onvermijdelijk lijkt. Eerder meldde media dat legerchef Zamir als enige veiligheidsbaas tegen militaire actie vóór de verkiezingen was. Een aftredende regering kan, ondanks wettelijke beperkingen, in theorie oorlog verklaren. Premier Netanyahu noemde eerder een “historische kans” om Iran te verslaan; critici zien electorale motieven.</p><div class="bron">Bron: <a href="https://www.timesofisrael.com/after-months-of-threats-by-trump-resumption-of-iran-war-now-seems-inevitable/">Times of Israel</a> · <a href="https://www.timesofisrael.com/report-zamir-the-only-security-chief-to-oppose-pre-election-military-action-against-iran/">Times of Israel</a></div></article>
+<article><h3>Schip met ZIM-link tot zinken gebracht in Zwarte Zee</h3><p>Het containerschip CONTSHIP JET, op weg van Haifa naar Constanta, werd op 28 oktober voor de Bulgaarse kust geraakt door drie onbemande explosieve boten en zonk. Alle 18 bemanningsleden zijn veilig. ZIM bevestigt dat het om een schip in zijn dienst gaat; er is geen direct bewijs wie erachter zit, al wordt gewezen op Rusland.</p><div class="bron">Bron: <a href="https://www.israelnieuws.nl/post/n12news-een-schip-in-dienst-van-zim-werd-door-rusland-in-de-zwarte-zee-beschadigd-en-tot-zinken-geb">Israelnieuws / N12</a></div></article>
+<article><h3>VN-onderzoek beschuldigt Israël; Israël wijst het af</h3><p>Een door de VN gesteund onderzoek beschuldigt Israël van voortdurende genocide in Gaza en misdaden tegen de menselijkheid op de Westelijke Jordaanoever. Israël spreekt van een “desinformatiecampagne”.</p><div class="bron">Bron: <a href="https://www.timesofisrael.com/un-sponsored-probe-accuses-israel-of-ongoing-gaza-genocide-west-bank-crimes-against-humanity/">Times of Israel</a></div></article>
+<article><h3>Aanvaller bij Israëlische ambassade in Servië doodgeschoten</h3><p>De politie schoot een aanvaller dood buiten de Israëlische ambassade in Servië. Details over het motief zijn nog beperkt.</p><div class="bron">Bron: <a href="https://www.jta.org/2026/10/28/global/police-shoot-dead-assailant-outside-israeli-embassy-in-serbia">JTA</a></div></article></section>
+<section><h2 class="blok">💻 Techniek & Economie</h2>
+<article><h3>Intel-fabriek Kiryat Gat: ontploffing kost ~$600 miljoen</h3><p>Een explosie bij Intels fabriek in Kiryat Gat legde de productie ongeveer twee weken stil en eiste twee levens. Intel verwacht ongeveer $300 miljoen omzetverlies in Q4 en een vergelijkbaar bedrag in Q1. Het aandeel kelderde na beurs zo’n 20% na een zwakke vooruitblik. Mobileye staat intussen op een recordlaagte.</p><div class="bron">Bron: <a href="https://www.calcalistech.com/ctechnews/article/7djs538lu">Calcalist</a> · <a href="https://www.calcalistech.com/ctechnews/article/mmi26zdey">Calcalist (Mobileye)</a></div></article>
+<article><h3>Politieke impasse kan miljarden kosten</h3><p>Volgens schattingen kan de patstelling zo’n NIS 6,5 miljard kosten. Is er op 1 januari 2027 geen begroting, dan gelden maandelijkse uitgavenplafonds en kan NIS 10–15 miljard aan geplande uitgaven worden geraakt. Ook hogere rentelasten zijn een risico.</p><div class="bron">Bron: <a href="https://www.calcalistech.com/ctechnews/article/rexnr6xcn">Calcalist</a></div></article>
+<article><h3>Prijsverhogingen na de verkiezingen op komst</h3><p>Na de verkiezingen wordt een golf van prijsverhogingen in de supermarkt verwacht, aldus Israëlische media.</p><div class="bron">Bron: <a href="https://www.israelnieuws.nl/post/de-grote-klap-na-de-verkiezingen-de-golf-van-prijsverhogingen-die-op-weg-is-naar-de-winkelschappen">Israelnieuws</a> · <a href="https://www.calcalistech.com/ctechnews/article/zau31dvmn">Calcalist</a></div></article>
+<article><h3>Cyberstartup ter waarde van $1,5 miljard haalt oud-8200-chef binnen</h3><p>Een nog stealth opererende Israëlische cyberstartup, gewaardeerd op meer dan $1,5 miljard, heeft een voormalig commandant van Unit 8200 aangetrokken.</p><div class="bron">Bron: <a href="https://www.calcalistech.com/ctechnews/article/noua2b4u0">Calcalist</a></div></article></section>
+<section><h2 class="blok">✡️ Religieus Nieuws</h2>
+<article><h3>Beroemde Radin-jesjiwa heropend in Belarus</h3><p>De jesjiwa van de Chofetz Chaim in Radun, opgericht in 1869 en onder Sovjetbewind een theater, is na een jaar restauratie weer in gebruik als jesjiwa. Zo’n honderd rabbijnen woonden de inwijding bij, voor het eerst sinds de Tweede Wereldoorlog.</p><div class="bron">Bron: <a href="https://www.jta.org/2026/10/28/global/a-famed-rabbis-yeshiva-reopens-for-students-for-the-first-time-since-world-war-ii">JTA</a></div></article>
+<article><h3>Spaans woordenboek definieert “joods” nog steeds als “gierig”</h3><p>Twee jaar na een rechterlijk bevel staat in het gezaghebbende Spaanse woordenboek nog steeds de beledigende betekenis bij het woord “Jewish”.</p><div class="bron">Bron: <a href="https://www.jta.org/2026/10/29/global/two-years-after-a-judges-order-a-spanish-dictionary-still-defines-jewish-as-miserly">JTA</a></div></article></section>
+<section><h2 class="blok">🌟 Positief Nieuws</h2>
+<article><h3>Door nazi’s gestolen Joodse schatten keren terug</h3><p>Joodse voorwerpen die 88 jaar geleden door de nazi’s zijn gestolen, zijn dankzij een synagoge in Arizona teruggekeerd.</p><div class="bron">Bron: <a href="https://www.jta.org/2026/10/27/global/jewish-treasures-stolen-by-nazis-88-years-ago-come-home-thanks-to-an-arizona-synagogue">JTA</a></div></article>
+<article><h3>KKL-JNF heropent vesting uit de tijd van de richteren</h3><p>Na restauratie en verbeterde toegankelijkheid heropent KKL-JNF een vesting uit de bijbelse tijd van de richteren.</p><div class="bron">Bron: <a href="https://www.israelnieuws.nl/post/video-na-restauratie-en-toegankelijkheids-werkzaamheden-kkl-jnf-heropent-een-vesting-uit-de-tijd-v">Israelnieuws</a></div></article>
+<article><h3>Bites haalt $40 miljoen op voor AI-training</h3><p>Het Israëlische Bites haalt een Series A van $40 miljoen op om AI-training naar werknemers in de frontlinie te brengen.</p><div class="bron">Bron: <a href="https://www.calcalistech.com/ctechnews/article/s1t5soetmx">Calcalist</a></div></article></section>
+<footer>Samengesteld uit openbare bronnen; bij tegenstrijdige berichtgeving staan beide lezingen vermeld. Niet alle details zijn onafhankelijk bevestigd.</footer>
+<script>
+(function () {
+  var editie = document.body.getAttribute('data-editie-datum');
+  if (!editie) return;
+
+  var nu = new Date();
+  var vandaag = nu.getFullYear() + '-' +
+                String(nu.getMonth() + 1).padStart(2, '0') + '-' +
+                String(nu.getDate()).padStart(2, '0');
+
+  var balk = document.getElementById('stale');
+  var knop = document.getElementById('refreshBtn');
+  var melding = document.getElementById('staleMelding');
+
+  var netGeprobeerd = false;
+  try {
+    netGeprobeerd = sessionStorage.getItem('nbRefresh') === '1';
+    sessionStorage.removeItem('nbRefresh');
+  } catch (e) {}
+
+  if (editie < vandaag) {
+    var d = editie.split('-');
+    var leesbaar = d[2] + '-' + d[1] + '-' + d[0];
+    document.getElementById('staleDatum').textContent = leesbaar;
+    balk.style.display = 'block';
+    if (netGeprobeerd && melding) {
+      melding.textContent = 'Opnieuw opgehaald: er is nog geen nieuwere editie gepubliceerd. ' +
+                            'De laatste blijft die van ' + leesbaar + '.';
+      melding.style.display = 'block';
+    }
+  } else if (netGeprobeerd && balk) {
+    balk.style.display = 'none';
+  }
+
+  if (knop) {
+    knop.addEventListener('click', function () {
+      knop.disabled = true;
+      knop.textContent = 'Bezig met ophalen\u2026';
+      if (melding) { melding.textContent = ''; melding.style.display = 'none'; }
+      try { sessionStorage.setItem('nbRefresh', '1'); } catch (e) {}
+      var url = location.pathname + '?v=' + Date.now();
+      setTimeout(function () { location.replace(url); }, 150);
+      setTimeout(function () { location.reload(); }, 2500);
+    });
+  }
+})();
+</script>
+<script>
+(function () {
+  var knop = document.getElementById('pdfBtn');
+  if (!knop) return;
+  knop.addEventListener('click', function () {
+    var titel = document.title;
+    var datum = document.body.getAttribute('data-editie-datum') || '';
+    if (datum) { document.title = 'Israel-Nieuwsbrief-' + datum; }
+    window.print();
+    setTimeout(function () { document.title = titel; }, 1000);
+  });
+})();
+</script>
+</body>
+</html>
