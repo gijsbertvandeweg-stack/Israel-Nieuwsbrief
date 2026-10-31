@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0038b8">
+<meta name="color-scheme" content="light">
+<meta name="apple-mobile-web-app-title" content="Israël Nieuwsbrief">
+<meta name="format-detection" content="telephone=no">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23fff'/%3E%3Crect y='8' width='64' height='7' fill='%230038b8'/%3E%3Crect y='49' width='64' height='7' fill='%230038b8'/%3E%3Cpath d='M32 20l10 17H22z' fill='none' stroke='%230038b8' stroke-width='4'/%3E%3Cpath d='M32 44L22 27h20z' fill='none' stroke='%230038b8' stroke-width='4'/%3E%3C/svg%3E">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Israël Nieuwsbrief – zaterdag 31 oktober 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'M PLUS 1p', 'Leelawadee UI', Leelawadee, Arial, sans-serif; max-width: 760px; margin: 0 auto; padding: 24px 20px; color: #1a1a2e; background: #fdfcf8; line-height: 1.6; }
+  header { border-bottom: 3px solid #0038b8; padding-bottom: 14px; margin-bottom: 24px; }
+  h1 { margin: 0; font-size: 1.9em; color: #0038b8; }
+  .datum { color: #666; font-size: 0.95em; margin-top: 4px; }
+  .intro { background: #eef3ff; border-left: 4px solid #0038b8; padding: 14px 18px; border-radius: 0 8px 8px 0; margin-bottom: 28px; }
+  .intro h2 { margin: 0 0 8px; font-size: 1.1em; color: #0038b8; }
+  section { margin-bottom: 32px; }
+  h2.blok { font-size: 1.35em; border-bottom: 2px solid #d9d4c5; padding-bottom: 6px; color: #22223b; }
+  article { margin-bottom: 18px; }
+  h3 { margin: 0 0 4px; font-size: 1.08em; }
+  p { margin: 0; }
+  .bron { font-size: 0.85em; color: #777; }
+  .bron a { color: #0038b8; text-decoration: none; }
+  .verssig { font-size: 0.8em; color: #999; margin-top: 6px; }
+  #stale { display: none; background: #fff4e5; border-left: 4px solid #d9822b; color: #7a4a12; padding: 12px 16px; border-radius: 0 8px 8px 0; margin-bottom: 20px; font-size: 0.92em; }
+  #stale strong { color: #b35c00; }
+  #stale button { margin-top: 8px; font: inherit; background: #0038b8; color: #fff; border: 0; border-radius: 6px; padding: 7px 14px; cursor: pointer; }
+  #staleMelding { display: none; margin-top: 8px; font-weight: 500; color: #7a4a12; }
+  #stale button:disabled { opacity: .6; cursor: default; }
+  .acties { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: -8px 0 26px; }
+  .acties button { font: inherit; font-size: 0.92em; background: #fff; color: #0038b8; border: 1.5px solid #0038b8; border-radius: 6px; padding: 8px 14px; cursor: pointer; }
+  .acties button:hover { background: #0038b8; color: #fff; }
+  .acties .hint { font-size: 0.8em; color: #999; }
+  footer { border-top: 1px solid #d9d4c5; margin-top: 30px; padding-top: 12px; font-size: 0.85em; color: #888; }
+
+
+/* --- Mobiel (iPhone) --- */
+html { -webkit-text-size-adjust: 100%; }
+body { overflow-wrap: break-word; }
+a { overflow-wrap: break-word; }
+button { min-height: 44px; touch-action: manipulation; }
+
+@media (max-width: 640px) {
+  body {
+    font-size: 17px;
+    padding: 16px max(16px, env(safe-area-inset-right)) calc(28px + env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+  }
+  h1 { font-size: 1.45em; line-height: 1.25; }
+  .datum { font-size: 0.9em; }
+  h2.blok { font-size: 1.18em; }
+  h3 { font-size: 1.03em; line-height: 1.35; }
+  .intro { padding: 12px 14px; }
+  section { margin-bottom: 26px; }
+  article { margin-bottom: 22px; }
+  .acties { flex-direction: column; align-items: stretch; margin: 0 0 24px; }
+  .acties button { width: 100%; padding: 13px 16px; font-size: 1em; }
+  .acties .hint { font-size: 0.78em; text-align: center; }
+  #stale button { width: 100%; padding: 13px 16px; }
+  .bron { font-size: 0.82em; }
+}
+
+@media print {
+  @page { margin: 16mm 14mm; }
+  body { background: #fff; max-width: none; margin: 0; padding: 0; font-size: 10.5pt; line-height: 1.45; }
+  #stale, .acties { display: none !important; }
+  header { border-bottom: 2px solid #0038b8; }
+  h1 { font-size: 1.5em; }
+  .intro { background: #fff; border-left: 3px solid #0038b8; }
+  a { color: #0038b8; text-decoration: none; }
+  article, .intro, footer { break-inside: avoid; page-break-inside: avoid; }
+  h2.blok { break-after: avoid; page-break-after: avoid; }
+}
+</style>
+</head>
+<body data-editie-datum="2026-10-31">
+<header>
+  <h1>🇮🇱 Israël Nieuwsbrief</h1>
+  <div class="datum">Zaterdag 31 oktober 2026 · Editie 84</div>
+  <div class="verssig">Bijgewerkt: 31-10-2026 06:15 UTC</div>
+</header>
+
+<div id="stale">
+  <strong>Let op: dit is niet de editie van vandaag.</strong><br>
+  Je leest de editie van <span id="staleDatum"></span>. De nieuwe editie is nog niet gepubliceerd,
+  of je telefoon toont een opgeslagen versie.
+  <div id="staleMelding"></div>
+  <button id="refreshBtn" type="button">Opnieuw ophalen</button>
+</div>
+
+<div class="acties">
+  <button id="pdfBtn" type="button">📄 Opslaan als pdf</button>
+  <span class="hint">Kies in het printvenster &lsquo;Bewaar als pdf&rsquo; &mdash; daarna kun je hem doorsturen.</span>
+</div>
+
+<div class="intro">
+  <h2>In het kort</h2>
+  <p>Na de verkiezingen van 27 oktober is de telling rond: het blok van Netanyahu haalt 53 zetels, dat van Eisenkot 48 en de Arabische partijen een recordaantal van 19 – niemand haalt de 61. Likud noemt de verkiezing &ldquo;gestolen&rdquo; na berichten over Qatarees geld voor de Arabische opkomst; verkiezingsfunctionarissen, Eisenkot en Ra&rsquo;am-leider Abbas wijzen dat af, de Shin Bet onderzoekt buitenlandse inmenging. In Gaza doodde Israël een Hamas-commandant die betrokken was bij het vasthouden van onder meer Noa Argamani, en in Hebron wordt gewerkt aan de sloop van de huizen van de aanvallers van 23 oktober. Verder: een dodelijk busongeluk bij Netivot en vertraagde Israëlische vluchten naar Dubai.</p>
+</div>
+
+<section>
+  <h2 class="blok">🏛️ Politiek</h2>
+  <article>
+    <h3>Telling afgerond: patstelling, Arabische partijen op recordhoogte</h3>
+    <p>Het blok van Netanyahu heeft 53 zetels, dat van Eisenkot 48; Ra&rsquo;am (8) en de Verenigde Lijst (11) hebben samen 19. Likud blijft de grootste partij, maar verloor ruim zes zetels. Netanyahu zou volgens JPost een nationale-eenheidsregering kunnen zoeken, maar volgens JTA hebben alle vier partijen in Eisenkots blok dat uitgesloten. Eisenkot zou voor een meerderheid Arabische partijen nodig hebben (door drie van zijn vier partners uitgesloten) of de ultraorthodoxe partijen (wat zijn belofte over de dienstplicht zou breken). Als onderhandelingen mislukken, dreigen nieuwe verkiezingen of maanden van een demissionaire regering.</p>
+    <div class="bron">Bronnen: <a href="https://www.jpost.com/israel-news/politics-and-diplomacy/article-913272">Jerusalem Post</a> · <a href="https://www.jta.org/2026/10/29/israel/what-pledges-eisenkot-and-netanayhu-need-to-break-to-become-pm">JTA</a></div>
+  </article>
+  <article>
+    <h3>&ldquo;Gestolen verkiezing&rdquo;: Likud wijst naar Qatar, functionarissen wijzen claim af</h3>
+    <p>Likud stelt dat Doha heimelijk geld stak in het opkrikken van de Arabische opkomst. Rechter Noam Sohlberg, voorzitter van de Centrale Verkiezingscommissie, vroeg de Shin Bet onderzoek te doen naar mogelijke buitenlandse inmenging; de dienst waarschuwt niet te vroeg conclusies te trekken. Verkiezingsfunctionarissen, Eisenkot en Mansour Abbas verwerpen de fraudeclaim, en Qatar ontkent betrokkenheid.</p>
+    <div class="bron">Bron: <a href="https://www.jta.org/2026/10/30/israel/israel-probes-alleged-qatari-election-meddling-in-arab-vote-as-netanyahu-claims-election-stolen">JTA</a></div>
+  </article>
+  <article>
+    <h3>Israël weigert delegatie van 23 activisten de Westelijke Jordaanoever tijdens olijfoogst</h3>
+    <p>Een groep uit verschillende Europese landen en de VS, op weg naar een congres in Ramallah, werd bij de Allenby-overgang zo&rsquo;n negen uur vastgehouden en zonder uitleg geweigerd. Het volgt op een instructie van minister van Defensie Katz begin oktober om uitzettingsbevelen tegen activisten na te streven, terwijl het aantal aanvallen van kolonisten op Palestijnen tijdens de oogst toeneemt.</p>
+    <div class="bron">Bron: <a href="https://www.jpost.com/israel-news/article-913360">Jerusalem Post</a></div>
+  </article>
+</section>
+
+<section>
+  <h2 class="blok">⚔️ Oorlog &amp; Veiligheid</h2>
+  <article>
+    <h3>Hamas-commandant die Noa Argamani en andere gijzelaars vasthield gedood in Nuseirat</h3>
+    <p>Volgens IDF en Shin Bet kwam squadcommandant Ihab Jamil Abu Taqiya om bij een luchtaanval op 29 oktober; hij zou ook Emily Hand en Ohad Ben Ami hebben vastgehouden. Een pelotonscommandant kwam om in dezelfde aanval. Het leger spreekt van &ldquo;systematische schendingen van het staakt-het-vuren&rdquo; en meldt dat eerder die week twee wapendepots werden vernietigd en vier andere Hamas-leden werden gedood.</p>
+    <div class="bron">Bron: <a href="https://www.jpost.com/israel-news/defense-news/article-913354">Jerusalem Post</a></div>
+  </article>
+  <article>
+    <h3>Hebron: huizen van aanvallers van 23 oktober worden voor sloop voorbereid</h3>
+    <p>Nieuw ten opzichte van eerdere berichtgeving: op 30 oktober evacueerden soldaten bewoners van een wijk in Hebron om de woningen van de daders te slopen. Bij de aanslag bij Yehuda Junction kwamen twee soldaten om (23 en 20 jaar). Als reactie kondigde de regionale raad van Mount Hebron acht nieuwe nederzettingsposten in de Hebron-heuvels aan.</p>
+    <div class="bron">Bron: <a href="https://www.jpost.com/israel-news/defense-news/article-913326">Jerusalem Post</a></div>
+  </article>
+  <article>
+    <h3>Wapens en 2.300 patronen in beslag genomen bij actie bij Kalkilya</h3>
+    <p>IDF en Grenspolitie namen geweren, geluiddempers en 2.300 kogels in beslag bij een inval op de Westelijke Jordaanoever.</p>
+    <div class="bron">Bron: <a href="https://www.jpost.com/israel-news/defense-news/article-913337">Jerusalem Post</a></div>
+  </article>
+  <article>
+    <h3>Busdriver omgekomen, 24 gewonden bij botsing met tractor bij Netivot</h3>
+    <p>Op 30 oktober botste een bus met een groep meisjes op Route 25 bij Beit Hagadi-kruispunt tegen een tractor. De chauffeur (ca. 50) overleed ter plaatse; twee vrouwen verkeren in ernstige toestand in het Soroka-ziekenhuis. De politie onderzoekt het ongeluk.</p>
+    <div class="bron">Bron: <a href="https://www.jpost.com/israel-news/article-913330">Jerusalem Post</a></div>
+  </article>
+</section>
+
+<section>
+  <h2 class="blok">💻 Techniek &amp; Economie</h2>
+  <article>
+    <h3>Upwind verhoogt financieringsronde naar $400 miljoen</h3>
+    <p>Het Israëlische cloudbeveiligingsbedrijf behoudt een waardering van $3,8 miljard (in januari nog $1,5 miljard). Er zijn berichten dat Datadog een overname overwoog. Upwind nam Aegis over en startte Upwind AI Labs voor beveiliging van AI-systemen.</p>
+    <div class="bron">Bron: <a href="https://www.calcalistech.com/ctechnews/article/rohkgwlwu">CTech</a></div>
+  </article>
+  <article>
+    <h3>Ex-baas Unit 8200 Schneorson verlaat Paragon voor Ribon</h3>
+    <p>Ehud Schneorson, medeoprichter van Paragon, stapt over naar Ribon, dat naar verluidt zo&rsquo;n $200 miljoen ophaalde en meer dan $1,5 miljard waard is. Hij blijft adviseur van Paragon, dat via een fusie met een SPAC naar de Nasdaq wil.</p>
+    <div class="bron">Bron: <a href="https://www.calcalistech.com/ctechnews/article/noua2b4u0">CTech</a></div>
+  </article>
+  <article>
+    <h3>Israëlische maatschappijen stellen vluchten naar Dubai en Marokko uit</h3>
+    <p>El Al schuift de terugkeer naar Dubai door van november naar 15 december; Arkia schort UAE-vluchten op. Oorzaken zijn spanningen met de UAE over Israëlische screeningapparatuur op het vliegveld van Dubai en strengere Israëlische veiligheidseisen na een poging tot kaping van een Flydubai-toestel op 30 september.</p>
+    <div class="bron">Bron: <a href="https://www.calcalistech.com/ctechnews/article/iqsxbea3s">CTech</a></div>
+  </article>
+  <article>
+    <h3>KFC-exploitant in Israël vraagt rechterlijke bescherming</h3>
+    <p>Smart-Service K&amp;K (12 vestigingen) vroeg de rechtbank in Be&rsquo;er Sheva om een tijdelijke curator, met schulden van tientallen miljoenen shekel. Zitting op 2 november.</p>
+    <div class="bron">Bron: <a href="https://www.calcalistech.com/ctechnews/article/s1xcmz116fx">CTech</a></div>
+  </article>
+</section>
+
+<section>
+  <h2 class="blok">✡️ Religieus Nieuws</h2>
+  <article>
+    <h3>Orthodoxe joden in VS vastgehouden na stemmen zonder staatsburgerschap, zegt politicus</h3>
+    <p>Volgens Avi Schnall (lid van de staatsvergadering en COO van Agudath Israel of America) zijn enkele orthodoxe joden door ICE of de grenspolitie aangehouden nadat ze met een visum of green card zouden hebben gestemd; hij spreekt van &ldquo;onschuldige vergissingen&rdquo;. Het item staat in het teken van de Amerikaanse tussentijdse verkiezingen en de rol van de orthodoxe stem.</p>
+    <div class="bron">Bron: <a href="https://www.jta.org/2026/10/29/ny/orthodox-jews-were-detained-by-ice-after-voting-as-non-citizens-says-nj-pol">JTA</a></div>
+  </article>
+</section>
+
+<section>
+  <h2 class="blok">🌟 Positief Nieuws</h2>
+  <article>
+    <h3>Haardonaties voor kankerpatiënten dalen met 50%: campagne zoekt donoren</h3>
+    <p>Een landelijke actie biedt gratis knipbeurten aan mensen die hun haar willen doneren, nadat het aantal donaties met de helft daalde.</p>
+    <div class="bron">Bron: <a href="https://www.jpost.com/israel-news/article-913323">Jerusalem Post</a></div>
+  </article>
+  <article>
+    <h3>Uitkijkpunt bij Sint-Joriskloster weer toegankelijk na onderzoek van de Post</h3>
+    <p>Het ministerie van Toerisme heropent de toegang tot het uitkijkpunt bij het klooster in de Judese woestijn.</p>
+    <div class="bron">Bron: <a href="https://www.jpost.com/israel-news/culture/article-913346">Jerusalem Post</a></div>
+  </article>
+</section>
+<footer>Samengesteld uit openbare bronnen. Bij tegenstrijdige berichtgeving zijn beide lezingen vermeld.</footer>
+
+<script>
+(function () {
+  var editie = document.body.getAttribute('data-editie-datum');
+  if (!editie) return;
+
+  var nu = new Date();
+  var vandaag = nu.getFullYear() + '-' +
+                String(nu.getMonth() + 1).padStart(2, '0') + '-' +
+                String(nu.getDate()).padStart(2, '0');
+
+  var balk = document.getElementById('stale');
+  var knop = document.getElementById('refreshBtn');
+  var melding = document.getElementById('staleMelding');
+
+  var netGeprobeerd = false;
+  try {
+    netGeprobeerd = sessionStorage.getItem('nbRefresh') === '1';
+    sessionStorage.removeItem('nbRefresh');
+  } catch (e) {}
+
+  if (editie < vandaag) {
+    var d = editie.split('-');
+    var leesbaar = d[2] + '-' + d[1] + '-' + d[0];
+    document.getElementById('staleDatum').textContent = leesbaar;
+    balk.style.display = 'block';
+    if (netGeprobeerd && melding) {
+      melding.textContent = 'Opnieuw opgehaald: er is nog geen nieuwere editie gepubliceerd. ' +
+                            'De laatste blijft die van ' + leesbaar + '.';
+      melding.style.display = 'block';
+    }
+  } else if (netGeprobeerd && balk) {
+    balk.style.display = 'none';
+  }
+
+  if (knop) {
+    knop.addEventListener('click', function () {
+      knop.disabled = true;
+      knop.textContent = 'Bezig met ophalen\u2026';
+      if (melding) { melding.textContent = ''; melding.style.display = 'none'; }
+      try { sessionStorage.setItem('nbRefresh', '1'); } catch (e) {}
+      var url = location.pathname + '?v=' + Date.now();
+      setTimeout(function () { location.replace(url); }, 150);
+      setTimeout(function () { location.reload(); }, 2500);
+    });
+  }
+})();
+</script>
+<script>
+(function () {
+  var knop = document.getElementById('pdfBtn');
+  if (!knop) return;
+  knop.addEventListener('click', function () {
+    var titel = document.title;
+    var datum = document.body.getAttribute('data-editie-datum') || '';
+    if (datum) { document.title = 'Israel-Nieuwsbrief-' + datum; }
+    window.print();
+    setTimeout(function () { document.title = titel; }, 1000);
+  });
+})();
+</script>
+</body>
+</html>
