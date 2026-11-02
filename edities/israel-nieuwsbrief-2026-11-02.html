@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0038b8">
+<meta name="color-scheme" content="light">
+<meta name="apple-mobile-web-app-title" content="Israël Nieuwsbrief">
+<meta name="format-detection" content="telephone=no">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23fff'/%3E%3Crect y='8' width='64' height='7' fill='%230038b8'/%3E%3Crect y='49' width='64' height='7' fill='%230038b8'/%3E%3Cpath d='M32 20l10 17H22z' fill='none' stroke='%230038b8' stroke-width='4'/%3E%3Cpath d='M32 44L22 27h20z' fill='none' stroke='%230038b8' stroke-width='4'/%3E%3C/svg%3E">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Israël Nieuwsbrief – maandag 2 november 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'M PLUS 1p', 'Leelawadee UI', Leelawadee, Arial, sans-serif; max-width: 760px; margin: 0 auto; padding: 24px 20px; color: #1a1a2e; background: #fdfcf8; line-height: 1.6; }
+  header { border-bottom: 3px solid #0038b8; padding-bottom: 14px; margin-bottom: 24px; }
+  h1 { margin: 0; font-size: 1.9em; color: #0038b8; }
+  .datum { color: #666; font-size: 0.95em; margin-top: 4px; }
+  .intro { background: #eef3ff; border-left: 4px solid #0038b8; padding: 14px 18px; border-radius: 0 8px 8px 0; margin-bottom: 28px; }
+  .intro h2 { margin: 0 0 8px; font-size: 1.1em; color: #0038b8; }
+  section { margin-bottom: 32px; }
+  h2.blok { font-size: 1.35em; border-bottom: 2px solid #d9d4c5; padding-bottom: 6px; color: #22223b; }
+  article { margin-bottom: 18px; }
+  h3 { margin: 0 0 4px; font-size: 1.08em; }
+  p { margin: 0; }
+  .bron { font-size: 0.85em; color: #777; }
+  .bron a { color: #0038b8; text-decoration: none; }
+  .verssig { font-size: 0.8em; color: #999; margin-top: 6px; }
+  #stale { display: none; background: #fff4e5; border-left: 4px solid #d9822b; color: #7a4a12; padding: 12px 16px; border-radius: 0 8px 8px 0; margin-bottom: 20px; font-size: 0.92em; }
+  #stale strong { color: #b35c00; }
+  #stale button { margin-top: 8px; font: inherit; background: #0038b8; color: #fff; border: 0; border-radius: 6px; padding: 7px 14px; cursor: pointer; }
+  #staleMelding { display: none; margin-top: 8px; font-weight: 500; color: #7a4a12; }
+  #stale button:disabled { opacity: .6; cursor: default; }
+  .acties { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: -8px 0 26px; }
+  .acties button { font: inherit; font-size: 0.92em; background: #fff; color: #0038b8; border: 1.5px solid #0038b8; border-radius: 6px; padding: 8px 14px; cursor: pointer; }
+  .acties button:hover { background: #0038b8; color: #fff; }
+  .acties .hint { font-size: 0.8em; color: #999; }
+  footer { border-top: 1px solid #d9d4c5; margin-top: 30px; padding-top: 12px; font-size: 0.85em; color: #888; }
+
+
+/* --- Mobiel (iPhone) --- */
+html { -webkit-text-size-adjust: 100%; }
+body { overflow-wrap: break-word; }
+a { overflow-wrap: break-word; }
+button { min-height: 44px; touch-action: manipulation; }
+
+@media (max-width: 640px) {
+  body {
+    font-size: 17px;
+    padding: 16px max(16px, env(safe-area-inset-right)) calc(28px + env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+  }
+  h1 { font-size: 1.45em; line-height: 1.25; }
+  .datum { font-size: 0.9em; }
+  h2.blok { font-size: 1.18em; }
+  h3 { font-size: 1.03em; line-height: 1.35; }
+  .intro { padding: 12px 14px; }
+  section { margin-bottom: 26px; }
+  article { margin-bottom: 22px; }
+  .acties { flex-direction: column; align-items: stretch; margin: 0 0 24px; }
+  .acties button { width: 100%; padding: 13px 16px; font-size: 1em; }
+  .acties .hint { font-size: 0.78em; text-align: center; }
+  #stale button { width: 100%; padding: 13px 16px; }
+  .bron { font-size: 0.82em; }
+}
+
+@media print {
+  @page { margin: 16mm 14mm; }
+  body { background: #fff; max-width: none; margin: 0; padding: 0; font-size: 10.5pt; line-height: 1.45; }
+  #stale, .acties { display: none !important; }
+  header { border-bottom: 2px solid #0038b8; }
+  h1 { font-size: 1.5em; }
+  .intro { background: #fff; border-left: 3px solid #0038b8; }
+  a { color: #0038b8; text-decoration: none; }
+  article, .intro, footer { break-inside: avoid; page-break-inside: avoid; }
+  h2.blok { break-after: avoid; page-break-after: avoid; }
+}
+</style>
+</head>
+<body data-editie-datum="2026-11-02">
+<header>
+  <h1>🇮🇱 Israël Nieuwsbrief</h1>
+  <div class="datum">MAANDAG 2 NOVEMBER 2026 · Editie 86</div>
+  <div class="verssig">Bijgewerkt: 02-11-2026 19:10 UTC</div>
+</header>
+
+<div id="stale">
+  <strong>Let op: dit is niet de editie van vandaag.</strong><br>
+  Je leest de editie van <span id="staleDatum"></span>. De nieuwe editie is nog niet gepubliceerd,
+  of je telefoon toont een opgeslagen versie.
+  <div id="staleMelding"></div>
+  <button id="refreshBtn" type="button">Opnieuw ophalen</button>
+</div>
+
+<div class="acties">
+  <button id="pdfBtn" type="button">📄 Opslaan als pdf</button>
+  <span class="hint">Kies in het printvenster &lsquo;Bewaar als pdf&rsquo; &mdash; daarna kun je hem doorsturen.</span>
+</div>
+
+<div class="intro"><h2>In het kort</h2><p>Een week na de verkiezingen is er nog geen duidelijke winnaar: het blok van Netanyahu heeft 53 zetels, dat van Eisenkot 48, en de Arabische partijen (19) lijken Eisenkot te steunen. President Herzog begint woensdag met consultaties en dringt aan op flexibiliteit. Likud eist uitstel van de certificering van de uitslag, maar de kiescommissie weigert. Rond Iran twijfelt Trump nog over hervatting van de oorlog, terwijl de Houthi's weer drones op Saoedi-Arabië claimen. In de tech-sector waren er in oktober negen exits ter waarde van circa $8,9 miljard.</p></div>
+<section>
+<h2 class="blok">🏛️ Politiek</h2>
+<article><h3>Herzog roept op tot flexibiliteit; consultaties beginnen woensdag</h3><p>Geen van beide blokken haalt de 61 zetels: Netanyahu 53, Eisenkot 48, Arabische partijen 19. President Herzog zegt dat de uitslag "een gegeven" is en waarschuwt dat een impasse tot nieuwe verkiezingen kan leiden. De Knesset wordt op 10 november beëdigd; de kandidaat met het mandaat krijgt 28 dagen (plus 14 verlenging) om een coalitie te vormen.</p><div class="bron">Bron: <a href="https://www.jpost.com/israel-election-2026/article-913448">Jerusalem Post</a> · <a href="https://www.aljazeera.com/news/2026/11/2/arab-parties-back-eisenkot-whats-the-latest-in-israels-coalition-talks">Al Jazeera</a></div></article>
+<article><h3>Arabische partijen steunen Eisenkot als premier</h3><p>De Joint List (11 zetels) en Ra'am (8) gaan Eisenkot naar verwachting aanbevelen. De Joint List sluit regeringsdeelname uit maar zou een minderheidsregering kunnen steunen; Ra'am-leider Abbas wil erin als hij Binnenlandse Veiligheid krijgt. Eisenkot, Bennett en Liberman hebben eerder Arabische partijen in de regering uitgesloten.</p><div class="bron">Bron: <a href="https://www.aljazeera.com/news/2026/11/2/arab-parties-back-eisenkot-whats-the-latest-in-israels-coalition-talks">Al Jazeera</a> · <a href="https://www.timesofisrael.com/liveblog-november-1-2026-2/">Times of Israel</a></div></article>
+<article><h3>Likud wil certificering uitstellen; kiescommissie weigert</h3><p>Likud vroeg om uitstel van de certificering vanwege een onderzoek naar buitenlandse inmenging. Commissievoorzitter Sohlberg zegt dat hij die bevoegdheid niet heeft; verkiezingsfunctionarissen stellen dat de uitslag niet verandert. Netanyahu noemt de verkiezing zonder bewijs "gestolen"; Lapid noemt de stap een poging de democratie te ondermijnen. Een rechter liet een verdachte in het Ra'am-stemmenkooponderzoek vrij, een tweede kreeg huisarrest.</p><div class="bron">Bron: <a href="https://www.timesofisrael.com/liveblog-november-1-2026-2/">Times of Israel</a> · <a href="https://www.aljazeera.com/news/2026/11/2/arab-parties-back-eisenkot-whats-the-latest-in-israels-coalition-talks">Al Jazeera</a></div></article>
+</section>
+<section>
+<h2 class="blok">⚔️ Oorlog & Veiligheid</h2>
+<article><h3>Trump heeft haast niet met hervatting Iran-oorlog</h3><p>Volgens Channel 12 wil Trump eerst afwachten: de economische druk zou Teheran verzwakken en de door Qatar bemiddelde gesprekken verlopen volgens hem goed. Zijn adviseurs zijn verdeeld; Netanyahu bepleitte in een telefoongesprek zaterdag hervatting. Nieuw ten opzichte van eerdere berichten dat een aanval na de Amerikaanse tussentijdse verkiezingen gepland zou zijn.</p><div class="bron">Bron: <a href="https://www.timesofisrael.com/liveblog_entry/trump-reportedly-in-no-rush-to-decide-whether-to-resume-war-with-iran/">Times of Israel</a></div></article>
+<article><h3>Houthi's claimen drone-aanvallen op Saoedi-Arabië</h3><p>De Houthi's zeggen drones te hebben gelanceerd richting het vliegveld van Dammam en doelen bij Jizan te hebben getroffen. Saoedi-Arabië heeft dit nog niet bevestigd.</p><div class="bron">Bron: <a href="https://www.timesofisrael.com/liveblog_entry/houthis-say-they-launched-drones-at-saudi-arabias-dammam-airport/">Times of Israel</a></div></article>
+<article><h3>Bedreigingen tegen Eisenkot</h3><p>Een onbekende vrouw drong het appartementengebouw van Eisenkot in Herzliya binnen op zoek naar zijn woning; de politie onderzoekt het. Eisenkot deed eerder aangifte tegen een activist wegens doodsbedreigingen.</p><div class="bron">Bron: <a href="https://www.timesofisrael.com/liveblog-november-1-2026-2/">Times of Israel</a></div></article>
+</section>
+<section>
+<h2 class="blok">💻 Techniek & Economie</h2>
+<article><h3>Oktober: negen Israëlische tech-exits van samen ~$8,9 miljard</h3><p>Twee deals zorgen voor $8,6 miljard: Proofpoint koopt Varonis voor $6,3 miljard en Intel koopt quantumbedrijf Classiq voor $2,3 miljard, de grootste quantum-overname tot nu toe. Acht van de negen deals draaiden om AI.</p><div class="bron">Bron: <a href="https://www.calcalistech.com/ctechnews/article/0v83gn94p">Calcalist</a></div></article>
+<article><h3>Salesforce huurt nieuw hoofdkantoor in Tel Aviv</h3><p>Vijfjarige huur van ca. 15.300 m² in de ToHa 2-toren voor circa 1.000 medewerkers, in gebruik in de eerste helft van 2028.</p><div class="bron">Bron: <a href="https://www.calcalistech.com/ctechnews/article/ryjjvov6fx">Calcalist</a></div></article>
+<article><h3>Beursbaas waarschuwt: politieke impasse bedreigt groei</h3><p>TASE-topman Ben-Zeev pleit voor een brede regering. Na de verkiezingen daalde de beurs en verzwakte de sjekel; de TA-125 verloor in oktober 3,4%, maar staat dit jaar nog 7,4% hoger.</p><div class="bron">Bron: <a href="https://www.timesofisrael.com/tel-aviv-bourse-chief-warns-political-deadlock-threatens-growth-urges-broad-government/">Times of Israel</a></div></article>
+</section>
+<section>
+<h2 class="blok">✡️ Religieus Nieuws</h2>
+<article><h3>Herzogs "Voice of the People": 38 initiatieven voor de Joodse wereld</h3><p>Het programma bracht 150 Joden uit Israël en de diaspora samen rond antisemitisme, polarisatie, identiteit en Israël-diasporarelaties. 21 projecten kregen startgeld; deelnemers waren ook kritisch over het strak geleide proces. Een tweede groep kreeg 2.500 aanmeldingen.</p><div class="bron">Bron: <a href="https://www.jta.org/2026/11/01/global/what-happened-when-isaac-herzog-asked-150-jews-to-solve-their-peoples-problems">JTA</a></div></article>
+</section>
+<footer>Samengesteld uit Times of Israel, Jerusalem Post, Al Jazeera, Calcalist en JTA. Haaretz was niet raadpleegbaar; een Positief Nieuws-blok ontbreekt vandaag bij gebrek aan recente items.</footer>
+
+<script>
+(function () {
+  var editie = document.body.getAttribute('data-editie-datum');
+  if (!editie) return;
+
+  var nu = new Date();
+  var vandaag = nu.getFullYear() + '-' +
+                String(nu.getMonth() + 1).padStart(2, '0') + '-' +
+                String(nu.getDate()).padStart(2, '0');
+
+  var balk = document.getElementById('stale');
+  var knop = document.getElementById('refreshBtn');
+  var melding = document.getElementById('staleMelding');
+
+  var netGeprobeerd = false;
+  try {
+    netGeprobeerd = sessionStorage.getItem('nbRefresh') === '1';
+    sessionStorage.removeItem('nbRefresh');
+  } catch (e) {}
+
+  if (editie < vandaag) {
+    var d = editie.split('-');
+    var leesbaar = d[2] + '-' + d[1] + '-' + d[0];
+    document.getElementById('staleDatum').textContent = leesbaar;
+    balk.style.display = 'block';
+    if (netGeprobeerd && melding) {
+      melding.textContent = 'Opnieuw opgehaald: er is nog geen nieuwere editie gepubliceerd. ' +
+                            'De laatste blijft die van ' + leesbaar + '.';
+      melding.style.display = 'block';
+    }
+  } else if (netGeprobeerd && balk) {
+    balk.style.display = 'none';
+  }
+
+  if (knop) {
+    knop.addEventListener('click', function () {
+      knop.disabled = true;
+      knop.textContent = 'Bezig met ophalen\u2026';
+      if (melding) { melding.textContent = ''; melding.style.display = 'none'; }
+      try { sessionStorage.setItem('nbRefresh', '1'); } catch (e) {}
+      var url = location.pathname + '?v=' + Date.now();
+      setTimeout(function () { location.replace(url); }, 150);
+      setTimeout(function () { location.reload(); }, 2500);
+    });
+  }
+})();
+</script>
+<script>
+(function () {
+  var knop = document.getElementById('pdfBtn');
+  if (!knop) return;
+  knop.addEventListener('click', function () {
+    var titel = document.title;
+    var datum = document.body.getAttribute('data-editie-datum') || '';
+    if (datum) { document.title = 'Israel-Nieuwsbrief-' + datum; }
+    window.print();
+    setTimeout(function () { document.title = titel; }, 1000);
+  });
+})();
+</script>
+</body>
+</html>
