@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0038b8">
+<meta name="color-scheme" content="light">
+<meta name="apple-mobile-web-app-title" content="Israël Nieuwsbrief">
+<meta name="format-detection" content="telephone=no">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23fff'/%3E%3Crect y='8' width='64' height='7' fill='%230038b8'/%3E%3Crect y='49' width='64' height='7' fill='%230038b8'/%3E%3Cpath d='M32 20l10 17H22z' fill='none' stroke='%230038b8' stroke-width='4'/%3E%3Cpath d='M32 44L22 27h20z' fill='none' stroke='%230038b8' stroke-width='4'/%3E%3C/svg%3E">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Israël Nieuwsbrief – dinsdag 3 november 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'M PLUS 1p', 'Leelawadee UI', Leelawadee, Arial, sans-serif; max-width: 760px; margin: 0 auto; padding: 24px 20px; color: #1a1a2e; background: #fdfcf8; line-height: 1.6; }
+  header { border-bottom: 3px solid #0038b8; padding-bottom: 14px; margin-bottom: 24px; }
+  h1 { margin: 0; font-size: 1.9em; color: #0038b8; }
+  .datum { color: #666; font-size: 0.95em; margin-top: 4px; }
+  .intro { background: #eef3ff; border-left: 4px solid #0038b8; padding: 14px 18px; border-radius: 0 8px 8px 0; margin-bottom: 28px; }
+  .intro h2 { margin: 0 0 8px; font-size: 1.1em; color: #0038b8; }
+  section { margin-bottom: 32px; }
+  h2.blok { font-size: 1.35em; border-bottom: 2px solid #d9d4c5; padding-bottom: 6px; color: #22223b; }
+  article { margin-bottom: 18px; }
+  h3 { margin: 0 0 4px; font-size: 1.08em; }
+  p { margin: 0; }
+  .bron { font-size: 0.85em; color: #777; }
+  .bron a { color: #0038b8; text-decoration: none; }
+  .verssig { font-size: 0.8em; color: #999; margin-top: 6px; }
+  #stale { display: none; background: #fff4e5; border-left: 4px solid #d9822b; color: #7a4a12; padding: 12px 16px; border-radius: 0 8px 8px 0; margin-bottom: 20px; font-size: 0.92em; }
+  #stale strong { color: #b35c00; }
+  #stale button { margin-top: 8px; font: inherit; background: #0038b8; color: #fff; border: 0; border-radius: 6px; padding: 7px 14px; cursor: pointer; }
+  #staleMelding { display: none; margin-top: 8px; font-weight: 500; color: #7a4a12; }
+  #stale button:disabled { opacity: .6; cursor: default; }
+  .acties { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: -8px 0 26px; }
+  .acties button { font: inherit; font-size: 0.92em; background: #fff; color: #0038b8; border: 1.5px solid #0038b8; border-radius: 6px; padding: 8px 14px; cursor: pointer; }
+  .acties button:hover { background: #0038b8; color: #fff; }
+  .acties .hint { font-size: 0.8em; color: #999; }
+  footer { border-top: 1px solid #d9d4c5; margin-top: 30px; padding-top: 12px; font-size: 0.85em; color: #888; }
+
+
+/* --- Mobiel (iPhone) --- */
+html { -webkit-text-size-adjust: 100%; }
+body { overflow-wrap: break-word; }
+a { overflow-wrap: break-word; }
+button { min-height: 44px; touch-action: manipulation; }
+
+@media (max-width: 640px) {
+  body {
+    font-size: 17px;
+    padding: 16px max(16px, env(safe-area-inset-right)) calc(28px + env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+  }
+  h1 { font-size: 1.45em; line-height: 1.25; }
+  .datum { font-size: 0.9em; }
+  h2.blok { font-size: 1.18em; }
+  h3 { font-size: 1.03em; line-height: 1.35; }
+  .intro { padding: 12px 14px; }
+  section { margin-bottom: 26px; }
+  article { margin-bottom: 22px; }
+  .acties { flex-direction: column; align-items: stretch; margin: 0 0 24px; }
+  .acties button { width: 100%; padding: 13px 16px; font-size: 1em; }
+  .acties .hint { font-size: 0.78em; text-align: center; }
+  #stale button { width: 100%; padding: 13px 16px; }
+  .bron { font-size: 0.82em; }
+}
+
+@media print {
+  @page { margin: 16mm 14mm; }
+  body { background: #fff; max-width: none; margin: 0; padding: 0; font-size: 10.5pt; line-height: 1.45; }
+  #stale, .acties { display: none !important; }
+  header { border-bottom: 2px solid #0038b8; }
+  h1 { font-size: 1.5em; }
+  .intro { background: #fff; border-left: 3px solid #0038b8; }
+  a { color: #0038b8; text-decoration: none; }
+  article, .intro, footer { break-inside: avoid; page-break-inside: avoid; }
+  h2.blok { break-after: avoid; page-break-after: avoid; }
+}
+</style>
+</head>
+<body data-editie-datum="2026-11-03">
+<header>
+  <h1>🇮🇱 Israël Nieuwsbrief</h1>
+  <div class="datum">Dinsdag 3 november 2026 · Editie 87</div>
+  <div class="verssig">Bijgewerkt: 03-11-2026 07:32 UTC</div>
+</header>
+
+<div id="stale">
+  <strong>Let op: dit is niet de editie van vandaag.</strong><br>
+  Je leest de editie van <span id="staleDatum"></span>. De nieuwe editie is nog niet gepubliceerd,
+  of je telefoon toont een opgeslagen versie.
+  <div id="staleMelding"></div>
+  <button id="refreshBtn" type="button">Opnieuw ophalen</button>
+</div>
+
+<div class="acties">
+  <button id="pdfBtn" type="button">📄 Opslaan als pdf</button>
+  <span class="hint">Kies in het printvenster &lsquo;Bewaar als pdf&rsquo; &mdash; daarna kun je hem doorsturen.</span>
+</div>
+
+<div class="intro"><h2>In het kort</h2><p>Na de verkiezingen van 27 oktober heeft geen van beide blokken een meerderheid: Bennett en Golan steunen Eisenkot als premier, maar Liberman verzet zich tegen een regering met steun van Arabische partijen. Bij Shas staat leider Deri onder druk na een historisch slecht resultaat. Het IDF waarschuwt dat Hamas zijn wapenproductie hervat, en in Israël wordt gerekend op een derde ronde met Iran. Moody's verhoogt de groeiprognose voor Israël naar 5%.</p></div>
+<section><h2 class="blok">🏛️ Politiek</h2>
+<article><h3>Bennett en Golan steunen Eisenkot, Liberman dwarsligt</h3><p>Bennetts B'Yachad (12 zetels) en Golans Democraten (8) hebben beloofd Gadi Eisenkot (Yashar, 21 zetels) voor te dragen als premier. Geen van beide blokken heeft een meerderheid, dus de partijen wegen samenwerking met Arabische partijen, haredische partijen of Likud af. Liberman (7 zetels) verzet zich naar verluidt tegen een regering met Arabische steun. Netanyahu's kamp wil volgens berichten niet onderhandelen over een eenheidsregering zolang Knesset-voorzitter Ohana wordt vervangen.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/bennett-golan-pledge-to-back-eisenkot-as-pm-as-bloc-mulls-which-coalition-to-seek/">Times of Israel</a></p></article>
+<article><h3>Arabische partijen met 19 zetels mogelijk koningmakers</h3><p>Arabische partijen behaalden na een recordopkomst 19 van de 120 zetels. Veel Joodse Israëli's en het grootste deel van Eisenkots blok zijn tegen hun deelname aan een coalitie, maar analisten zien dit mogelijk als de enige route om Netanyahu te vervangen. De Amerikaanse ambassadeur Huckabee noemde het betrekken van Arabische parlementariërs die 7 oktober niet veroordeelden 'zorgwekkend'.</p><p class="bron">Bron: <a href="https://www.jta.org/2026/11/02/israel/arab-parties-are-kingmakers-but-will-israels-jewish-leaders-accept-them">JTA</a></p></article>
+<article><h3>Netanyahu verdedigt Shas-leider Deri</h3><p>Shas viel terug van 11 naar 6 zetels, het slechtste resultaat sinds 1992, en volgens berichten proberen kopstukken Deri te laten vertrekken. Netanyahu noemde Shas een 'belangrijke partner' van het rechtse blok. Shas-bronnen zeggen dat de partij Netanyahu zal aanbevelen bij president Herzog.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/netanyahu-defends-shas-party-chair-as-deri-faces-uncertain-political-future/">Times of Israel</a></p></article>
+<article><h3>Oud-stafchef Halevi: 7 oktober was te voorkomen, maar geen verraad</h3><p>Voormalig IDF-chef Herzi Halevi zei in New York dat de aanval een voorkombaar falen was, maar dat er 'absoluut geen verraad' was. Hij pleitte voor een staatscommissie van onderzoek en zei dat het leger Iran en Hezbollah als grotere dreiging zag dan Hamas.</p><p class="bron">Bron: <a href="https://www.jpost.com/israel-news/politics-and-diplomacy/article-913582">Jerusalem Post</a></p></article>
+</section>
+<section><h2 class="blok">⚔️ Oorlog &amp; Veiligheid</h2>
+<article><h3>Trump zou schuldigen zoeken voor vastgelopen Iran-oorlog</h3><p>The Atlantic meldt dat Trump overweegt Hegseth of generaal Caine de schuld te geven van de uitblijvende afloop van de oorlog die op 28 februari begon. Trump zelf zei dat het 'heel snel, op de een of andere manier' eindigt, via een deal of een nieuw offensief. Eerder bleek dat Qatarese bemiddelaars opnieuw in Teheran zijn voor gesprekken over een akkoord.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/liveblog-november-1-2026-2/">Times of Israel (liveblog)</a></p></article>
+<article><h3>Tanker in de Golf getroffen door projectielen</h3><p>Een tanker werd ongeveer 72 zeemijl ten oosten van Ras al-Khafji (Saoedi-Arabië) geraakt door twee onbekende projectielen. Volgens UKMTO is de bemanning ongedeerd; de dader is onbekend.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/liveblog-november-1-2026-2/">Times of Israel (liveblog)</a></p></article>
+<article><h3>Israël bereidt zich voor op een derde ronde met Iran</h3><p>Analyse: Israël wierp in begin 2026 meer dan 30.000 bommen op Iran in 40 dagen zonder het regime te doen vallen of nucleaire concessies af te dwingen. Israëlische functionarissen zien Iran eerder als te beheersen dan te verslaan, maar wijzen op de steun van Amerika en de Iraanse bevolking die het regime afwijst.</p><p class="bron">Bron: <a href="https://www.jpost.com/israel-news/defense-news/article-913615">Jerusalem Post</a></p></article>
+<article><h3>IDF: Hamas bouwt wapenproductie weer op</h3><p>Volgens Haaretz waarschuwt het IDF dat Hamas zijn wapenproductie herstelt en over honderden raketten beschikt; het leger zou tevens aandringen op beëindiging van de operatie op de Westelijke Jordaanoever. (Artikel achter betaalmuur; details uit de zoekresultaten.)</p><p class="bron">Bron: <a href="https://www.haaretz.com/israel-news/israel-security/2026-11-02/ty-article/.premium/idf-warns-hamas-rebuilding-weapons-production-urges-end-to-west-bank-operation/000001a1-98a9-dc07-a3f5-dabb61bf0000">Haaretz</a></p></article>
+<article><h3>18 Israëlische relschoppers aangehouden bij Salfit</h3><p>Het IDF arresteerde 18 Israëli's die veiligheidstroepen aanvielen toen die bouw bij een illegale buitenpost in een gesloten militaire zone wilden stoppen. Relschoppers blokkeerden wegen met brandende banden; er werden voertuigen met brandbare stoffen en wapens in beslag genomen.</p><p class="bron">Bron: <a href="https://www.jpost.com/israel-news/defense-news/article-913608">Jerusalem Post</a></p></article>
+<article><h3>Islamitische Staat doet meer aanslagpogingen tegen Israël</h3><p>Volgens het Washington Institute deed IS sinds 7 oktober 28 aanslagpogingen, meer dan in de negen jaar daarvoor samen; vrijwel alle mislukten. Israël voerde 46 IS-gerelateerde arrestatieoperaties uit tegenover 50 in bijna tien jaar ervoor.</p><p class="bron">Bron: <a href="https://www.jpost.com/israel-news/defense-news/article-913594">Jerusalem Post</a></p></article>
+</section>
+<section><h2 class="blok">💻 Techniek &amp; Economie</h2>
+<article><h3>Moody's verhoogt groeiprognose Israël naar 5%</h3><p>Moody's laat de Baa1-rating (stabiel) ongemoeid en verwacht 5% groei in 2026 (was 3,7%) en 6% in 2027. Het tekort komt op 5% van het bbp en de schuld op 68,5%. Het bureau waarschuwt dat gerechtelijke hervormingen of verslechterde buitenlandse betrekkingen de kredietwaardigheid kunnen schaden.</p><p class="bron">Bron: <a href="https://www.calcalistech.com/ctechnews/article/sjogzhrex">Calcalist</a></p></article>
+<article><h3>Private-equityfonds neemt TailorMed over voor circa $250 miljoen</h3><p>GrowthCurve neemt een meerderheidsbelang in het Israëlische digital-healthbedrijf TailorMed, dat Amerikaanse patiënten helpt met kosten en papierwerk rond medicijnen. De meeste huidige aandeelhouders verkopen.</p><p class="bron">Bron: <a href="https://www.calcalistech.com/ctechnews/article/sk4ycmiazg">Calcalist</a></p></article>
+<article><h3>Cyberautoriteit waarschuwt winkelketens na hack van Europese koelsystemen</h3><p>Hackers verstelden de koeling van tientallen Europese winkels (o.a. Ahold Delhaize, Colruyt, ICA), waardoor veel voedsel bedierf. Israël raadt bedrijven aan toegang op afstand te controleren, standaardwachtwoorden te wijzigen en meervoudige authenticatie in te schakelen.</p><p class="bron">Bron: <a href="https://www.jpost.com/israel-news/article-913619">Jerusalem Post</a></p></article>
+</section>
+<section><h2 class="blok">✡️ Religieus Nieuws</h2>
+<article><h3>Schoolbussen in Brooklyn beklad met antisemitische leuzen</h3><p>Joodse schoolbussen werden in Brooklyn beklad met antisemitische graffiti.</p><p class="bron">Bron: <a href="https://www.jta.org/2026/11/02/ny/jewish-school-buses-tagged-with-antisemitic-spray-paint-in-brooklyn">JTA</a></p></article>
+<article><h3>Rabbijnen starten nationale beweging na Michigan-campagne</h3><p>De groep 'Nonnegotiable Michigan' eiste van senaatskandidaat El-Sayed een duidelijke steun voor Joodse staat en veiligheid, maar kreeg geen reactie. Nu willen de rabbijnen een landelijk platform opzetten, mogelijk ook voor 2028; critici zeggen dat het Republikeinen helpt.</p><p class="bron">Bron: <a href="https://www.jta.org/2026/11/02/politics/these-michigan-rabbis-couldnt-get-el-sayeds-attention-now-theyre-going-national">JTA</a></p></article>
+</section>
+<footer>Samengesteld uit Times of Israel, Jerusalem Post, JTA, Calcalist en Haaretz. Berichten van 1-2 november 2026.</footer>
+
+<script>
+(function () {
+  var editie = document.body.getAttribute('data-editie-datum');
+  if (!editie) return;
+
+  var nu = new Date();
+  var vandaag = nu.getFullYear() + '-' +
+                String(nu.getMonth() + 1).padStart(2, '0') + '-' +
+                String(nu.getDate()).padStart(2, '0');
+
+  var balk = document.getElementById('stale');
+  var knop = document.getElementById('refreshBtn');
+  var melding = document.getElementById('staleMelding');
+
+  var netGeprobeerd = false;
+  try {
+    netGeprobeerd = sessionStorage.getItem('nbRefresh') === '1';
+    sessionStorage.removeItem('nbRefresh');
+  } catch (e) {}
+
+  if (editie < vandaag) {
+    var d = editie.split('-');
+    var leesbaar = d[2] + '-' + d[1] + '-' + d[0];
+    document.getElementById('staleDatum').textContent = leesbaar;
+    balk.style.display = 'block';
+    if (netGeprobeerd && melding) {
+      melding.textContent = 'Opnieuw opgehaald: er is nog geen nieuwere editie gepubliceerd. ' +
+                            'De laatste blijft die van ' + leesbaar + '.';
+      melding.style.display = 'block';
+    }
+  } else if (netGeprobeerd && balk) {
+    balk.style.display = 'none';
+  }
+
+  if (knop) {
+    knop.addEventListener('click', function () {
+      knop.disabled = true;
+      knop.textContent = 'Bezig met ophalen\u2026';
+      if (melding) { melding.textContent = ''; melding.style.display = 'none'; }
+      try { sessionStorage.setItem('nbRefresh', '1'); } catch (e) {}
+      var url = location.pathname + '?v=' + Date.now();
+      setTimeout(function () { location.replace(url); }, 150);
+      setTimeout(function () { location.reload(); }, 2500);
+    });
+  }
+})();
+</script>
+<script>
+(function () {
+  var knop = document.getElementById('pdfBtn');
+  if (!knop) return;
+  knop.addEventListener('click', function () {
+    var titel = document.title;
+    var datum = document.body.getAttribute('data-editie-datum') || '';
+    if (datum) { document.title = 'Israel-Nieuwsbrief-' + datum; }
+    window.print();
+    setTimeout(function () { document.title = titel; }, 1000);
+  });
+})();
+</script>
+</body>
+</html>
