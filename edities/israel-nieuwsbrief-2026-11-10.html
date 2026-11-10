@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0038b8">
+<meta name="color-scheme" content="light">
+<meta name="apple-mobile-web-app-title" content="Israël Nieuwsbrief">
+<meta name="format-detection" content="telephone=no">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23fff'/%3E%3Crect y='8' width='64' height='7' fill='%230038b8'/%3E%3Crect y='49' width='64' height='7' fill='%230038b8'/%3E%3Cpath d='M32 20l10 17H22z' fill='none' stroke='%230038b8' stroke-width='4'/%3E%3Cpath d='M32 44L22 27h20z' fill='none' stroke='%230038b8' stroke-width='4'/%3E%3C/svg%3E">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Israël Nieuwsbrief – dinsdag 10 november 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'M PLUS 1p', 'Leelawadee UI', Leelawadee, Arial, sans-serif; max-width: 760px; margin: 0 auto; padding: 24px 20px; color: #1a1a2e; background: #fdfcf8; line-height: 1.6; }
+  header { border-bottom: 3px solid #0038b8; padding-bottom: 14px; margin-bottom: 24px; }
+  h1 { margin: 0; font-size: 1.9em; color: #0038b8; }
+  .datum { color: #666; font-size: 0.95em; margin-top: 4px; }
+  .intro { background: #eef3ff; border-left: 4px solid #0038b8; padding: 14px 18px; border-radius: 0 8px 8px 0; margin-bottom: 28px; }
+  .intro h2 { margin: 0 0 8px; font-size: 1.1em; color: #0038b8; }
+  section { margin-bottom: 32px; }
+  h2.blok { font-size: 1.35em; border-bottom: 2px solid #d9d4c5; padding-bottom: 6px; color: #22223b; }
+  article { margin-bottom: 18px; }
+  h3 { margin: 0 0 4px; font-size: 1.08em; }
+  p { margin: 0; }
+  .bron { font-size: 0.85em; color: #777; }
+  .bron a { color: #0038b8; text-decoration: none; }
+  .verssig { font-size: 0.8em; color: #999; margin-top: 6px; }
+  #stale { display: none; background: #fff4e5; border-left: 4px solid #d9822b; color: #7a4a12; padding: 12px 16px; border-radius: 0 8px 8px 0; margin-bottom: 20px; font-size: 0.92em; }
+  #stale strong { color: #b35c00; }
+  #stale button { margin-top: 8px; font: inherit; background: #0038b8; color: #fff; border: 0; border-radius: 6px; padding: 7px 14px; cursor: pointer; }
+  #staleMelding { display: none; margin-top: 8px; font-weight: 500; color: #7a4a12; }
+  #stale button:disabled { opacity: .6; cursor: default; }
+  .acties { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: -8px 0 26px; }
+  .acties button { font: inherit; font-size: 0.92em; background: #fff; color: #0038b8; border: 1.5px solid #0038b8; border-radius: 6px; padding: 8px 14px; cursor: pointer; }
+  .acties button:hover { background: #0038b8; color: #fff; }
+  .acties .hint { font-size: 0.8em; color: #999; }
+  footer { border-top: 1px solid #d9d4c5; margin-top: 30px; padding-top: 12px; font-size: 0.85em; color: #888; }
+
+
+/* --- Mobiel (iPhone) --- */
+html { -webkit-text-size-adjust: 100%; }
+body { overflow-wrap: break-word; }
+a { overflow-wrap: break-word; }
+button { min-height: 44px; touch-action: manipulation; }
+
+@media (max-width: 640px) {
+  body {
+    font-size: 17px;
+    padding: 16px max(16px, env(safe-area-inset-right)) calc(28px + env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+  }
+  h1 { font-size: 1.45em; line-height: 1.25; }
+  .datum { font-size: 0.9em; }
+  h2.blok { font-size: 1.18em; }
+  h3 { font-size: 1.03em; line-height: 1.35; }
+  .intro { padding: 12px 14px; }
+  section { margin-bottom: 26px; }
+  article { margin-bottom: 22px; }
+  .acties { flex-direction: column; align-items: stretch; margin: 0 0 24px; }
+  .acties button { width: 100%; padding: 13px 16px; font-size: 1em; }
+  .acties .hint { font-size: 0.78em; text-align: center; }
+  #stale button { width: 100%; padding: 13px 16px; }
+  .bron { font-size: 0.82em; }
+}
+
+@media print {
+  @page { margin: 16mm 14mm; }
+  body { background: #fff; max-width: none; margin: 0; padding: 0; font-size: 10.5pt; line-height: 1.45; }
+  #stale, .acties { display: none !important; }
+  header { border-bottom: 2px solid #0038b8; }
+  h1 { font-size: 1.5em; }
+  .intro { background: #fff; border-left: 3px solid #0038b8; }
+  a { color: #0038b8; text-decoration: none; }
+  article, .intro, footer { break-inside: avoid; page-break-inside: avoid; }
+  h2.blok { break-after: avoid; page-break-after: avoid; }
+}
+</style>
+</head>
+<body data-editie-datum="2026-11-10">
+<header>
+  <h1>🇮🇱 Israël Nieuwsbrief</h1>
+  <div class="datum">DINSDAG 10 NOVEMBER 2026 · Editie 93</div>
+  <div class="verssig">Bijgewerkt: 10-11-2026 06:09 UTC</div>
+</header>
+
+<div id="stale">
+  <strong>Let op: dit is niet de editie van vandaag.</strong><br>
+  Je leest de editie van <span id="staleDatum"></span>. De nieuwe editie is nog niet gepubliceerd,
+  of je telefoon toont een opgeslagen versie.
+  <div id="staleMelding"></div>
+  <button id="refreshBtn" type="button">Opnieuw ophalen</button>
+</div>
+
+<div class="acties">
+  <button id="pdfBtn" type="button">📄 Opslaan als pdf</button>
+  <span class="hint">Kies in het printvenster &lsquo;Bewaar als pdf&rsquo; &mdash; daarna kun je hem doorsturen.</span>
+</div>
+
+<div class="intro"><h2>In het kort</h2><p>Eisenkot heeft zes weken om een coalitie te smeden; Shas wacht af en Trump zegt dat Eisenkot en Netanyahu vergelijkbare opvattingen hebben. Trump zag in het weekend af van een aanval op Iran en spreekt maandag met Qatar, terwijl Israël een eerste 250 buitenlandse troepen voor een Gaza-macht goedkeurde. Over de Amerikaanse hulp wordt onderhandeld tot 2033, ondanks Trumps uitspraak dat die eind dit jaar stopt. Vanta koopt Pillar voor $150 miljoen en Israël wil 300.000 GPU&rsquo;s voor een eigen AI-infrastructuur.</p></div>
+<section><h2 class="blok">🏛️ Politiek</h2>
+<article><h3>Shas wacht af: steun aan Eisenkot kan als dienstplicht-kwestie is opgelost</h3><p>Volgens de Jerusalem Post kan Shas een regering onder Eisenkot steunen als de status van yeshivastudenten wordt geregeld, maar de partij wacht eerst af of Verenigd Torah-Jodendom (UTJ) breekt met het blok van Netanyahu. Shas vreest zo&rsquo;n 100.000 traditionele kiezers te vervreemden die Netanyahu nog steunen. Het is nog vroeg: er is nog geen coalitie en Eisenkot heeft zes weken om 61 zetels bijeen te brengen. Eerder legde hij vier voorwaarden op, waaronder dienstplicht voor iedereen.</p><div class="bron">Bron: <a href="https://www.jpost.com/israel-election-2026/article-914275">Jerusalem Post</a> · <a href="https://www.jta.org/2026/11/08/israel/explainer-gadi-eisenkots-four-conditions-for-forming-israels-next-government">JTA</a></div></article>
+<article><h3>Trump: Eisenkot en Netanyahu hebben &ldquo;zeer vergelijkbare opvattingen&rdquo;</h3><p>Trump zei maandag dat de nieuwe regeringsformateur Eisenkot en premier Netanyahu veel op elkaar lijken en dat beiden hem zouden steunen. Hij noemde ook &ldquo;een grote afkeer van Israël&rdquo; als een van de factoren achter de Republikeinse verliezen bij de Amerikaanse tussentijdse verkiezingen, naast de oorlog met Iran; in de VS roept dat discussie op, onder meer van Republikeinse Congresleden.</p><div class="bron">Bron: <a href="https://www.jpost.com/international/article-914279">Jerusalem Post</a> · <a href="https://www.jta.org/2026/11/09/united-states/trump-says-a-great-dislike-for-israel-was-factor-in-republican-midterm-losses">JTA</a></div></article>
+<article><h3>Amerikaanse militaire hulp: onderhandelen over opvolger tot 2033</h3><p>Na Trumps uitspraak dat de hulp eind dit jaar stopt, schrijft CTech dat Israël en de VS onderhandelen over een vijfjarig vervolg op het huidige akkoord, dat in 2028 afloopt, tot 2033. Directe financiering zou ongeveer $16,5 miljard bedragen, tegen $33 miljard nu; zo&rsquo;n $3,3 miljard per jaar voor Amerikaanse wapenaankopen blijft vrijwel gelijk. Israëlische functionarissen waren volgens het bericht verrast door Trumps uitspraak en zien die niet als weergave van de gesprekken. De Jerusalem Post meldt dat de defensietop geschokt reageerde.</p><div class="bron">Bron: <a href="https://www.calcalistech.com/ctechnews/article/fjchfengr">CTech</a> · <a href="https://www.jpost.com/israel-news/defense-news/article-914254">Jerusalem Post</a></div></article>
+</section>
+<section><h2 class="blok">⚔️ Oorlog &amp; Veiligheid</h2>
+<article><h3>Israël stemt in met eerste 250 buitenlandse troepen voor Gaza-macht</h3><p>Volgens Walla heeft Israël de VS toestemming gegeven een eerste internationale troepenmacht van circa 250 militairen in Gaza te stationeren. Indonesië, Marokko, Kazachstan, Kosovo, Oeganda en Albanië hebben interesse getoond. Israël verzet zich sterk tegen Turkse deelname; Turkse druk op Washington zou de opbouw vertragen.</p><div class="bron">Bron: <a href="https://www.jpost.com/israel-news/article-914289">Jerusalem Post</a></div></article>
+<article><h3>Trump zag af van aanval op Iran en spreekt met Qatar</h3><p>Bronnen melden dat Israël en de VS in het weekend een aanval op Iran hadden voorbereid, maar dat Trump geen bevel gaf en VP Vance en anderen &ldquo;enkele dagen&rdquo; gaf voor een akkoord. Trump noemde terugkeer naar oorlog in een CNN-interview een &ldquo;zeer kleine kans&rdquo; als de gesprekken vorderen. Maandag ontmoet hij de Qatarese premier over bemiddeling; Rubio zegt dat de gesprekken vastlopen op &ldquo;belachelijke&rdquo; Iraanse eisen. Ondertussen versterkt de VS haar aanwezigheid in de regio.</p><div class="bron">Bron: <a href="https://www.jpost.com/middle-east/iran-news/article-914268">Jerusalem Post</a> · <a href="https://www.israelnieuws.nl/post/trump-ontmoet-qatarese-premier-om-te-praten-over-bemiddelingspogingen-met-iran-schrijft-barak-ravid">Israelnieuws</a> · <a href="https://www.jpost.com/middle-east/iran-news/article-914276">Jerusalem Post</a></div></article>
+<article><h3>IDF toont 10 km lange Hamas-tunnel in Rafah</h3><p>Het leger onthulde een tunnelnetwerk van meer dan 10 km op drie niveaus, tot zo&rsquo;n 30 meter diep, onder een dichtbevolkte wijk bij de Filadelfi-corridor, met ongeveer 80 ruimten en commandokamers. Volgens de IDF liep de route onder onder meer een UNRWA-complex, moskeeën, klinieken en scholen en werd hij gebruikt om de stoffelijke resten van Hadar Goldin vast te houden. De route is in juni met 30.000 kubieke meter beton afgesloten.</p><div class="bron">Bron: <a href="https://www.jpost.com/israel-news/article-914256">Jerusalem Post</a></div></article>
+<article><h3>Russisch gesanctioneerd militair toestel landt op Ben Gurion</h3><p>Een Tupolev Tu-154M van het Russische ministerie van Defensie, sinds 2023 op de Amerikaanse sanctielijst, landde zondagavond op Ben Gurion nadat het vertrok van een basis bij Moskou. Waarom het toestel kwam is niet bekendgemaakt.</p><div class="bron">Bron: <a href="https://www.jpost.com/israel-news/article-914291">Jerusalem Post</a> · <a href="https://www.israelnieuws.nl/post/kan-newsvideo-het-russische-militaire-vliegtuig-dat-gisteren-in-isra%C3%ABl-is-geland-was-geland-op-de-l">Israelnieuws</a></div></article>
+</section>
+<section><h2 class="blok">💻 Techniek &amp; Economie</h2>
+<article><h3>Vanta koopt Israëlische AI-beveiliger Pillar voor $150 miljoen</h3><p>Het Amerikaanse compliancebedrijf Vanta neemt Pillar Security over voor circa $150 miljoen in contanten en aandelen. Pillar, met ruim 20 medewerkers, wordt Vanta&rsquo;s Israëlische R&amp;D-centrum en de oprichters blijven de AI-beveiligingstak leiden. De technologie test AI-agents en blokkeert ongeautoriseerde acties.</p><div class="bron">Bron: <a href="https://www.calcalistech.com/ctechnews/article/hkjzjkjrfl">CTech</a></div></article>
+<article><h3>Israël wil eigen AI-infrastructuur met 300.000 GPU&rsquo;s</h3><p>De nationale AI-directie wil ongeveer 300.000 GPU&rsquo;s en een eigen basismodel bouwen om minder afhankelijk te zijn van buitenlandse techbedrijven. Circa 100.000 GPU&rsquo;s zijn bedoeld voor overheid, defensie, universiteiten en startups; het geheel vergt zo&rsquo;n twee gigawatt aan stroom.</p><div class="bron">Bron: <a href="https://www.calcalistech.com/ctechnews/article/rj6zywyrgx">CTech</a></div></article>
+<article><h3>Axonius schrapt banen in Israël; Cyera haalt mogelijk $800 miljoen op</h3><p>Cyberbedrijf Axonius wil wereldwijd 66 banen schrappen, waarvan 46 in Israël (circa 22% van het Israëlische personeel), als onderdeel van een AI-gerichte herstructurering. Daarnaast meldt CTech dat Cyera een ronde van $800 miljoen voorbereidt tegen een waardering van $20 miljard, waarvan $300 miljoen van Cyberstarts.</p><div class="bron">Bron: <a href="https://www.calcalistech.com/ctechnews/article/9upwifo24">CTech</a> · <a href="https://www.calcalistech.com/ctechnews/article/j9ux237im">CTech</a></div></article>
+</section>
+<section><h2 class="blok">✡️ Religieus Nieuws</h2>
+<article><h3>Thailand trekt staatsburgerschap van Chabad-opperrabbijn in</h3><p>Thailand heeft het staatsburgerschap van opperrabbijn Yosef Chaim Kantor ingetrokken, naar verluidt omdat hij op reis zijn Amerikaanse paspoort gebruikte. Critici zeggen dat veel dubbele nationaliteiten dat doen en vragen naar het echte motief. De Joodse gemeenschap is onrustig te midden van anti-Israëlische protesten.</p><div class="bron">Bron: <a href="https://www.jpost.com/diaspora/article-914128">Jerusalem Post</a></div></article>
+<article><h3>Mezoeza van Joodse woning in Silwan gerukt</h3><p>De politie arresteerde een tiener uit Oost-Jeruzalem die verdacht wordt van het van de deurpost rukken van een mezoeza bij een Joods huis in Silwan.</p><div class="bron">Bron: <a href="https://www.jpost.com/israel-news/crime-in-israel/article-914262">Jerusalem Post</a></div></article>
+</section>
+<section><h2 class="blok">🌟 Positief Nieuws</h2>
+<article><h3>Israëlische AI-oogscan wint Prix Galien</h3><p>AEYE Health won de Prix Galien USA 2026 voor beste digitale gezondheidsoplossing met AEYE-DS, een door de FDA goedgekeurde autonome AI-test voor diabetische oogonderzoeken. Zo kan vroege screening bijna overal plaatsvinden.</p><div class="bron">Bron: <a href="https://www.jpost.com/health-and-wellness/article-914057">Jerusalem Post</a></div></article>
+<article><h3>Hadassah opent centrum voor immunologie en allergie</h3><p>Op de Ein Kerem-campus opende een centrum met zo&rsquo;n 12 immunologen, een kinderafdeling en laboratoria, mogelijk gemaakt door donateurs. Het moet wachttijden verkorten die bij sommige klinieken oplopen tot vier jaar.</p><div class="bron">Bron: <a href="https://www.jpost.com/health-and-wellness/article-914052">Jerusalem Post</a></div></article>
+</section>
+<footer>Samengesteld uit Times of Israel, Jerusalem Post, JTA, CTech, Israelnieuws e.a. Bij tegenstrijdige berichtgeving zijn bronnen vermeld.</footer>
+
+<script>
+(function () {
+  var editie = document.body.getAttribute('data-editie-datum');
+  if (!editie) return;
+
+  var nu = new Date();
+  var vandaag = nu.getFullYear() + '-' +
+                String(nu.getMonth() + 1).padStart(2, '0') + '-' +
+                String(nu.getDate()).padStart(2, '0');
+
+  var balk = document.getElementById('stale');
+  var knop = document.getElementById('refreshBtn');
+  var melding = document.getElementById('staleMelding');
+
+  var netGeprobeerd = false;
+  try {
+    netGeprobeerd = sessionStorage.getItem('nbRefresh') === '1';
+    sessionStorage.removeItem('nbRefresh');
+  } catch (e) {}
+
+  if (editie < vandaag) {
+    var d = editie.split('-');
+    var leesbaar = d[2] + '-' + d[1] + '-' + d[0];
+    document.getElementById('staleDatum').textContent = leesbaar;
+    balk.style.display = 'block';
+    if (netGeprobeerd && melding) {
+      melding.textContent = 'Opnieuw opgehaald: er is nog geen nieuwere editie gepubliceerd. ' +
+                            'De laatste blijft die van ' + leesbaar + '.';
+      melding.style.display = 'block';
+    }
+  } else if (netGeprobeerd && balk) {
+    balk.style.display = 'none';
+  }
+
+  if (knop) {
+    knop.addEventListener('click', function () {
+      knop.disabled = true;
+      knop.textContent = 'Bezig met ophalen\u2026';
+      if (melding) { melding.textContent = ''; melding.style.display = 'none'; }
+      try { sessionStorage.setItem('nbRefresh', '1'); } catch (e) {}
+      var url = location.pathname + '?v=' + Date.now();
+      setTimeout(function () { location.replace(url); }, 150);
+      setTimeout(function () { location.reload(); }, 2500);
+    });
+  }
+})();
+</script>
+<script>
+(function () {
+  var knop = document.getElementById('pdfBtn');
+  if (!knop) return;
+  knop.addEventListener('click', function () {
+    var titel = document.title;
+    var datum = document.body.getAttribute('data-editie-datum') || '';
+    if (datum) { document.title = 'Israel-Nieuwsbrief-' + datum; }
+    window.print();
+    setTimeout(function () { document.title = titel; }, 1000);
+  });
+})();
+</script>
+</body>
+</html>
