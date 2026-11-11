@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0038b8">
+<meta name="color-scheme" content="light">
+<meta name="apple-mobile-web-app-title" content="Israël Nieuwsbrief">
+<meta name="format-detection" content="telephone=no">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23fff'/%3E%3Crect y='8' width='64' height='7' fill='%230038b8'/%3E%3Crect y='49' width='64' height='7' fill='%230038b8'/%3E%3Cpath d='M32 20l10 17H22z' fill='none' stroke='%230038b8' stroke-width='4'/%3E%3Cpath d='M32 44L22 27h20z' fill='none' stroke='%230038b8' stroke-width='4'/%3E%3C/svg%3E">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Israël Nieuwsbrief – woensdag 11 november 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'M PLUS 1p', 'Leelawadee UI', Leelawadee, Arial, sans-serif; max-width: 760px; margin: 0 auto; padding: 24px 20px; color: #1a1a2e; background: #fdfcf8; line-height: 1.6; }
+  header { border-bottom: 3px solid #0038b8; padding-bottom: 14px; margin-bottom: 24px; }
+  h1 { margin: 0; font-size: 1.9em; color: #0038b8; }
+  .datum { color: #666; font-size: 0.95em; margin-top: 4px; }
+  .intro { background: #eef3ff; border-left: 4px solid #0038b8; padding: 14px 18px; border-radius: 0 8px 8px 0; margin-bottom: 28px; }
+  .intro h2 { margin: 0 0 8px; font-size: 1.1em; color: #0038b8; }
+  section { margin-bottom: 32px; }
+  h2.blok { font-size: 1.35em; border-bottom: 2px solid #d9d4c5; padding-bottom: 6px; color: #22223b; }
+  article { margin-bottom: 18px; }
+  h3 { margin: 0 0 4px; font-size: 1.08em; }
+  p { margin: 0; }
+  .bron { font-size: 0.85em; color: #777; }
+  .bron a { color: #0038b8; text-decoration: none; }
+  .verssig { font-size: 0.8em; color: #999; margin-top: 6px; }
+  #stale { display: none; background: #fff4e5; border-left: 4px solid #d9822b; color: #7a4a12; padding: 12px 16px; border-radius: 0 8px 8px 0; margin-bottom: 20px; font-size: 0.92em; }
+  #stale strong { color: #b35c00; }
+  #stale button { margin-top: 8px; font: inherit; background: #0038b8; color: #fff; border: 0; border-radius: 6px; padding: 7px 14px; cursor: pointer; }
+  #staleMelding { display: none; margin-top: 8px; font-weight: 500; color: #7a4a12; }
+  #stale button:disabled { opacity: .6; cursor: default; }
+  .acties { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: -8px 0 26px; }
+  .acties button { font: inherit; font-size: 0.92em; background: #fff; color: #0038b8; border: 1.5px solid #0038b8; border-radius: 6px; padding: 8px 14px; cursor: pointer; }
+  .acties button:hover { background: #0038b8; color: #fff; }
+  .acties .hint { font-size: 0.8em; color: #999; }
+  footer { border-top: 1px solid #d9d4c5; margin-top: 30px; padding-top: 12px; font-size: 0.85em; color: #888; }
+
+
+/* --- Mobiel (iPhone) --- */
+html { -webkit-text-size-adjust: 100%; }
+body { overflow-wrap: break-word; }
+a { overflow-wrap: break-word; }
+button { min-height: 44px; touch-action: manipulation; }
+
+@media (max-width: 640px) {
+  body {
+    font-size: 17px;
+    padding: 16px max(16px, env(safe-area-inset-right)) calc(28px + env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+  }
+  h1 { font-size: 1.45em; line-height: 1.25; }
+  .datum { font-size: 0.9em; }
+  h2.blok { font-size: 1.18em; }
+  h3 { font-size: 1.03em; line-height: 1.35; }
+  .intro { padding: 12px 14px; }
+  section { margin-bottom: 26px; }
+  article { margin-bottom: 22px; }
+  .acties { flex-direction: column; align-items: stretch; margin: 0 0 24px; }
+  .acties button { width: 100%; padding: 13px 16px; font-size: 1em; }
+  .acties .hint { font-size: 0.78em; text-align: center; }
+  #stale button { width: 100%; padding: 13px 16px; }
+  .bron { font-size: 0.82em; }
+}
+
+@media print {
+  @page { margin: 16mm 14mm; }
+  body { background: #fff; max-width: none; margin: 0; padding: 0; font-size: 10.5pt; line-height: 1.45; }
+  #stale, .acties { display: none !important; }
+  header { border-bottom: 2px solid #0038b8; }
+  h1 { font-size: 1.5em; }
+  .intro { background: #fff; border-left: 3px solid #0038b8; }
+  a { color: #0038b8; text-decoration: none; }
+  article, .intro, footer { break-inside: avoid; page-break-inside: avoid; }
+  h2.blok { break-after: avoid; page-break-after: avoid; }
+}
+</style>
+</head>
+<body data-editie-datum="2026-11-11">
+<header>
+  <h1>🇮🇱 Israël Nieuwsbrief</h1>
+  <div class="datum">Woensdag 11 november 2026 · Editie 94</div>
+  <div class="verssig">Bijgewerkt: 11-11-2026 19:28 UTC</div>
+</header>
+
+<div id="stale">
+  <strong>Let op: dit is niet de editie van vandaag.</strong><br>
+  Je leest de editie van <span id="staleDatum"></span>. De nieuwe editie is nog niet gepubliceerd,
+  of je telefoon toont een opgeslagen versie.
+  <div id="staleMelding"></div>
+  <button id="refreshBtn" type="button">Opnieuw ophalen</button>
+</div>
+
+<div class="acties">
+  <button id="pdfBtn" type="button">📄 Opslaan als pdf</button>
+  <span class="hint">Kies in het printvenster &lsquo;Bewaar als pdf&rsquo; &mdash; daarna kun je hem doorsturen.</span>
+</div>
+
+<div class="intro"><h2>In het kort</h2><p>Eisenkot blies de coalitiegesprekken met Likud af na een felle Knesset-toespraak van Netanyahu, die een dag later toch zei dat eenheid &ldquo;mogelijk&rdquo; is. Het anti-Netanyahu-blok kreeg met 63 tegen 50 stemmen de controle over de Knesset-agenda en richt commissies op om de juridische hervorming terug te draaien. Qatar zegt minstens twee weken voor diplomatie tussen de VS en Iran te hebben bedongen, terwijl Iran een ondergrondse &ldquo;raketstad&rdquo; toont. Israël plant een grensbarrière van 500 km langs Jordanië, en Revolut krijgt een voorwaardelijke Israëlische banklicentie.</p></div>
+
+<section><h2 class="blok">🏛️ Politiek</h2>
+<article><h3>Eisenkot zegt gesprek met Likud af; Netanyahu: &ldquo;eenheid is mogelijk&rdquo;</h3><p>Yashar had een eerste coalitieoverleg met Likud gepland, maar Eisenkot schrapte dat na Netanyahu&rsquo;s Knesset-toespraak van dinsdag, die hij &ldquo;waanzinnig, verdeeldheid zaaiend en hatelijk&rdquo; noemde. Netanyahu had in die toespraak opgeroepen tot een eenheidsregering tegen de Iraanse nucleaire dreiging en Arabische Kamerleden verweten terreur te steunen. Likud noemt het &ldquo;vreemd&rdquo; dat Yashar wel met Arabische partijen blijft praten. Woensdag zei Netanyahu tegen verslaggevers dat eenheid nog steeds mogelijk is en dat hij potentiële partners blijft benaderen.</p><p class="bron">Bron: <a href="https://www.jpost.com/israel-news/politics-and-diplomacy/article-914502">Jerusalem Post</a> · <a href="https://www.timesofisrael.com/liveblog_entry/day-after-furious-knesset-speech-netanyahu-says-unity-is-possible/">Times of Israel</a></p></article>
+<article><h3>Anti-Netanyahu-blok neemt Knesset-agenda over</h3><p>De Knesset stemde woensdag met 63 tegen 50 in met de samenstelling van de machtige Regelingscommissie (22 leden), voorgezeten door Yashar-Kamerlid Roy Folkman. Beide blokken krijgen negen zetels en de Arabische partijen vier; voorstellen van Likud om de invloed van de Arabische partijen te verkleinen werden verworpen. Volgens Hebreeuwse media richt het Eisenkot-blok daarnaast speciale commissies op om vijf wetten van de juridische hervorming in te trekken, grotendeels onder leiding van de Democraten.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/liveblog_entry/knesset-approves-makeup-of-powerful-arrangements-committee-63-50-rejecting-likud-bid-to-dilute-arab-parties-influence/">Times of Israel</a> · <a href="https://www.timesofisrael.com/liveblog_entry/eisenkot-led-bloc-establishes-special-committees-to-repeal-judicial-overhaul/">Times of Israel</a></p></article>
+<article><h3>Eisenkot waarschuwt Netanyahu voor militaire actie in overgangsperiode</h3><p>In een brief vroeg Eisenkot de premier geen troepen in te zetten zolang er geen acuut gevaar is, en waarschuwde hij voor &ldquo;verwoestende gevolgen voor de Israëlische democratie&rdquo; bij een niet-noodzakelijke operatie. Volgens Times of Israel klaagt hij ook dat hij geen veiligheidsbriefings krijgt. Het premierskantoor noemt de brief een &ldquo;doorzichtige poging&rdquo; om de nationale veiligheid te politiseren.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/liveblog_entry/netanyahu-dismisses-eisenkots-demand-as-transparent-attempt-to-politicize-national-security/">Times of Israel</a> · <a href="https://www.timesofisrael.com/liveblog-november-11-2026/">Times of Israel liveblog</a></p></article>
+<article><h3>Ra&rsquo;am-leider: &ldquo;Netanyahu vertrouwde Sinwar&rdquo;</h3><p>Mansour Abbas zegt dat Netanyahu hem in 2021 in de ambtswoning vertelde: &ldquo;Yahya Sinwar en ik begrijpen elkaar.&rdquo; Abbas wil dat herhalen voor een staatscommissie naar 7 oktober. Het gaat om zijn lezing van het gesprek; een reactie van Netanyahu staat niet in het bericht.</p><p class="bron">Bron: <a href="https://www.jpost.com/israel-news/politics-and-diplomacy/article-914515">Jerusalem Post</a></p></article>
+<article><h3>Malediven willen permanent inreisverbod voor Israëliërs</h3><p>President Muizzu kondigde aan dat Israëliërs &ldquo;onder geen enkele omstandigheid&rdquo; meer worden toegelaten. Een aparte wet moet Israëlische burgers en bedrijven verbieden te investeren in vastgoed of grond te kopen. Eerdere voorstellen waren nog voorwaardelijk; dit verbod is onvoorwaardelijk.</p><p class="bron">Bron: <a href="https://www.jpost.com/international/article-914500">Jerusalem Post</a></p></article>
+</section>
+
+<section><h2 class="blok">⚔️ Oorlog &amp; Veiligheid</h2>
+<article><h3>Qatar: &ldquo;minstens twee weken&rdquo; voor diplomatie met Iran</h3><p>De Qatarese premier Al Thani vertelde G7-ministers in Parijs dat Doha minstens twee weken heeft bedongen voordat de VS Iran eventueel opnieuw aanvalt. Na zijn gesprek met Trump en Vance zei Trump dat er momentum is om het conflict te beëindigen, maar hij sluit nieuwe aanvallen niet uit. Volgens Al Thani zijn de verschillen groot, onder meer over de volgorde: opheffing van de zeeblokkade, de nucleaire kwestie en vrijgave van bevroren Iraanse tegoeden.</p><p class="bron">Bron: <a href="https://www.jpost.com/middle-east/article-914504">Jerusalem Post</a></p></article>
+<article><h3>Iran toont ondergrondse &ldquo;raketstad&rdquo;</h3><p>Iran presenteerde een nieuw ondergronds complex met ballistische raketten, kruisraketten en lanceerinstallaties; onafhankelijke bevestiging ontbreekt. Generaal Abdollahi dreigde dat een volgende aanval een antwoord &ldquo;buiten de regio&rdquo; krijgt. Volgens Israelnieuws produceert Iran nu tot 50 ballistische raketten per maand, ongeveer de helft van het tempo van voor de oorlog.</p><p class="bron">Bron: <a href="https://www.jpost.com/middle-east/iran-news/article-914507">Jerusalem Post</a> · <a href="https://www.israelnieuws.nl/post/iran-produceert-tot-50-ballistische-raketten-per-maand-de-helft-van-het-tempo-van-voor-de-oorlog">Israelnieuws</a></p></article>
+<article><h3>VS klaagt drie Iran-gesteunde agenten aan voor aanslagen op Joden</h3><p>Een Amerikaanse aanklacht met acht punten koppelt drie mannen met banden met Kataib Hezbollah en de Revolutionaire Garde aan bijna twintig (pogingen tot) aanslagen op Joodse gemeenschappen in Europa en de VS, plus een complot tegen een Britse basis met Amerikaanse troepen. Het Verenigd Koninkrijk werd het zwaarst getroffen. FBI-directeur Patel belooft de netwerken op te rollen.</p><p class="bron">Bron: <a href="https://www.israelnieuws.nl/post/de-vs-klaagt-drie-door-iran-gesteunde-agenten-aan-voor-bijna-twintig-aanslagen-op-joden-in-heel-euro">Israelnieuws</a> · <a href="https://www.jpost.com/middle-east/iran-news/article-914520">Jerusalem Post</a></p></article>
+<article><h3>Israël plant 500 km lange grensbarrière langs Jordanië</h3><p>Het ministerie van Defensie werkt aan een plan voor de oostgrens met een barrière van ongeveer 500 km (geschat op NIS 5,5 miljard), waarvan de eerste tientallen kilometers klaar zijn. Het plan omvat ook zo&rsquo;n 40 nederzettingen en burgerlocaties en wil de bevolking aan de oostgrens (nu ruim 20.000) binnen tien jaar verdubbelen. Route 90 moet een meerbaansweg worden.</p><p class="bron">Bron: <a href="https://www.jpost.com/israel-news/defense-news/article-914505">Jerusalem Post</a></p></article>
+<article><h3>Rafael onthult &lsquo;Super Ice&rsquo;; grotere rol voor laser Iron Beam</h3><p>Rafael presenteerde de Super Ice, een kruisraket met een kernkop van 1.000 pond, te lanceren vanaf straaljagers, schepen of het land; het bereik is niet bekendgemaakt. Daarnaast meldt de Jerusalem Post dat Iron Beam eind dit jaar sterker in de oorlogsplanning wordt opgenomen. In de oorlog met Iran werd de laser beperkt ingezet omdat er volgens de luchtmacht 14 batterijen nodig zijn voor echt effect.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/liveblog_entry/rafael-unveils-new-long-range-cruise-missile-with-larger-warhead-and-extended-range">Times of Israel</a> · <a href="https://www.jpost.com/israel-news/defense-news/article-914490">Jerusalem Post</a></p></article>
+<article><h3>Onrust aan Libanese grens: UNIFIL beschoten, Israëliër aangehouden</h3><p>Een UNIFIL-patrouille bij Wadi Jilou, buiten de Israëlische bufferzone, werd beschoten en schoot terug; er vielen geen gewonden. Ook werd een Israëliër die bij Rosh HaNikra illegaal de grens overstak door UNIFIL vastgehouden; volgens het leger was hij vermoedelijk geestelijk in de war. Israël verzet zich tegen een plan van Macron voor een opvolger van UNIFIL, dat eind dit jaar vertrekt.</p><p class="bron">Bron: <a href="https://www.jpost.com/israel-news/article-914531">Jerusalem Post</a> · <a href="https://www.jpost.com/middle-east/article-914510">Jerusalem Post</a> · <a href="https://www.timesofisrael.com/liveblog-november-11-2026/">Times of Israel</a></p></article>
+</section>
+
+<section><h2 class="blok">💻 Techniek &amp; Economie</h2>
+<article><h3>Revolut krijgt voorwaardelijke banklicentie</h3><p>De Bank of Israel gaf Revolut een voorwaardelijke vergunning voor &lsquo;Revolut Bank Israel&rsquo;. De bank mag pas starten als de technische, operationele en regelgevende voorbereidingen klaar zijn; een startdatum is er nog niet. Het is pas de derde nieuwe banklicentie sinds december 2019.</p><p class="bron">Bron: <a href="https://www.calcalistech.com/ctechnews/article/d4bjf79h3">CTech</a> · <a href="https://www.israelnieuws.nl/post/fintechgigant-revolut-krijgt-groen-licht-van-de-centrale-bank-om-een-nieuwe-digitale-bank-in-israë">Israelnieuws</a></p></article>
+<article><h3>Netafim voor $1,2 miljard terug naar kibboets en Spaanse investeerder</h3><p>Het Mexicaanse Orbia staat op het punt 80% van irrigatiepionier Netafim te verkopen aan het Spaanse MatHolding en Kibboets Hatzerim, waar het bedrijf ooit begon. De ondernemingswaarde is circa $1,2 miljard; Hatzerim koopt 10% extra voor zo&rsquo;n $80 miljoen. De deal wordt naar verwachting eind dit jaar rond.</p><p class="bron">Bron: <a href="https://www.calcalistech.com/ctechnews/article/0nbyo4eej">CTech</a></p></article>
+<article><h3>Cyberbedrijf Daylight haalt $80 miljoen op</h3><p>Daylight, begin 2025 opgericht, combineert AI met menselijke beveiligingsexperts en haalde een Series B op onder leiding van Goldman Sachs Alternatives. De geschatte waardering is zo&rsquo;n $400 miljoen; de omzet steeg volgens het bedrijf ruim 40 keer in een jaar.</p><p class="bron">Bron: <a href="https://www.calcalistech.com/ctechnews/article/x8vrvo7dt">CTech</a></p></article>
+</section>
+
+<section><h2 class="blok">✡️ Religieus Nieuws</h2>
+<article><h3>Tentoonstelling 300 jaar synagoge Amersfoort nog onzeker</h3><p>Museum Amersfoort schrapte een expositie over het 300-jarig bestaan van de synagoge, met als reden &ldquo;druk&rdquo; rond Israël; Joodse leiders spraken van antisemitisme. Burgemeester Bolsius en de museumdirectie zoeken samen een oplossing, maar volgens JTA staat nog niet vast dat de tentoonstelling begin 2027 doorgaat.</p><p class="bron">Bron: <a href="https://www.jta.org/2026/11/10/culture/museum-cancels-amersfoort-synagogues-tricentennial-celebration-over-israel-tensions">JTA</a> · <a href="https://www.jpost.com/diaspora/antisemitism/article-914522">Jerusalem Post</a></p></article>
+<article><h3>Tzohar start WhatsApp-lijn &lsquo;Je hebt een rabbijn&rsquo;</h3><p>De rabbijnenorganisatie Tzohar laat mensen elke avond van 17.00 tot 23.00 uur anoniem chatten met rabbijnen over halacha, geloof, identiteit, sjabbat en dienstplicht. Binnen enkele dagen meldden zich honderden mensen, als teken van groeiende interesse in het jodendom.</p><p class="bron">Bron: <a href="https://www.jpost.com/judaism/article-914353">Jerusalem Post</a></p></article>
+</section>
+
+<section><h2 class="blok">🌟 Positief Nieuws</h2>
+<article><h3>Jeruzalemse tram L3 rijdt door tot de Damascuspoort</h3><p>Lijn L3 is verlengd van HaTurim via het centrum naar de Damascuspoort, met vijf haltes die gedeeld worden met L1, zoals bij Mahane Yehuda, het stadhuis en Mamilla. Lijn L4 naar Gilo rondt de tests af en opent binnenkort, na veiligheidsgoedkeuring.</p><p class="bron">Bron: <a href="https://www.jpost.com/israel-news/article-914417">Jerusalem Post</a></p></article>
+<article><h3>Haaien zijn terug voor de kust van Hadera</h3><p>De jaarlijkse winterse haaienconcentratie bij de energiecentrale van Hadera is weer begonnen. De beschermde dieren zijn een bijzonder natuurverschijnsel, maar de natuurautoriteit waarschuwt nadrukkelijk niet te duiken of te snorkelen in de buurt.</p><p class="bron">Bron: <a href="https://www.jpost.com/environment-and-climate-change/article-914495">Jerusalem Post</a></p></article>
+</section>
+
+<footer>Samengesteld uit Times of Israel, Jerusalem Post, JTA, CTech, Israelnieuws e.a. Bij tegenstrijdige berichtgeving zijn bronnen vermeld.</footer>
+
+<script>
+(function () {
+  var editie = document.body.getAttribute('data-editie-datum');
+  if (!editie) return;
+
+  var nu = new Date();
+  var vandaag = nu.getFullYear() + '-' +
+                String(nu.getMonth() + 1).padStart(2, '0') + '-' +
+                String(nu.getDate()).padStart(2, '0');
+
+  var balk = document.getElementById('stale');
+  var knop = document.getElementById('refreshBtn');
+  var melding = document.getElementById('staleMelding');
+
+  var netGeprobeerd = false;
+  try {
+    netGeprobeerd = sessionStorage.getItem('nbRefresh') === '1';
+    sessionStorage.removeItem('nbRefresh');
+  } catch (e) {}
+
+  if (editie < vandaag) {
+    var d = editie.split('-');
+    var leesbaar = d[2] + '-' + d[1] + '-' + d[0];
+    document.getElementById('staleDatum').textContent = leesbaar;
+    balk.style.display = 'block';
+    if (netGeprobeerd && melding) {
+      melding.textContent = 'Opnieuw opgehaald: er is nog geen nieuwere editie gepubliceerd. ' +
+                            'De laatste blijft die van ' + leesbaar + '.';
+      melding.style.display = 'block';
+    }
+  } else if (netGeprobeerd && balk) {
+    balk.style.display = 'none';
+  }
+
+  if (knop) {
+    knop.addEventListener('click', function () {
+      knop.disabled = true;
+      knop.textContent = 'Bezig met ophalen\u2026';
+      if (melding) { melding.textContent = ''; melding.style.display = 'none'; }
+      try { sessionStorage.setItem('nbRefresh', '1'); } catch (e) {}
+      var url = location.pathname + '?v=' + Date.now();
+      setTimeout(function () { location.replace(url); }, 150);
+      setTimeout(function () { location.reload(); }, 2500);
+    });
+  }
+})();
+</script>
+<script>
+(function () {
+  var knop = document.getElementById('pdfBtn');
+  if (!knop) return;
+  knop.addEventListener('click', function () {
+    var titel = document.title;
+    var datum = document.body.getAttribute('data-editie-datum') || '';
+    if (datum) { document.title = 'Israel-Nieuwsbrief-' + datum; }
+    window.print();
+    setTimeout(function () { document.title = titel; }, 1000);
+  });
+})();
+</script>
+</body>
+</html>
