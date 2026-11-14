@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0038b8">
+<meta name="color-scheme" content="light">
+<meta name="apple-mobile-web-app-title" content="Israël Nieuwsbrief">
+<meta name="format-detection" content="telephone=no">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23fff'/%3E%3Crect y='8' width='64' height='7' fill='%230038b8'/%3E%3Crect y='49' width='64' height='7' fill='%230038b8'/%3E%3Cpath d='M32 20l10 17H22z' fill='none' stroke='%230038b8' stroke-width='4'/%3E%3Cpath d='M32 44L22 27h20z' fill='none' stroke='%230038b8' stroke-width='4'/%3E%3C/svg%3E">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Israël Nieuwsbrief – 14 november 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'M PLUS 1p', 'Leelawadee UI', Leelawadee, Arial, sans-serif; max-width: 760px; margin: 0 auto; padding: 24px 20px; color: #1a1a2e; background: #fdfcf8; line-height: 1.6; }
+  header { border-bottom: 3px solid #0038b8; padding-bottom: 14px; margin-bottom: 24px; }
+  h1 { margin: 0; font-size: 1.9em; color: #0038b8; }
+  .datum { color: #666; font-size: 0.95em; margin-top: 4px; }
+  .intro { background: #eef3ff; border-left: 4px solid #0038b8; padding: 14px 18px; border-radius: 0 8px 8px 0; margin-bottom: 28px; }
+  .intro h2 { margin: 0 0 8px; font-size: 1.1em; color: #0038b8; }
+  section { margin-bottom: 32px; }
+  h2.blok { font-size: 1.35em; border-bottom: 2px solid #d9d4c5; padding-bottom: 6px; color: #22223b; }
+  article { margin-bottom: 18px; }
+  h3 { margin: 0 0 4px; font-size: 1.08em; }
+  p { margin: 0; }
+  .bron { font-size: 0.85em; color: #777; }
+  .bron a { color: #0038b8; text-decoration: none; }
+  .verssig { font-size: 0.8em; color: #999; margin-top: 6px; }
+  #stale { display: none; background: #fff4e5; border-left: 4px solid #d9822b; color: #7a4a12; padding: 12px 16px; border-radius: 0 8px 8px 0; margin-bottom: 20px; font-size: 0.92em; }
+  #stale strong { color: #b35c00; }
+  #stale button { margin-top: 8px; font: inherit; background: #0038b8; color: #fff; border: 0; border-radius: 6px; padding: 7px 14px; cursor: pointer; }
+  #staleMelding { display: none; margin-top: 8px; font-weight: 500; color: #7a4a12; }
+  #stale button:disabled { opacity: .6; cursor: default; }
+  .acties { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: -8px 0 26px; }
+  .acties button { font: inherit; font-size: 0.92em; background: #fff; color: #0038b8; border: 1.5px solid #0038b8; border-radius: 6px; padding: 8px 14px; cursor: pointer; }
+  .acties button:hover { background: #0038b8; color: #fff; }
+  .acties .hint { font-size: 0.8em; color: #999; }
+  footer { border-top: 1px solid #d9d4c5; margin-top: 30px; padding-top: 12px; font-size: 0.85em; color: #888; }
+
+
+/* --- Mobiel (iPhone) --- */
+html { -webkit-text-size-adjust: 100%; }
+body { overflow-wrap: break-word; }
+a { overflow-wrap: break-word; }
+button { min-height: 44px; touch-action: manipulation; }
+
+@media (max-width: 640px) {
+  body {
+    font-size: 17px;
+    padding: 16px max(16px, env(safe-area-inset-right)) calc(28px + env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+  }
+  h1 { font-size: 1.45em; line-height: 1.25; }
+  .datum { font-size: 0.9em; }
+  h2.blok { font-size: 1.18em; }
+  h3 { font-size: 1.03em; line-height: 1.35; }
+  .intro { padding: 12px 14px; }
+  section { margin-bottom: 26px; }
+  article { margin-bottom: 22px; }
+  .acties { flex-direction: column; align-items: stretch; margin: 0 0 24px; }
+  .acties button { width: 100%; padding: 13px 16px; font-size: 1em; }
+  .acties .hint { font-size: 0.78em; text-align: center; }
+  #stale button { width: 100%; padding: 13px 16px; }
+  .bron { font-size: 0.82em; }
+}
+
+@media print {
+  @page { margin: 16mm 14mm; }
+  body { background: #fff; max-width: none; margin: 0; padding: 0; font-size: 10.5pt; line-height: 1.45; }
+  #stale, .acties { display: none !important; }
+  header { border-bottom: 2px solid #0038b8; }
+  h1 { font-size: 1.5em; }
+  .intro { background: #fff; border-left: 3px solid #0038b8; }
+  a { color: #0038b8; text-decoration: none; }
+  article, .intro, footer { break-inside: avoid; page-break-inside: avoid; }
+  h2.blok { break-after: avoid; page-break-after: avoid; }
+}
+</style>
+</head>
+<body data-editie-datum="2026-11-14">
+<header>
+  <h1>🇮🇱 Israël Nieuwsbrief</h1>
+  <div class="datum">Zaterdag 14 november 2026 · Editie 95</div>
+  <div class="verssig">Bijgewerkt: 14-11-2026 11:31 UTC</div>
+</header>
+
+<div id="stale">
+  <strong>Let op: dit is niet de editie van vandaag.</strong><br>
+  Je leest de editie van <span id="staleDatum"></span>. De nieuwe editie is nog niet gepubliceerd,
+  of je telefoon toont een opgeslagen versie.
+  <div id="staleMelding"></div>
+  <button id="refreshBtn" type="button">Opnieuw ophalen</button>
+</div>
+
+<div class="acties">
+  <button id="pdfBtn" type="button">📄 Opslaan als pdf</button>
+  <span class="hint">Kies in het printvenster &lsquo;Bewaar als pdf&rsquo; &mdash; daarna kun je hem doorsturen.</span>
+</div>
+
+<div class="intro"><h2>In het kort</h2><p>Gezamenlijke Lijst-Kamerlid Ahmad Tibi toonde berichten waaruit zou blijken dat Netanyahu&rsquo;s kamp in het geheim Arabische hulp zocht tegen Eisenkot; Likud spreekt van &ldquo;een complete leugen&rdquo;. Partijleider Jabareen zette intussen zijn eisen op tafel voor samenwerking met het Eisenkot-blok, waar twijfels groeien over de koers van Bennett. Mossad-chef Gofman lobbyt in Washington voor hervatting van de oorlog met Iran, terwijl CENTCOM meldt dat twee Iraanse drones richting Bahrein zijn onderschept. De politie ziet vooralsnog te weinig bewijs voor een strafzaak over buitenlandse verkiezingsfinanciering. Bij Nvidia neemt Colette Kress, een van de architecten van de Israëlische groei van het bedrijf, voorlopig het roer over.</p></div>
+
+<section><h2 class="blok">🏛️ Politiek</h2>
+<article><h3>Tibi: Netanyahu-vertrouweling zocht in het geheim Arabische steun</h3><p>In een interview met Kanaal 12 liet Ahmad Tibi (Gezamenlijke Lijst) berichten zien van Natan Eshel, een oude vertrouweling van Netanyahu, die hem voor en na de verkiezingen zou hebben benaderd om een Eisenkot-regering te voorkomen. Volgens Tibi drong ook een niet bij naam genoemde Likud-minister aan op nieuwe verkiezingen. Kanaal 12 meldt dat Eshel ook Ra&rsquo;am-leider Mansour Abbas herhaaldelijk benaderde. Eshel ontkent namens Netanyahu te hebben gehandeld; Likud noemt het verhaal &ldquo;een complete leugen&rdquo;.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/tibi-exposes-messages-said-to-show-netanyahu-camp-sought-arab-help-while-attacking-parties-publicly/">Times of Israel</a> · <a href="https://www.israelnieuws.nl/post/n12news-knessetlid-ahmad-tibi-van-de-gezamenlijke-lijst-onthult-berichten-die-aantonen-dat-het-kamp">Israelnieuws</a></p></article>
+<article><h3>Gezamenlijke Lijst stelt voorwaarden aan Eisenkot-blok</h3><p>Partijleider Yousef Jabareen noemde vrijdag de eisen voor samenwerking: intrekking van de Kaminitz-wet (sloop van zonder vergunning gebouwde Arabische woningen), een plan tegen geweld en misdaad in Arabische gemeenschappen en een vijfjarig economisch ontwikkelingsplan. Ook zou er een nieuwe Knessetcommissie voor Arabische sociaal-economische kwesties komen. Volgens KAN hebben Ra&rsquo;am en de Gezamenlijke Lijst bovendien contact met de ultraorthodoxe UTJ.</p><p class="bron">Bron: <a href="https://www.jpost.com/israel-news/politics-and-diplomacy/article-914817">Jerusalem Post</a> · <a href="https://www.jpost.com/israel-election-2026/2026-11-14/live-updates-914845">Jerusalem Post liveblog</a></p></article>
+<article><h3>Twijfels over Bennett; Eisenkot wil haredim stapsgewijs binnenhalen</h3><p>In het Eisenkot-blok groeit volgens de Jerusalem Post de onzekerheid over Naftali Bennett, die zich publiek niet uitspreekt over concessies aan de ultraorthodoxen bij de dienstplicht. Sommigen vermoeden dat hij liever nieuwe verkiezingen heeft; dat is hun inschatting, niet iets wat Bennett zelf heeft gezegd. Eisenkot wil de haredische partijen in fasen erbij halen, Liberman wil met beide meteen afspraken. Volgens Times of Israel geeft Eisenkot voorrang aan een coalitie met de haredim boven een met Arabische partijen. Netanyahu waarschuwt de haredim intussen: &ldquo;Ze gebruiken jullie en gooien jullie weg.&rdquo;</p><p class="bron">Bron: <a href="https://www.jpost.com/israel-news/politics-and-diplomacy/article-914850">Jerusalem Post</a> · <a href="https://www.timesofisrael.com/liveblog-november-13-2026/#liveblog-entry-3933653">Times of Israel liveblog</a> · <a href="https://www.jpost.com/israel-news/politics-and-diplomacy/article-914799">Jerusalem Post</a></p></article>
+<article><h3>Druk op Yashar-Kamerlid Elisaf Peretz</h3><p>Miriam Peretz, Israëlprijswinnares en moeder van Yashar-Kamerlid Elisaf Peretz, zegt dat haar zoon de Knesset verlaat als zijn partij een regering vormt met een Arabische partij; volgens haar staan zij en hij onder druk. Eisenkot sprak zich uit voor Peretz, veroordeelde bedreigingen tegen Yashar-Kamerleden en hun families en noemde de campagne &ldquo;racistisch en anti-Arabisch&rdquo;. Elisaf Peretz zelf reageerde nog niet.</p><p class="bron">Bron: <a href="https://www.jpost.com/israel-news/politics-and-diplomacy/article-914727">Jerusalem Post</a> · <a href="https://www.jpost.com/israel-election-2026/article-914820">Jerusalem Post</a></p></article>
+<article><h3>Politie: te weinig bewijs voor zaak over buitenlands verkiezingsgeld</h3><p>Volgens Maariv vindt de politie (Lahav 433) het materiaal van de Shin Bet onvoldoende voor een strafrechtelijk onderzoek; het gaat hooguit om een &ldquo;mogelijke kleine overtreding&rdquo; van de partijfinancieringsregels. De Shin Bet onderzoekt of een Kamerlid van de Gezamenlijke Lijst duizenden sjekels uit Qatar ontving. Een definitief besluit ligt bij procureur-generaal Baharav-Miara. Qatar en Ra&rsquo;am-leider Abbas ontkennen elke betrokkenheid.</p><p class="bron">Bron: <a href="https://www.jpost.com/israel-news/politics-and-diplomacy/article-914800">Jerusalem Post</a></p></article>
+<article><h3>Boek Yair Netanyahu: verkiezing &lsquo;gestolen&rsquo;</h3><p>Yair Netanyahu, zoon van de premier, brengt in maart 2027 het boek <em>Two-Front War</em> uit, dat stelt dat binnen- en buitenlandse tegenstanders samenwerkten om zijn vader ten val te brengen, en noemt diens opponenten &ldquo;saboteurs&rdquo;. Hij beweert dat de verkiezing van 27 oktober is gestolen; verkiezingsautoriteiten en de procureur-generaal zien geen aanwijzingen dat de uitslag is beïnvloed.</p><p class="bron">Bron: <a href="https://www.jpost.com/israel-news/article-914846">Jerusalem Post / JTA</a></p></article>
+</section>
+
+<section><h2 class="blok">⚔️ Oorlog &amp; Veiligheid</h2>
+<article><h3>Mossad-chef in Washington om oorlog met Iran te hervatten</h3><p>Mossad-directeur Roman Gofman sprak met CIA-directeur Ratcliffe en zou daarna gezant Witkoff in Miami ontmoeten, terwijl Netanyahu aandringt op hervatting van de aanvallen op Iran. Volgens Axios wees Trump dat verzoek eerder af ten gunste van diplomatie, maar op 12 november zei hij dat de VS geen deal met Iran meer nodig hebben. Volgens Ynet en N12 werd Eisenkot tijdens zijn veiligheidsbriefing niet ingelicht over de reis.</p><p class="bron">Bron: <a href="https://www.jpost.com/international/article-914818">Jerusalem Post</a> · <a href="https://www.israelnieuws.nl/post/n12news-ondanks-de-veiligheids-bijeenkomst-met-netanyahu-werd-eisenkot-niet-op-de-hoogte-gesteld-da">Israelnieuws</a></p></article>
+<article><h3>CENTCOM: Iraanse drones op Bahrein onderschept</h3><p>Nieuw ten opzichte van gisteren: het Amerikaanse CENTCOM bevestigt dat de Revolutionaire Garde twee zelfmoorddrones richting Bahrein lanceerde, maar zegt dat beide zijn onderschept zonder schade of slachtoffers. De Iraanse claim dat een Amerikaanse vroegtijdige-waarschuwingsradar is vernietigd, spreekt CENTCOM tegen. Iran noemt de actie vergelding voor een aanval op een telecommast in de provincie Hormozgan.</p><p class="bron">Bron: <a href="https://www.jpost.com/middle-east/iran-news/article-914794">Jerusalem Post</a></p></article>
+<article><h3>Vance overweegt af te zien van 2028 na kritiek op Iran-oorlog</h3><p>Volgens CNN twijfelt vicepresident JD Vance serieus of hij in 2028 meedoet. Na de zware Republikeinse verliezen schreef hij op X: &ldquo;De reden dat we verloren is de oorlog&rdquo;, en riep hij op de band met Israël te heroverwegen. Trump zou hem privé hebben bekritiseerd en haalde hem weg bij de Iran-onderhandelingen.</p><p class="bron">Bron: <a href="https://www.jpost.com/american-politics/article-914849">Jerusalem Post</a></p></article>
+<article><h3>Leger: ruim tien militanten in Gaza gedood</h3><p>Leger en Shin Bet zeggen afgelopen week meer dan tien militanten in Gaza te hebben gedood, onder wie twee mannen die op 7 oktober Israël binnendrongen, zoals Nukhba-lid Muhammad Kishawi. Ook werd een wapenwerkplaats van Hamas ontmanteld. Het leger spreekt van een &ldquo;systematische schending van het staakt-het-vuren&rdquo; door Hamas.</p><p class="bron">Bron: <a href="https://www.jpost.com/israel-news/defense-news/article-914822">Jerusalem Post</a></p></article>
+<article><h3>Gazaans meisje met brandwonden de dupe van conflict over hulp</h3><p>De zesjarige Masa Yassin heeft een 3D-geprint masker nodig voor haar brandwonden, maar de enige kliniek die die maakt, van Artsen zonder Grenzen, krijgt sinds februari geen voorraden binnen. Israël eist namenlijsten van lokaal personeel; AzG weigert dat zonder veiligheidsgaranties. COGAT zegt dat de lijsten nodig zijn tegen misbruik van hulp en ontkent medische hulp te blokkeren.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/six-year-old-gaza-burn-victim-caught-in-israeli-dispute-over-medical-aid/">Times of Israel (Reuters)</a></p></article>
+<article><h3>Libanees leger neemt wapens Hezbollah in beslag in Beiroet</h3><p>Het Libanese leger deed een inval in een wapendepot in de zuidelijke voorsteden van Beiroet, een bolwerk van Hezbollah, en nam &ldquo;een grote hoeveelheid wapens en munitie&rdquo; in beslag. Eén verdachte werd aangehouden. Het volgt op uitspraken van Hezbollah-leider Qassem dat de beweging haar wapens niet inlevert.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/liveblog_entry/lebanese-army-says-large-quantity-of-weapons-seized-during-raid-on-hezbollah-stronghold-in-beirut/">Times of Israel</a></p></article>
+</section>
+
+<section><h2 class="blok">💻 Techniek &amp; Economie</h2>
+<article><h3>Colette Kress, pleitbezorger van Israël, leidt Nvidia</h3><p>Interim-CEO Colette Kress steunde in 2020 sterk de overname van het Israëlische Mellanox ($6,9 miljard), de basis van Nvidia&rsquo;s grote Israëlische R&amp;D-tak. Nieuw sinds het vertrek van Jensen Huang: veel werknemers eisen op een intern forum met de leus &ldquo;Bring Back the Boss&rdquo; zijn terugkeer, en voormalig Synopsys-topman Harvey Jones wordt bestuursvoorzitter. Amerikaanse senatoren willen Huang laten getuigen.</p><p class="bron">Bron: <a href="https://www.calcalistech.com/ctechnews/article/rjmkodeagg">CTech</a> · <a href="https://www.jpost.com/business-and-innovation/article-914828">Jerusalem Post</a></p></article>
+<article><h3>Arbeidsconflict in haven van Haifa</h3><p>De Histadrut riep een arbeidsconflict uit in de haven van Haifa, eigendom van Adani-Gadot. De vakbond spreekt van gebroken afspraken, uitbesteding en ernstige veiligheidsproblemen, zoals slecht onderhouden kranen. Er werken zo&rsquo;n 700 mensen; acties kunnen de havenactiviteiten verstoren.</p><p class="bron">Bron: <a href="https://www.calcalistech.com/ctechnews/article/5cepxeg6r">CTech</a></p></article>
+</section>
+
+<section><h2 class="blok">✡️ Religieus Nieuws</h2>
+<article><h3>ZAKA en Chabad starten wereldwijde reddingseenheid</h3><p>Op het internationale congres van Chabad-sjlichim in New York lanceerden ZAKA en Chabad een gezamenlijke eenheid voor noodhulp, zoek-en-redding en de zorg voor overledenen (Chesed Shel Emes). Chabad-emissarissen wereldwijd krijgen training, en ZAKA levert mensen en materieel bij rampen in Joodse gemeenschappen.</p><p class="bron">Bron: <a href="https://www.jpost.com/diaspora/article-914768">Jerusalem Post</a></p></article>
+<article><h3>Trump: antisemitisme in VS &ldquo;als Duitsland in 1938&rdquo;</h3><p>In een radio-interview vergeleek Trump het Amerikaanse antisemitisme met nazi-Duitsland in 1938. Volgens FBI-cijfers richtte 63% van de religieus gemotiveerde haatmisdrijven zich vorig jaar tegen Joden (70% in 2024). Trump uitte ook ongenoegen dat veel Joodse kiezers in Michigan op Democraat Abdul El-Sayed stemden.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/trump-says-us-antisemitism-at-levels-like-germany-in-1938/">Times of Israel</a></p></article>
+</section>
+
+<section><h2 class="blok">🌟 Positief Nieuws</h2>
+<article><h3>Nieuwe pelgrimsroute van Jaffa naar Jeruzalem</h3><p>&lsquo;De Weg naar Jeruzalem&rsquo; is een wandelroute van 111 km, in vijf dagen, van de haven van Jaffa naar de Jaffapoort, langs eeuwenoude pelgrimspaden via onder meer Ramle, Latrun, Abu Ghosh en Ein Kerem. Het idee komt van een oud-veiligheidsfunctionaris die de Camino de Santiago liep. Zo&rsquo;n 1.500 pelgrims liepen al mee; de bewegwijzering moet eind 2027 klaar zijn.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/from-jaffa-port-to-jaffa-gate-israels-new-trail-invites-pilgrims-to-stroll-the-holy-land/">Times of Israel</a></p></article>
+<article><h3>Ecoduct over Route 6 voor bedreigde gazellen</h3><p>De nationale planraad stemde in met verdere uitwerking van een begroeide wildbrug van 50 bij 80 meter over Route 6 bij natuurgebied Pura. Die moet geïsoleerde populaties van de bedreigde Israëlische gazelle in de noordelijke Negev weer verbinden.</p><p class="bron">Bron: <a href="https://www.jpost.com/travel/article-914518">Jerusalem Post</a></p></article>
+<article><h3>Mogelijk nieuwe vissoort voor Israëlische kust</h3><p>Een visser uit Jisr az-Zarqa ving een pompano (geslacht <em>Trachinotus</em>); samen met een vangst bij Caesarea kort daarvoor zijn dit volgens de Universiteit van Tel Aviv de eerste gedocumenteerde exemplaren in Israël. Onderzoekers zoeken nog uit om welke soort het gaat en hoe hij hier kwam.</p><p class="bron">Bron: <a href="https://www.jpost.com/environment-and-climate-change/article-914745">Jerusalem Post</a></p></article>
+</section>
+
+<footer>Samengesteld uit Times of Israel, Jerusalem Post, CTech, Israelnieuws, JTA e.a. Bij tegenstrijdige berichtgeving zijn bronnen vermeld.</footer>
+
+<script>
+(function () {
+  var editie = document.body.getAttribute('data-editie-datum');
+  if (!editie) return;
+
+  var nu = new Date();
+  var vandaag = nu.getFullYear() + '-' +
+                String(nu.getMonth() + 1).padStart(2, '0') + '-' +
+                String(nu.getDate()).padStart(2, '0');
+
+  var balk = document.getElementById('stale');
+  var knop = document.getElementById('refreshBtn');
+  var melding = document.getElementById('staleMelding');
+
+  var netGeprobeerd = false;
+  try {
+    netGeprobeerd = sessionStorage.getItem('nbRefresh') === '1';
+    sessionStorage.removeItem('nbRefresh');
+  } catch (e) {}
+
+  if (editie < vandaag) {
+    var d = editie.split('-');
+    var leesbaar = d[2] + '-' + d[1] + '-' + d[0];
+    document.getElementById('staleDatum').textContent = leesbaar;
+    balk.style.display = 'block';
+    if (netGeprobeerd && melding) {
+      melding.textContent = 'Opnieuw opgehaald: er is nog geen nieuwere editie gepubliceerd. ' +
+                            'De laatste blijft die van ' + leesbaar + '.';
+      melding.style.display = 'block';
+    }
+  } else if (netGeprobeerd && balk) {
+    balk.style.display = 'none';
+  }
+
+  if (knop) {
+    knop.addEventListener('click', function () {
+      knop.disabled = true;
+      knop.textContent = 'Bezig met ophalen\u2026';
+      if (melding) { melding.textContent = ''; melding.style.display = 'none'; }
+      try { sessionStorage.setItem('nbRefresh', '1'); } catch (e) {}
+      var url = location.pathname + '?v=' + Date.now();
+      setTimeout(function () { location.replace(url); }, 150);
+      setTimeout(function () { location.reload(); }, 2500);
+    });
+  }
+})();
+</script>
+<script>
+(function () {
+  var knop = document.getElementById('pdfBtn');
+  if (!knop) return;
+  knop.addEventListener('click', function () {
+    var titel = document.title;
+    var datum = document.body.getAttribute('data-editie-datum') || '';
+    if (datum) { document.title = 'Israel-Nieuwsbrief-' + datum; }
+    window.print();
+    setTimeout(function () { document.title = titel; }, 1000);
+  });
+})();
+</script>
+</body>
+</html>
