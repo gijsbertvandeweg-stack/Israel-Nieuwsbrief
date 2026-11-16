@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0038b8">
+<meta name="color-scheme" content="light">
+<meta name="apple-mobile-web-app-title" content="Israël Nieuwsbrief">
+<meta name="format-detection" content="telephone=no">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23fff'/%3E%3Crect y='8' width='64' height='7' fill='%230038b8'/%3E%3Crect y='49' width='64' height='7' fill='%230038b8'/%3E%3Cpath d='M32 20l10 17H22z' fill='none' stroke='%230038b8' stroke-width='4'/%3E%3Cpath d='M32 44L22 27h20z' fill='none' stroke='%230038b8' stroke-width='4'/%3E%3C/svg%3E">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Israël Nieuwsbrief – maandag 16 november 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'M PLUS 1p', 'Leelawadee UI', Leelawadee, Arial, sans-serif; max-width: 760px; margin: 0 auto; padding: 24px 20px; color: #1a1a2e; background: #fdfcf8; line-height: 1.6; }
+  header { border-bottom: 3px solid #0038b8; padding-bottom: 14px; margin-bottom: 24px; }
+  h1 { margin: 0; font-size: 1.9em; color: #0038b8; }
+  .datum { color: #666; font-size: 0.95em; margin-top: 4px; }
+  .intro { background: #eef3ff; border-left: 4px solid #0038b8; padding: 14px 18px; border-radius: 0 8px 8px 0; margin-bottom: 28px; }
+  .intro h2 { margin: 0 0 8px; font-size: 1.1em; color: #0038b8; }
+  section { margin-bottom: 32px; }
+  h2.blok { font-size: 1.35em; border-bottom: 2px solid #d9d4c5; padding-bottom: 6px; color: #22223b; }
+  article { margin-bottom: 18px; }
+  h3 { margin: 0 0 4px; font-size: 1.08em; }
+  p { margin: 0; }
+  .bron { font-size: 0.85em; color: #777; }
+  .bron a { color: #0038b8; text-decoration: none; }
+  .verssig { font-size: 0.8em; color: #999; margin-top: 6px; }
+  #stale { display: none; background: #fff4e5; border-left: 4px solid #d9822b; color: #7a4a12; padding: 12px 16px; border-radius: 0 8px 8px 0; margin-bottom: 20px; font-size: 0.92em; }
+  #stale strong { color: #b35c00; }
+  #stale button { margin-top: 8px; font: inherit; background: #0038b8; color: #fff; border: 0; border-radius: 6px; padding: 7px 14px; cursor: pointer; }
+  #staleMelding { display: none; margin-top: 8px; font-weight: 500; color: #7a4a12; }
+  #stale button:disabled { opacity: .6; cursor: default; }
+  .acties { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: -8px 0 26px; }
+  .acties button { font: inherit; font-size: 0.92em; background: #fff; color: #0038b8; border: 1.5px solid #0038b8; border-radius: 6px; padding: 8px 14px; cursor: pointer; }
+  .acties button:hover { background: #0038b8; color: #fff; }
+  .acties .hint { font-size: 0.8em; color: #999; }
+  footer { border-top: 1px solid #d9d4c5; margin-top: 30px; padding-top: 12px; font-size: 0.85em; color: #888; }
+
+
+/* --- Mobiel (iPhone) --- */
+html { -webkit-text-size-adjust: 100%; }
+body { overflow-wrap: break-word; }
+a { overflow-wrap: break-word; }
+button { min-height: 44px; touch-action: manipulation; }
+
+@media (max-width: 640px) {
+  body {
+    font-size: 17px;
+    padding: 16px max(16px, env(safe-area-inset-right)) calc(28px + env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+  }
+  h1 { font-size: 1.45em; line-height: 1.25; }
+  .datum { font-size: 0.9em; }
+  h2.blok { font-size: 1.18em; }
+  h3 { font-size: 1.03em; line-height: 1.35; }
+  .intro { padding: 12px 14px; }
+  section { margin-bottom: 26px; }
+  article { margin-bottom: 22px; }
+  .acties { flex-direction: column; align-items: stretch; margin: 0 0 24px; }
+  .acties button { width: 100%; padding: 13px 16px; font-size: 1em; }
+  .acties .hint { font-size: 0.78em; text-align: center; }
+  #stale button { width: 100%; padding: 13px 16px; }
+  .bron { font-size: 0.82em; }
+}
+
+@media print {
+  @page { margin: 16mm 14mm; }
+  body { background: #fff; max-width: none; margin: 0; padding: 0; font-size: 10.5pt; line-height: 1.45; }
+  #stale, .acties { display: none !important; }
+  header { border-bottom: 2px solid #0038b8; }
+  h1 { font-size: 1.5em; }
+  .intro { background: #fff; border-left: 3px solid #0038b8; }
+  a { color: #0038b8; text-decoration: none; }
+  article, .intro, footer { break-inside: avoid; page-break-inside: avoid; }
+  h2.blok { break-after: avoid; page-break-after: avoid; }
+}
+</style>
+</head>
+<body data-editie-datum="2026-11-16">
+<header>
+  <h1>🇮🇱 Israël Nieuwsbrief</h1>
+  <div class="datum">Maandag 16 november 2026 · Editie 97</div>
+  <div class="verssig">Bijgewerkt: 16-11-2026 05:52 UTC</div>
+</header>
+
+<div id="stale">
+  <strong>Let op: dit is niet de editie van vandaag.</strong><br>
+  Je leest de editie van <span id="staleDatum"></span>. De nieuwe editie is nog niet gepubliceerd,
+  of je telefoon toont een opgeslagen versie.
+  <div id="staleMelding"></div>
+  <button id="refreshBtn" type="button">Opnieuw ophalen</button>
+</div>
+
+<div class="acties">
+  <button id="pdfBtn" type="button">📄 Opslaan als pdf</button>
+  <span class="hint">Kies in het printvenster &lsquo;Bewaar als pdf&rsquo; &mdash; daarna kun je hem doorsturen.</span>
+</div>
+
+<div class="intro"><h2>In het kort</h2><p>De onderhandelaars van Eisenkots Yashar en Netanyahu&rsquo;s Likud kwamen voor het eerst bijeen, &ldquo;zakelijk&rdquo; maar zonder doorbraak. Deze week neemt het Eisenkot-blok de Knesset over: vandaag de belangrijkste commissies, dinsdag de stemming over een nieuwe Knessetvoorzitter. Iran viel zondag voor het eerst sinds september Bahrein aan, terwijl een derde Amerikaans vliegdekschip de regio zou hebben bereikt. Volgens The New York Times ontvoerde Israël Iraanse generaals bij de jarenlange zoektocht naar vermiste piloot Ron Arad. Positief: voormalig gijzelaar Bilal Ziyadne uit Rahat is getrouwd.</p></div>
+
+<section><h2 class="blok">🏛️ Politiek</h2>
+<article><h3>Eerste gesprek Yashar&ndash;Likud: &ldquo;zakelijk&rdquo;, geen doorbraak</h3><p>Onderhandelaars van Yashar (Chili Tropper, Yoav Horowitz) en Likud (fractievoorzitter Ofir Katz, advocaat Michael Rabello) spraken zondag een uur in een hotel in Herzliya; ook B&rsquo;Yachad van Bennett was aanwezig. In een gezamenlijke verklaring heette de sfeer &ldquo;zakelijk&rdquo; en gaan de gesprekken door, maar volgens Times of Israel was er geen vooruitgang. Yashar ontkent dat het Likud een rotatie aanbiedt: Likud kan alleen toetreden tot een regering onder Eisenkot, op basis van vier principes, waaronder dienstplicht voor iedereen en de ontmanteling van Hamas. Netanyahu zou zijn eis om een rotatieregering te leiden hebben laten vallen.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/yashar-likud-meet-for-unity-talks-as-eisenkot-bloc-moves-to-assert-control-over-knesset/">Times of Israel</a></p></article>
+<article><h3>Eisenkot-blok neemt deze week de Knesset over</h3><p>Vandaag worden Avigdor Liberman (voorzitter van de commissie Buitenlandse Zaken en Defensie) en Liran Avisar Ben-Horin (Financiën) definitief benoemd. Dinsdag volgt de stemming om Knessetvoorzitter Amir Ohana (Likud) te vervangen door Matan Kahana (Yashar); met steun van de Arabische partijen heeft het blok daarvoor genoeg stemmen. Netanyahu probeert UTJ tegen Kahana te laten stemmen. Yair Golans Democraten krijgen het voorzitterschap van een speciale commissie die de wetten van de justitiële hervorming moet terugdraaien. Golan noemt dat &ldquo;het begin van herstel&rdquo;.</p><p class="bron">Bron: <a href="https://www.jpost.com/israel-news/politics-and-diplomacy/article-914932">Jerusalem Post</a> · <a href="https://www.timesofisrael.com/yashar-likud-meet-for-unity-talks-as-eisenkot-bloc-moves-to-assert-control-over-knesset/">Times of Israel</a></p></article>
+<article><h3>Eisenkot hengelt naar UTJ, maar dienstplicht blijft struikelblok</h3><p>Eisenkot heeft zo&rsquo;n drie weken (plus eventueel 14 dagen verlenging) om een regering te vormen en probeert de ultraorthodoxe partij UTJ binnen te halen. UTJ eist uitstel van dienstplicht voor Torastudenten, een toezegging van alle 48 Kamerleden van het blok om een vrijstellingswet te steunen en een uitzonderingsclausule voor het geval het Hooggerechtshof die wet schrapt. Ook met UTJ zou een regering 55 zetels hebben, zes te weinig voor een meerderheid. Likud zegt de voortgang van de gesprekken te hebben stilgelegd na een nachtelijk overleg met UTJ-voorman Yaakov Asher.</p><p class="bron">Bron: <a href="https://www.jpost.com/israel-news/politics-and-diplomacy/article-914903">Jerusalem Post</a></p></article>
+</section>
+
+<section><h2 class="blok">⚔️ Oorlog &amp; Veiligheid</h2>
+<article><h3>Iran valt Bahrein aan; derde Amerikaans vliegdekschip in regio</h3><p>Zondag klonken in Bahrein voor het eerst sinds september weer sirenes. De Iraanse Revolutionaire Garde zegt met zes drones een radar op een Amerikaanse basis te hebben aangevallen; Bahrein meldt meerdere onderscheppingen, de VS bevestigden niets. Saoedi-Arabië, Qatar, Jordanië en Egypte veroordeelden de aanval. Inmiddels zou de USS Roosevelt de regio hebben bereikt, waarmee de VS er drie vliegdekschipgroepen hebben. Amerikaanse inlichtingendiensten schatten volgens de Wall Street Journal dat Iran nog 1.500 tot 2.500 ballistische raketten heeft. Ze noemen die schatting zelf onzeker.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/us-intelligence-believes-iran-could-still-have-up-to-2500-missiles-report/">Times of Israel</a> · <a href="https://www.timesofisrael.com/liveblog-november-16-2026/">Times of Israel liveblog</a> · <a href="https://www.theguardian.com/world/live/2026/nov/15/middle-east-crisis-live-iran-bahrain-strikes-gulf-donald-trump-us-israel-yemen-houthis">The Guardian</a></p></article>
+<article><h3>NYT: Israël ontvoerde Iraanse generaals bij zoektocht naar Ron Arad</h3><p>Volgens onderzoek van The New York Times ontvoerde en verhoorde de Mossad hoge Iraanse officieren in de overtuiging dat Iran de in 1986 boven Libanon verdwenen navigator Ron Arad vasthield. Quds-generaal Alireza Asgari zou rond 2006 in Istanbul zijn ontvoerd en daarna zijn gedood; Israël ontkent betrokkenheid. Eigen Israëlische onderzoeken concludeerden al in 2004 en 2006 dat Iran Arad niet had. Inmiddels geldt de focus op Iran in Israël als een vergissing. In maart 2026 mislukte nog een commando-actie in Libanon om zijn stoffelijk overschot te vinden.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/israel-kidnapped-iranian-generals-killed-one-in-effort-to-locate-ron-arad-nyt/">Times of Israel</a></p></article>
+<article><h3>Board of Peace hekelt Israëlische beperkingen op winterhulp Gaza</h3><p>De door de VS gesteunde Board of Peace noemt de Israëlische reactie op de winternood in Gaza &ldquo;onvoldoende&rdquo; en verwijt Israël de ontwapening van Hamas en de komst van het technocratische bestuurscomité te vertragen. Het geschil draait vooral om goederen voor tweeërlei gebruik. Het kantoor van Netanyahu wijst op een winterplan met ruim 91.000 tenten en meer dan 8.200 vrachtwagens met kleding en materialen. COGAT zegt dat de kritiek de aandacht afleidt van Hamas. Bij het instorten van een zandwal in een kamp in Midden-Gaza kwamen vijf mensen om.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/after-getting-pass-in-run-up-to-election-israel-back-in-hot-seat-over-winter-aid-for-gaza/">Times of Israel</a></p></article>
+<article><h3>Gemaskerde kolonisten vallen olijfplukkers aan</h3><p>Tientallen gemaskerde kolonisten van een illegale buitenpost vielen zaterdag Palestijnse olijfplukkers aan bij Sa&rsquo;ir, ten zuiden van de Westelijke Jordaanoever; WAFA meldt minstens vijf gewonden. Militairen en grenspolitie verdreven de aanvallers en riepen een gesloten militair gebied uit, zodat de oogst door kon gaan. Het leger &ldquo;veroordeelt de aanvallers krachtig&rdquo;. Bij twee andere aanvallen van kolonisten op vrijdag werd niemand gearresteerd.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/dozens-of-masked-settlers-attacked-palestinians-harvesting-olives-saturday/">Times of Israel</a></p></article>
+</section>
+
+<section><h2 class="blok">💻 Techniek &amp; Economie</h2>
+<article><h3>Cyberstarts haalt $360 miljoen op, vooral voor Cyera</h3><p>Het Israëlische durfkapitaalfonds Cyberstarts van Gili Raanan haalde zo&rsquo;n $360 miljoen op. Daarvan is $300 miljoen bestemd voor Cyera, dat een ronde van ongeveer $800 miljoen ophaalt bij een waardering van circa $20 miljard. Cyberstarts stapte in 2021 in bij Cyera, met $4,2 miljoen bij een waardering van $15 miljoen. De overige $60 miljoen vormt het vijfde seedfonds. Ook Wiz, dat Google voor $32 miljard kocht, zit in de portefeuille.</p><p class="bron">Bron: <a href="https://www.calcalistech.com/ctechnews/article/ukdmm9bbi">CTech/Calcalist</a></p></article>
+<article><h3>eToro bereidt nieuwe ontslagronde voor</h3><p>Handelsplatform eToro wil in de komende weken opnieuw tientallen mensen ontslaan, na een eerdere ronde van zo&rsquo;n 105 banen in januari. De nettowinst daalde in het derde kwartaal met 74% tot $15 miljoen, vooral door minder cryptohandel. De beurswaarde is met ongeveer $1,8 miljard nog geen helft van de waardering bij de beursgang in 2025.</p><p class="bron">Bron: <a href="https://www.calcalistech.com/ctechnews/article/kz5juy6e0">CTech/Calcalist</a></p></article>
+</section>
+
+<section><h2 class="blok">✡️ Religieus Nieuws</h2>
+<article><h3>Hooggerechtshof erkent private orthodoxe bekeringen</h3><p>Het Hooggerechtshof oordeelde unaniem dat het ministerie van Binnenlandse Zaken bekeringen moet erkennen van de private orthodoxe rabbijnse rechtbank Ahavat HaGer van rabbijn Haim Amsalem. De zaak ging over een Filipijnse verzorgster die zich in 2018 bekeerde en jarenlang geen staatsburgerschap kreeg. De rechters bekritiseerden het ministerie voor het rekken van de procedure en legden de staat NIS 20.000 aan kosten op. De uitspraak geldt niet voor het huwelijk, dat onder het Opperrabbinaat valt.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/supreme-court-backs-private-orthodox-conversions-in-citizenship-dispute/">Times of Israel</a></p></article>
+<article><h3>Ted Cruz spreekt Vance tegen over band met Israël</h3><p>Op een Joodse leiderschapsconferentie in Manhattan zei senator Ted Cruz dat hij de verkiezingsuitslag niet ziet als mandaat om Israël los te laten. Daarmee spreekt hij vicepresident Vance tegen, die de Republikeinse verliezen bij de tussentijdse verkiezingen deels aan de band met Israël weet. Cruz waarschuwde voor antisemitisme van zowel links als rechts.</p><p class="bron">Bron: <a href="https://www.jta.org/2026/11/15/ny/ted-cruz-rejects-vp-vances-postelection-assessment-of-us-israel-ties">JTA</a></p></article>
+</section>
+
+<section><h2 class="blok">🌟 Positief Nieuws</h2>
+<article><h3>Voormalig gijzelaar Bilal Ziyadne getrouwd</h3><p>Bilal Ziyadne uit de bedoeïenenstad Rahat, die op 7 oktober 2023 met zijn vader, broer en zus werd ontvoerd uit kibboets Holit, trouwde vrijdag in het bijzijn van honderden gasten. Bilal en zijn zus werden in november 2023 vrijgelaten; zijn vader en broer overleefden de gevangenschap niet. Zijn broer Muhammad sprak van &ldquo;grote vreugde&rdquo;.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/a-great-joy-hundreds-celebrate-as-former-gaza-hostage-bilal-ziyadne-gets-married/">Times of Israel</a></p></article>
+<article><h3>Armeense keramiste zet eeuwenoude Jeruzalemse traditie voort</h3><p>De 24-jarige Patil Karakashian is de vierde generatie in het familieatelier in de christelijke wijk. Haar overgrootvader kwam in 1919 naar Jeruzalem om de tegels van de Rotskoepel te restaureren. Haar grootvader maakte de keramieken straatnaambordjes van de Oude Stad, die nog steeds de weg wijzen; burgemeester Teddy Kollek hielp hem na 1967 met de Hebreeuwse letters. Nu schildert zij zelf nieuwe bordjes.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/peoples-of-israel-patil-karakashian-jerusalems-4th-generation-armenian-ceramicist/">Times of Israel</a></p></article>
+<article><h3>Zwemmen voor de Dode Zee</h3><p>Zo&rsquo;n dertig zwemmers uit binnen- en buitenland zwommen ruim 5 kilometer over de Dode Zee, van Metzoke Dragot naar Mitzpe Shalem, met volgelaatsmaskers tegen het zout. Zo vroegen ze aandacht voor het krimpende meer, waarvan het waterpeil sinds de eerste tocht tien jaar geleden met zo&rsquo;n 11 meter is gedaald.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/5km-swim-across-dead-sea-draws-attention-to-saline-lakes-demise/">Times of Israel</a></p></article>
+</section>
+
+<footer>Samengesteld uit Times of Israel, Jerusalem Post, CTech/Calcalist, JTA, The Guardian e.a. Bij tegenstrijdige berichtgeving zijn bronnen vermeld.</footer>
+
+<script>
+(function () {
+  var editie = document.body.getAttribute('data-editie-datum');
+  if (!editie) return;
+
+  var nu = new Date();
+  var vandaag = nu.getFullYear() + '-' +
+                String(nu.getMonth() + 1).padStart(2, '0') + '-' +
+                String(nu.getDate()).padStart(2, '0');
+
+  var balk = document.getElementById('stale');
+  var knop = document.getElementById('refreshBtn');
+  var melding = document.getElementById('staleMelding');
+
+  var netGeprobeerd = false;
+  try {
+    netGeprobeerd = sessionStorage.getItem('nbRefresh') === '1';
+    sessionStorage.removeItem('nbRefresh');
+  } catch (e) {}
+
+  if (editie < vandaag) {
+    var d = editie.split('-');
+    var leesbaar = d[2] + '-' + d[1] + '-' + d[0];
+    document.getElementById('staleDatum').textContent = leesbaar;
+    balk.style.display = 'block';
+    if (netGeprobeerd && melding) {
+      melding.textContent = 'Opnieuw opgehaald: er is nog geen nieuwere editie gepubliceerd. ' +
+                            'De laatste blijft die van ' + leesbaar + '.';
+      melding.style.display = 'block';
+    }
+  } else if (netGeprobeerd && balk) {
+    balk.style.display = 'none';
+  }
+
+  if (knop) {
+    knop.addEventListener('click', function () {
+      knop.disabled = true;
+      knop.textContent = 'Bezig met ophalen\u2026';
+      if (melding) { melding.textContent = ''; melding.style.display = 'none'; }
+      try { sessionStorage.setItem('nbRefresh', '1'); } catch (e) {}
+      var url = location.pathname + '?v=' + Date.now();
+      setTimeout(function () { location.replace(url); }, 150);
+      setTimeout(function () { location.reload(); }, 2500);
+    });
+  }
+})();
+</script>
+<script>
+(function () {
+  var knop = document.getElementById('pdfBtn');
+  if (!knop) return;
+  knop.addEventListener('click', function () {
+    var titel = document.title;
+    var datum = document.body.getAttribute('data-editie-datum') || '';
+    if (datum) { document.title = 'Israel-Nieuwsbrief-' + datum; }
+    window.print();
+    setTimeout(function () { document.title = titel; }, 1000);
+  });
+})();
+</script>
+</body>
+</html>
