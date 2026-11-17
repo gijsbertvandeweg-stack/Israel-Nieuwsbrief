@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0038b8">
+<meta name="color-scheme" content="light">
+<meta name="apple-mobile-web-app-title" content="Israël Nieuwsbrief">
+<meta name="format-detection" content="telephone=no">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23fff'/%3E%3Crect y='8' width='64' height='7' fill='%230038b8'/%3E%3Crect y='49' width='64' height='7' fill='%230038b8'/%3E%3Cpath d='M32 20l10 17H22z' fill='none' stroke='%230038b8' stroke-width='4'/%3E%3Cpath d='M32 44L22 27h20z' fill='none' stroke='%230038b8' stroke-width='4'/%3E%3C/svg%3E">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Israël Nieuwsbrief – dinsdag 17 november 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'M PLUS 1p', 'Leelawadee UI', Leelawadee, Arial, sans-serif; max-width: 760px; margin: 0 auto; padding: 24px 20px; color: #1a1a2e; background: #fdfcf8; line-height: 1.6; }
+  header { border-bottom: 3px solid #0038b8; padding-bottom: 14px; margin-bottom: 24px; }
+  h1 { margin: 0; font-size: 1.9em; color: #0038b8; }
+  .datum { color: #666; font-size: 0.95em; margin-top: 4px; }
+  .intro { background: #eef3ff; border-left: 4px solid #0038b8; padding: 14px 18px; border-radius: 0 8px 8px 0; margin-bottom: 28px; }
+  .intro h2 { margin: 0 0 8px; font-size: 1.1em; color: #0038b8; }
+  section { margin-bottom: 32px; }
+  h2.blok { font-size: 1.35em; border-bottom: 2px solid #d9d4c5; padding-bottom: 6px; color: #22223b; }
+  article { margin-bottom: 18px; }
+  h3 { margin: 0 0 4px; font-size: 1.08em; }
+  p { margin: 0; }
+  .bron { font-size: 0.85em; color: #777; }
+  .bron a { color: #0038b8; text-decoration: none; }
+  .verssig { font-size: 0.8em; color: #999; margin-top: 6px; }
+  #stale { display: none; background: #fff4e5; border-left: 4px solid #d9822b; color: #7a4a12; padding: 12px 16px; border-radius: 0 8px 8px 0; margin-bottom: 20px; font-size: 0.92em; }
+  #stale strong { color: #b35c00; }
+  #stale button { margin-top: 8px; font: inherit; background: #0038b8; color: #fff; border: 0; border-radius: 6px; padding: 7px 14px; cursor: pointer; }
+  #staleMelding { display: none; margin-top: 8px; font-weight: 500; color: #7a4a12; }
+  #stale button:disabled { opacity: .6; cursor: default; }
+  .acties { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: -8px 0 26px; }
+  .acties button { font: inherit; font-size: 0.92em; background: #fff; color: #0038b8; border: 1.5px solid #0038b8; border-radius: 6px; padding: 8px 14px; cursor: pointer; }
+  .acties button:hover { background: #0038b8; color: #fff; }
+  .acties .hint { font-size: 0.8em; color: #999; }
+  footer { border-top: 1px solid #d9d4c5; margin-top: 30px; padding-top: 12px; font-size: 0.85em; color: #888; }
+
+
+/* --- Mobiel (iPhone) --- */
+html { -webkit-text-size-adjust: 100%; }
+body { overflow-wrap: break-word; }
+a { overflow-wrap: break-word; }
+button { min-height: 44px; touch-action: manipulation; }
+
+@media (max-width: 640px) {
+  body {
+    font-size: 17px;
+    padding: 16px max(16px, env(safe-area-inset-right)) calc(28px + env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+  }
+  h1 { font-size: 1.45em; line-height: 1.25; }
+  .datum { font-size: 0.9em; }
+  h2.blok { font-size: 1.18em; }
+  h3 { font-size: 1.03em; line-height: 1.35; }
+  .intro { padding: 12px 14px; }
+  section { margin-bottom: 26px; }
+  article { margin-bottom: 22px; }
+  .acties { flex-direction: column; align-items: stretch; margin: 0 0 24px; }
+  .acties button { width: 100%; padding: 13px 16px; font-size: 1em; }
+  .acties .hint { font-size: 0.78em; text-align: center; }
+  #stale button { width: 100%; padding: 13px 16px; }
+  .bron { font-size: 0.82em; }
+}
+
+@media print {
+  @page { margin: 16mm 14mm; }
+  body { background: #fff; max-width: none; margin: 0; padding: 0; font-size: 10.5pt; line-height: 1.45; }
+  #stale, .acties { display: none !important; }
+  header { border-bottom: 2px solid #0038b8; }
+  h1 { font-size: 1.5em; }
+  .intro { background: #fff; border-left: 3px solid #0038b8; }
+  a { color: #0038b8; text-decoration: none; }
+  article, .intro, footer { break-inside: avoid; page-break-inside: avoid; }
+  h2.blok { break-after: avoid; page-break-after: avoid; }
+}
+</style>
+</head>
+<body data-editie-datum="2026-11-17">
+<header>
+  <h1>🇮🇱 Israël Nieuwsbrief</h1>
+  <div class="datum">Dinsdag 17 november 2026 · Editie 98</div>
+  <div class="verssig">Bijgewerkt: 17-11-2026 05:42 UTC</div>
+</header>
+
+<div id="stale">
+  <strong>Let op: dit is niet de editie van vandaag.</strong><br>
+  Je leest de editie van <span id="staleDatum"></span>. De nieuwe editie is nog niet gepubliceerd,
+  of je telefoon toont een opgeslagen versie.
+  <div id="staleMelding"></div>
+  <button id="refreshBtn" type="button">Opnieuw ophalen</button>
+</div>
+
+<div class="acties">
+  <button id="pdfBtn" type="button">📄 Opslaan als pdf</button>
+  <span class="hint">Kies in het printvenster &lsquo;Bewaar als pdf&rsquo; &mdash; daarna kun je hem doorsturen.</span>
+</div>
+
+<div class="intro"><h2>In het kort</h2><p>Politie en procureur-generaal onderzoeken of het kantoor van Netanyahu het &lsquo;stemkoopschandaal&rsquo; rond Arabische kiezers op verkiezingsdag zelf in gang zette; een kopstuk van het Eisenkot-blok spreekt van &ldquo;een poging tot staatsgreep&rdquo; en ziet geen kans meer op een eenheidsregering. Vandaag stemt de Knesset over Matan Kahana als nieuwe voorzitter, terwijl Liberman als voorzitter van de defensiecommissie meteen de dienstplicht voor ultraorthodoxen agendeert. Iran sluit nucleaire inspecties uit zolang de oorlog duurt. Bij Jericho raakten twee Isra&euml;li&euml;rs en twee Palestijnen gewond bij een gewelddadig incident. Positief: een 2000 jaar oude Romeinse straat in Jeruzalem wordt rolstoeltoegankelijk.</p></div>
+
+<section><h2 class="blok">🏛️ Politiek</h2>
+<article><h3>Zette premierskantoor &lsquo;stemkoopschandaal&rsquo; zelf in scène?</h3><p>Volgens Channel 12 leverde Netanyahu&rsquo;s stafchef Ido Norden op 26 oktober de eerste aangifte aan die leidde tot de invallen en arrestaties van drie bedoe&iuml;enen op verkiezingsdag. Alle drie zijn inmiddels zonder aanklacht vrijgelaten; Likud gebruikte de zaak om certificering van de uitslag te blokkeren, zonder succes. Politie en procureur-generaal Baharav-Miara onderzoeken nu de rol van het premierskantoor. Netanyahu&rsquo;s kantoor ontkent elke verdere betrokkenheid en dreigt met een smaadzaak; Norden zegt slechts tips van een burger te hebben doorgegeven. Een hoge bron in het Eisenkot-blok noemde het tegenover Kan &ldquo;niets minder dan een poging tot staatsgreep&rdquo; en ziet geen kans meer op een eenheidsregering met Likud.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/police-said-to-probe-whether-pms-office-faked-arab-vote-buying-scandal-to-undermine-election/">Times of Israel</a> · <a href="https://www.timesofisrael.com/senior-eisenkot-bloc-official-said-to-see-no-chance-for-unity-government-after-pms-attempted-coup/">Times of Israel</a></p></article>
+<article><h3>Vandaag stemming over Knessetvoorzitter; Smotrich stelt voorwaarde</h3><p>Smotrich zegt dat zijn partij en Likud Matan Kahana (Yashar) willen steunen als nieuwe Knessetvoorzitter, mits hij geen vicevoorzitters benoemt uit partijen die Hamas niet als terreurorganisatie erkennen. Kahana wees dat direct af als &ldquo;onstaatsmanlijk&rdquo;. De Arrangementscommissie droeg intussen negen tijdelijke vicevoorzitters voor, onder wie Walid Taha (Ra&rsquo;am) en Ahmad Tibi. Nieuw benoemd commissievoorzitter Liberman (Buitenlandse Zaken en Defensie) wil meteen de dienstplichtwet voor ultraorthodoxen behandelen en de legertop, Mossad, Shin Bet en politie ontbieden; minister Katz waarschuwt tegen een &ldquo;politiek circus&rdquo;.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/smotrich-vows-to-back-kahana-for-knesset-speaker-only-if-arab-mks-not-made-deputies/">Times of Israel</a> · <a href="https://www.timesofisrael.com/liberman-appointed-head-of-knesset-defense-panel-vows-to-tackle-haredi-draft-issue/">Times of Israel</a></p></article>
+<article><h3>Rechtbank: ex-ICC-aanklager Khan moet NIS 25 miljoen betalen</h3><p>De rechtbank in Jeruzalem veroordeelde voormalig ICC-hoofdaanklager Karim Khan tot NIS 25 miljoen (ca. $7,7 miljoen) schadevergoeding plus NIS 2,5 miljoen kosten aan oud-gijzelaar Eitan Mor en de families van Avinatan Or en Omri Miran. De eisers, bijgestaan door Shurat HaDin, stelden dat zijn arrestatiebevelen tegen Netanyahu en Gallant Hamas legitimeerden. Khan reageerde niet op de zaak, waarna de rechter de eis volledig toewees. Of het vonnis ooit te innen is, is onduidelijk; Khan werd in juli 2026 ontslagen na beschuldigingen van seksueel wangedrag.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/jerusalem-court-orders-ex-icc-prosecutor-khan-to-pay-nis-25-million-to-former-hostages/">Times of Israel</a></p></article>
+</section>
+
+<section><h2 class="blok">⚔️ Oorlog &amp; Veiligheid</h2>
+<article><h3>Gewelddadig incident bij nieuwe buitenpost Jericho</h3><p>Volgens het leger ramden Palestijnen bij Jericho een auto met Isra&euml;li&euml;rs op weg naar een nieuwe buitenpost en vielen ze de inzittenden aan; twee Isra&euml;li&euml;rs raakten licht gewond. Daarna zouden de Isra&euml;li&euml;rs op stenengooiers hebben geschoten. Palestijnse bronnen spreken van kolonistenvuur in een wijk die kolonisten onlangs hebben ingenomen: een man en een vrouw raakten gewond, de vrouw volgens de Rode Halve Maan kritiek met een hoofdwond. Het leger zette wegblokkades op.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/two-israelis-lightly-hurt-in-suspected-terror-attack-while-heading-to-new-outpost-on-jerichos-outskirts/">Times of Israel</a> · <a href="https://www.timesofisrael.com/liveblog-november-17-2026/">Times of Israel liveblog</a></p></article>
+<article><h3>Iran: geen nucleaire inspecties zolang de oorlog duurt</h3><p>Vice-minister Kazem Gharibabadi zegt dat IAEA-inspecteurs de beschadigde atoominstallaties pas mogen bezoeken als de oorlog definitief voorbij is en aan Iraanse eisen is voldaan, zoals opheffing van sancties en vrijgave van tegoeden. Het IAEA kan niet bevestigen dat Iran geen nucleair materiaal heeft weggesluisd. Iraanse media meldden dat zes olietankers in de Straat van Hormuz in brand vlogen na mijnen of projectielen. CNN meldt op basis van Amerikaanse inlichtingen dat Iran plannen uitwerkt voor een mogelijke aanslag met een &lsquo;vuile bom&rsquo; in Washington; een aanslag zou niet op handen zijn.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/third-us-aircraft-carrier-arrives-in-mideast-as-iran-rules-out-nuclear-inspections/">Times of Israel</a> · <a href="https://www.timesofisrael.com/liveblog-november-17-2026/">Times of Israel liveblog</a></p></article>
+<article><h3>Zeldzame aanval in Libanese Beqaa-vallei</h3><p>De luchtmacht bombardeerde bij Janta, vlak bij de Syrische grens, een wapentransport voor Hezbollah; het is de eerste aanval in dat gebied in maanden. In Shebaa hielden troepen twee Libanezen aan van een met Hezbollah verbonden militie. Washington onderzoekt een nieuwe vredesmacht van maximaal honderd militairen ter vervanging van UNIFIL, waarvan het mandaat op 31 december afloopt; VN-ambassadeur Mike Waltz sprak erover met president Aoun.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/israel-targets-arms-shipment-in-rare-strike-in-lebanons-eastern-beqaa-valley/">Times of Israel</a></p></article>
+<article><h3>Guardian: leger zet miljoenen foto&rsquo;s van Palestijnen in Amazon-gezichtsherkenning</h3><p>Volgens The Guardian heeft Isra&euml;l zo&rsquo;n 3,5 miljoen foto&rsquo;s van Palestijnen uit Gaza ge&uuml;pload naar Amazons gezichtsherkenningsdienst Rekognition, opgeslagen in een datacenter bij Tel Aviv onder het Nimbus-contract. Dat zou sinds begin 2024 gebeuren, onder meer om gijzelaars en verdachte terroristen te identificeren. Het leger geeft geen commentaar op &ldquo;operationele diensten&rdquo;; AWS spreekt van &ldquo;gewoon klantcontact&rdquo;.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/report-idf-uploaded-millions-of-photos-of-palestinians-to-amazons-ai-face-scanner-tech/">Times of Israel</a></p></article>
+<article><h3>VN-ambassadeurs bezoeken Hamas-tunnel en Kfar Aza</h3><p>Zo&rsquo;n veertig VN-ambassadeurs, onder meer uit Costa Rica, Paraguay, Griekenland en Georgi&euml;, bezochten met VN-gezant Danny Danon een Hamas-tunnel in Gaza en kibboets Kfar Aza. Danon wil zo de &ldquo;wintercampagne&rdquo; pareren die Isra&euml;l de schuld geeft van de humanitaire nood. De delegatie bezocht eerder ook Auschwitz-Birkenau.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/delegation-of-un-ambassadors-tours-hamas-tunnel-visits-kibbutz-ravaged-by-oct-7/">Times of Israel</a></p></article>
+</section>
+
+<section><h2 class="blok">💻 Techniek &amp; Economie</h2>
+<article><h3>Hightech-arbeidsmarkt gekanteld: meer zoekers dan vacatures</h3><p>Volgens de Isra&euml;lische arbeidsbemiddeling zakte het aantal vacatures per werkzoekende van 7,2 in februari 2022 naar 0,95 in september 2026. In de ICT-sector steeg het aantal werkzoekenden in drie jaar met 58% tot 10.300, terwijl het aantal vacatures maar 10% groeide tot 9.700. Zo&rsquo;n 8.900 softwareontwikkelaars zoeken werk, tegen 5.600 in 2023.</p><p class="bron">Bron: <a href="https://www.calcalistech.com/ctechnews/article/eh2q9m522">CTech/Calcalist</a></p></article>
+<article><h3>Ashkelon krijgt halfgeleidercomplex van $470 miljoen</h3><p>Investeringsgroep Awz en Nadav B. Logistics gaan in Ashkelon zo&rsquo;n 70.000 m&sup2; aan faciliteiten bouwen voor samengestelde halfgeleiders, met toepassingen in AI, quantumcomputing, communicatie en defensie. Het project maakt deel uit van een na 7 oktober aangekondigd investeringsplan van NIS 5 miljard. De bouw begint naar verwachting over ongeveer twee jaar.</p><p class="bron">Bron: <a href="https://www.calcalistech.com/ctechnews/article/qf4igwubd">CTech/Calcalist</a></p></article>
+<article><h3>P-Cure en MD Anderson werken aan nieuwe kankerbestraling</h3><p>Het Isra&euml;lische P-Cure gaat met het Amerikaanse MD Anderson Cancer Center een compact systeem ontwikkelen dat protonen- en heliumionentherapie combineert. Heliumionentherapie is nu wereldwijd maar in &eacute;&eacute;n centrum in Duitsland beschikbaar. In het Hadassah-ziekenhuis zijn sinds 2023 bijna tweehonderd pati&euml;nten met het P-Cure-systeem behandeld.</p><p class="bron">Bron: <a href="https://www.calcalistech.com/ctechnews/article/9kcxj1hvo">CTech/Calcalist</a></p></article>
+</section>
+
+<section><h2 class="blok">✡️ Religieus Nieuws</h2>
+<article><h3>Reformsynagoge in Jeruzalem wordt toetssteen voor pluralisme</h3><p>De reformsynagoge Kol HaNeshama in de wijk Baka kreeg de afgelopen tijd te maken met inbraken, vernielingen en intimidatie, ook gericht tegen haar LHBTQ-symbolen. Rabbijn Oded Mazor en oprichter Levi Weiman-Kelman wijzen op een verhardend klimaat en de rol van politici. Opvallend is de brede steun: ook orthodoxe rabbijnen en Masorti-gemeenten betuigden solidariteit.</p><p class="bron">Bron: <a href="https://www.jta.org/2026/11/16/israel/how-one-reform-synagogue-became-a-test-of-religious-pluralism-in-jerusalem">JTA</a></p></article>
+<article><h3>Feestelijke cheques voor ultraorthodoxe dienstweigeraars</h3><p>Op een bijeenkomst in Bnei Brak deelde de inzamelingsorganisatie Kela 1000 in totaal NIS 147.000 uit aan vijftien jesjivastudenten die vastzaten wegens dienstweigering: NIS 1.000 per dag in detentie. Een jesjivahoofd noemde de gevangenschap &ldquo;een eremedaille&rdquo;. De actie valt midden in het politieke gevecht over de dienstplicht en een groot personeelstekort bij het leger.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/nis-147000-distributed-to-15-haredi-draft-evaders-at-festive-ceremony-in-bnei-brak/">Times of Israel</a></p></article>
+</section>
+
+<section><h2 class="blok">🌟 Positief Nieuws</h2>
+<article><h3>Romeinse straat in Oude Stad wordt rolstoeltoegankelijk</h3><p>Een 2000 jaar oude Romeinse straat in de christelijke wijk van Jeruzalem wordt heringericht voor rolstoelen en kinderwagens. Zo&rsquo;n vijftig oude plaveistenen uit circa 135 na Christus worden onder toezicht van de Oudheidkundige Dienst verplaatst. Het project van NIS 80 miljoen heeft sinds 2019 al zo&rsquo;n zes kilometer steegjes toegankelijk gemaakt voor 40.000 bewoners en miljoenen bezoekers.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/jerusalem-renovation-to-make-2000-year-old-roman-street-wheelchair-accessible/">Times of Israel</a></p></article>
+<article><h3>AI-leerplatform van reservist bereikt tienduizenden kinderen</h3><p>Reservist en AI-architect Moti Malka bouwde YuviLab om kinderen tijdens de oorlogsonderbrekingen creatief te laten leren. Het gratis platform, ontwikkeld met steun van Microsoft, wordt nu in tientallen gemeenten gebruikt, en het onderwijsministerie koos de tool Spark voor het Engelse deel van een landelijk programma voor gepersonaliseerd leren. Zo&rsquo;n duizend kinderen volgden al de Yuvi Academy over werken met AI.</p><p class="bron">Bron: <a href="https://www.jta.org/2026/11/16/israel/a-wartime-hack-becomes-an-educational-tool-meet-yuvi-the-ai-platform-that-encourages-children-to-think">JTA</a></p></article>
+</section>
+
+<footer>Samengesteld uit Times of Israel, CTech/Calcalist, JTA, The Guardian, CNN en Channel 12 (via Times of Israel). Bij tegenstrijdige berichtgeving zijn beide lezingen vermeld.</footer>
+
+<script>
+(function () {
+  var editie = document.body.getAttribute('data-editie-datum');
+  if (!editie) return;
+
+  var nu = new Date();
+  var vandaag = nu.getFullYear() + '-' +
+                String(nu.getMonth() + 1).padStart(2, '0') + '-' +
+                String(nu.getDate()).padStart(2, '0');
+
+  var balk = document.getElementById('stale');
+  var knop = document.getElementById('refreshBtn');
+  var melding = document.getElementById('staleMelding');
+
+  var netGeprobeerd = false;
+  try {
+    netGeprobeerd = sessionStorage.getItem('nbRefresh') === '1';
+    sessionStorage.removeItem('nbRefresh');
+  } catch (e) {}
+
+  if (editie < vandaag) {
+    var d = editie.split('-');
+    var leesbaar = d[2] + '-' + d[1] + '-' + d[0];
+    document.getElementById('staleDatum').textContent = leesbaar;
+    balk.style.display = 'block';
+    if (netGeprobeerd && melding) {
+      melding.textContent = 'Opnieuw opgehaald: er is nog geen nieuwere editie gepubliceerd. ' +
+                            'De laatste blijft die van ' + leesbaar + '.';
+      melding.style.display = 'block';
+    }
+  } else if (netGeprobeerd && balk) {
+    balk.style.display = 'none';
+  }
+
+  if (knop) {
+    knop.addEventListener('click', function () {
+      knop.disabled = true;
+      knop.textContent = 'Bezig met ophalen\u2026';
+      if (melding) { melding.textContent = ''; melding.style.display = 'none'; }
+      try { sessionStorage.setItem('nbRefresh', '1'); } catch (e) {}
+      var url = location.pathname + '?v=' + Date.now();
+      setTimeout(function () { location.replace(url); }, 150);
+      setTimeout(function () { location.reload(); }, 2500);
+    });
+  }
+})();
+</script>
+<script>
+(function () {
+  var knop = document.getElementById('pdfBtn');
+  if (!knop) return;
+  knop.addEventListener('click', function () {
+    var titel = document.title;
+    var datum = document.body.getAttribute('data-editie-datum') || '';
+    if (datum) { document.title = 'Israel-Nieuwsbrief-' + datum; }
+    window.print();
+    setTimeout(function () { document.title = titel; }, 1000);
+  });
+})();
+</script>
+</body>
+</html>
