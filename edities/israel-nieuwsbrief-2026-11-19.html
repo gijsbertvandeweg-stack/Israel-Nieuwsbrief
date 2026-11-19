@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0038b8">
+<meta name="color-scheme" content="light">
+<meta name="apple-mobile-web-app-title" content="Israël Nieuwsbrief">
+<meta name="format-detection" content="telephone=no">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23fff'/%3E%3Crect y='8' width='64' height='7' fill='%230038b8'/%3E%3Crect y='49' width='64' height='7' fill='%230038b8'/%3E%3Cpath d='M32 20l10 17H22z' fill='none' stroke='%230038b8' stroke-width='4'/%3E%3Cpath d='M32 44L22 27h20z' fill='none' stroke='%230038b8' stroke-width='4'/%3E%3C/svg%3E">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Israël Nieuwsbrief – donderdag 19 november 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'M PLUS 1p', 'Leelawadee UI', Leelawadee, Arial, sans-serif; max-width: 760px; margin: 0 auto; padding: 24px 20px; color: #1a1a2e; background: #fdfcf8; line-height: 1.6; }
+  header { border-bottom: 3px solid #0038b8; padding-bottom: 14px; margin-bottom: 24px; }
+  h1 { margin: 0; font-size: 1.9em; color: #0038b8; }
+  .datum { color: #666; font-size: 0.95em; margin-top: 4px; }
+  .intro { background: #eef3ff; border-left: 4px solid #0038b8; padding: 14px 18px; border-radius: 0 8px 8px 0; margin-bottom: 28px; }
+  .intro h2 { margin: 0 0 8px; font-size: 1.1em; color: #0038b8; }
+  section { margin-bottom: 32px; }
+  h2.blok { font-size: 1.35em; border-bottom: 2px solid #d9d4c5; padding-bottom: 6px; color: #22223b; }
+  article { margin-bottom: 18px; }
+  h3 { margin: 0 0 4px; font-size: 1.08em; }
+  p { margin: 0; }
+  .bron { font-size: 0.85em; color: #777; }
+  .bron a { color: #0038b8; text-decoration: none; }
+  .verssig { font-size: 0.8em; color: #999; margin-top: 6px; }
+  #stale { display: none; background: #fff4e5; border-left: 4px solid #d9822b; color: #7a4a12; padding: 12px 16px; border-radius: 0 8px 8px 0; margin-bottom: 20px; font-size: 0.92em; }
+  #stale strong { color: #b35c00; }
+  #stale button { margin-top: 8px; font: inherit; background: #0038b8; color: #fff; border: 0; border-radius: 6px; padding: 7px 14px; cursor: pointer; }
+  #staleMelding { display: none; margin-top: 8px; font-weight: 500; color: #7a4a12; }
+  #stale button:disabled { opacity: .6; cursor: default; }
+  .acties { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: -8px 0 26px; }
+  .acties button { font: inherit; font-size: 0.92em; background: #fff; color: #0038b8; border: 1.5px solid #0038b8; border-radius: 6px; padding: 8px 14px; cursor: pointer; }
+  .acties button:hover { background: #0038b8; color: #fff; }
+  .acties .hint { font-size: 0.8em; color: #999; }
+  footer { border-top: 1px solid #d9d4c5; margin-top: 30px; padding-top: 12px; font-size: 0.85em; color: #888; }
+
+
+/* --- Mobiel (iPhone) --- */
+html { -webkit-text-size-adjust: 100%; }
+body { overflow-wrap: break-word; }
+a { overflow-wrap: break-word; }
+button { min-height: 44px; touch-action: manipulation; }
+
+@media (max-width: 640px) {
+  body {
+    font-size: 17px;
+    padding: 16px max(16px, env(safe-area-inset-right)) calc(28px + env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+  }
+  h1 { font-size: 1.45em; line-height: 1.25; }
+  .datum { font-size: 0.9em; }
+  h2.blok { font-size: 1.18em; }
+  h3 { font-size: 1.03em; line-height: 1.35; }
+  .intro { padding: 12px 14px; }
+  section { margin-bottom: 26px; }
+  article { margin-bottom: 22px; }
+  .acties { flex-direction: column; align-items: stretch; margin: 0 0 24px; }
+  .acties button { width: 100%; padding: 13px 16px; font-size: 1em; }
+  .acties .hint { font-size: 0.78em; text-align: center; }
+  #stale button { width: 100%; padding: 13px 16px; }
+  .bron { font-size: 0.82em; }
+}
+
+@media print {
+  @page { margin: 16mm 14mm; }
+  body { background: #fff; max-width: none; margin: 0; padding: 0; font-size: 10.5pt; line-height: 1.45; }
+  #stale, .acties { display: none !important; }
+  header { border-bottom: 2px solid #0038b8; }
+  h1 { font-size: 1.5em; }
+  .intro { background: #fff; border-left: 3px solid #0038b8; }
+  a { color: #0038b8; text-decoration: none; }
+  article, .intro, footer { break-inside: avoid; page-break-inside: avoid; }
+  h2.blok { break-after: avoid; page-break-after: avoid; }
+}
+</style>
+</head>
+<body data-editie-datum="2026-11-19">
+<header>
+  <h1>🇮🇱 Israël Nieuwsbrief</h1>
+  <div class="datum">Donderdag 19 november 2026 · Editie 100</div>
+  <div class="verssig">Bijgewerkt: 19-11-2026 05:39 UTC</div>
+</header>
+
+<div id="stale">
+  <strong>Let op: dit is niet de editie van vandaag.</strong><br>
+  Je leest de editie van <span id="staleDatum"></span>. De nieuwe editie is nog niet gepubliceerd,
+  of je telefoon toont een opgeslagen versie.
+  <div id="staleMelding"></div>
+  <button id="refreshBtn" type="button">Opnieuw ophalen</button>
+</div>
+
+<div class="acties">
+  <button id="pdfBtn" type="button">📄 Opslaan als pdf</button>
+  <span class="hint">Kies in het printvenster &lsquo;Bewaar als pdf&rsquo; &mdash; daarna kun je hem doorsturen.</span>
+</div>
+
+<div class="intro"><h2>In het kort</h2><p>Israël stuurde voor het eerst sinds het staakt-het-vuren van oktober 2025 tanks naar Hamas-gebied in Gaza; Hamas spreekt van een gevaarlijke escalatie. Netanyahu dringt in Washington aan op een vier- tot zevendaagse luchtcampagne tegen Iran, maar Trump lijkt te willen wachten tot na 1 januari. In de Knesset begon het Eisenkot-blok met de eerste wetsvoorstellen om de justitiële hervorming terug te draaien, en na Groot-Brittannië sanctioneert ook Australië kolonisten. In Kafr Qasim raakten acht mensen gewond door een Joodse automobilist, en in het nabijgelegen Dahi werd een moskee in brand gestoken. Techniek: Amazon staat op het punt Decart over te nemen voor maximaal $7,5 miljard.</p></div>
+
+<section><h2 class="blok">🏛️ Politiek</h2>
+<article><h3>Wetgeving Eisenkot-blok: eerste lezing over rechterscommissie en Openbaar Ministerie</h3><p>Na de verkiezing van Kahana tot voorzitter bracht het Eisenkot-blok de eerste voorstellen voor het terugdraaien van de justitiële hervorming in de Knesset. Volgens N12 (via Israelnieuws) keurde de Knesset in eerste lezing onder meer de wijziging van de samenstelling van de rechterselectiecommissie goed, evenals een voorstel om de wet te schrappen die de positie van de procureur-generaal verzwakte. Verenigd Torah-Jodendom werd verwacht Netanyahu te steunen en tegen het intrekken te stemmen; de berichtgeving over wat precies is aangenomen of afgewezen is nog niet eenduidig. Opvallend: Likud-parlementariër Ofir Katz diende zelf tegenvoorstellen in.</p><p class="bron">Bron: <a href="https://www.israelnieuws.nl/post/n12news-het-veranderingsblok-in-de-eerste-wetgeving-zijn-de-voorstellen-die-aan-de-plenaire-vergade">Israelnieuws.nl</a></p></article>
+<article><h3>Strafzaak tegen Gotliv komt terug nu immuniteit vervalt</h3><p>Procureur-generaal Gali Baharav-Miara zou de aanklacht tegen Likud-parlementariër Tally Gotliv opnieuw indienen zodra er een nieuwe Knessetcommissie is. Gotliv werd in mei vervolgd omdat ze in 2024 de partner van protestleider Shikma Bressler publiekelijk als Shin Bet-medewerker aanwees. De immuniteit die de vorige commissie haar gaf, verviel met het einde van de vorige Knesset en wordt naar verwachting niet hernieuwd nu het Netanyahu-blok geen meerderheid meer heeft.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/ag-reportedly-expected-to-refile-indictment-against-gotliv-for-exposing-shin-bet-officer/">Times of Israel</a></p></article>
+<article><h3>Australië sanctioneert kolonisten en nederzettingsorganisaties</h3><p>Een dag na Groot-Brittannië legde ook Australië sancties op aan drie personen, onder wie kolonistenleider Daniella Weiss, en vier organisaties die verband houden met nederzettingsuitbreiding, waaronder Amana en de Nachala-beweging. Voor het eerst vallen ook bouwbedrijven eronder. Minister Penny Wong zegt de mogelijkheid van een tweestatenoplossing te willen beschermen; overtreding kan tot tien jaar cel leiden.</p><p class="bron">Bron: <a href="https://www.jta.org/2026/11/18/israel/australia-announces-new-sanctions-on-west-bank-settlers-and-organizations">JTA</a></p></article>
+<article><h3>Herzog: “breek de botten van criminelen” in strijd tegen geweld in Arabische sector</h3><p>President Herzog bezocht Kafr Manda, waar een vrouw (51) door een granaataanslag op een banketbakkerij werd gedood, en eiste een harde aanpak. Volgens de Abraham Initiatives was zij het 200e geweldsslachtoffer in de Arabische samenleving dit jaar; kort daarna werd in Taibe nog een man gedood. De organisatie verwijt minister Ben-Gvir het oplopende geweld te negeren.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/herzog-calling-to-fight-arab-crime-says-law-enforcement-must-break-criminals-bones/">Times of Israel</a> · <a href="https://www.jpost.com/israel-news/crime-in-israel/article-915350">Jerusalem Post</a></p></article>
+<article><h3>Joodse automobilist rijdt acht mensen aan in Kafr Qasim</h3><p>Een Joodse bestuurder reed woensdagavond op vier plekken in de Arabische stad Kafr Qasim in op voetgangers; acht mensen raakten gewond, drie matig. De politie arresteerde de man en onderzoekt of hij onder invloed was en of het opzet was. Inwoners en parlementslid Ahmed Tibi (Gezamenlijke Lijst) wijzen op anti-Arabische hetze door politici en media; vannacht werd bovendien een moskee in het nabijgelegen Dahi in brand gestoken, met Hebreeuwse leuzen die op een kolonistenaanval wijzen. De politie onderzoekt beide zaken.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/kafr-qasim-residents-say-jewish-car-rammer-influenced-by-politicians-anti-arab-rhetoric/">Times of Israel</a> · <a href="https://www.timesofisrael.com/liveblog_entry/police-probing-northern-israel-mosque-fire-amid-suspicions-of-settler-linked-attack/">Times of Israel (liveblog)</a> · <a href="https://www.jpost.com/israel-news/article-915366">Jerusalem Post</a></p></article>
+</section>
+<section><h2 class="blok">⚔️ Oorlog &amp; Veiligheid</h2>
+<article><h3>Israël stuurt voor het eerst sinds het staakt-het-vuren tanks naar Hamas-gebied in Gaza</h3><p>Het Israëlische leger rukte woensdag met tanks op in het centrum van Gaza, ten westen van de “Gele Lijn” en buiten het door Israël gecontroleerde gebied, onder meer langs de Salah a-Din-weg bij Nuseirat. Het doel: Hamas-infrastructuur uitschakelen en de druk opvoeren zodat Hamas concessies doet over ontwapening; Israël zegt dat Hamas zich hergroepeert en herbewapent. Hamas spreekt van een gevaarlijke escalatie en een flagrante schending van het door de VS bemiddelde staakt-het-vuren van oktober 2025.</p><p class="bron">Bron: <a href="https://www.jpost.com/israel-news/defense-news/article-915349">Jerusalem Post</a></p></article>
+<article><h3>Trump overweegt nieuw offensief tegen Iran; Netanyahu pleit voor 4 tot 7 dagen luchtaanvallen</h3><p>Volgens The New York Times en Axios stuurde Netanyahu de Mossad-chef vorige week naar Washington met inlichtingen dat Iran werkt aan chemische wapens, om de VS te winnen voor een Israëlische luchtcampagne van vier tot zeven dagen. Binnen de Amerikaanse regering zouden sommigen de informatie “agenda-gedreven” vinden. Trump zegt dat er een “aanwijzing” is dat Iran naar gas en biologische wapens kijkt, maar liet doorschemeren dat een aanval niet direct komt: “we zien wel wat er na 1 januari gebeurt”. Vorige week noemde hij nieuwe aanvallen nog “vrij onwaarschijnlijk”.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/liveblog_entry/trump-said-weighing-another-iran-offensive-as-netanyahu-pushes-a-4-to-7-day-campaign/">Times of Israel (liveblog)</a> · <a href="https://www.timesofisrael.com/liveblog_entry/trump-claims-indication-that-iran-pursuing-biological-weapons/">Times of Israel (Trump)</a> · <a href="https://www.ynetnews.com/article/bjiti0irze">Ynet</a></p></article>
+<article><h3>VS-inlichtingenchef: Iraanse dreiging tegen Amerikanen “aanzienlijk toegenomen”</h3><p>Jay Clayton, de Amerikaanse directeur van nationale inlichtingen, zegt dat Iraanse plannen tegen Amerikaanse burgers een gevorderd stadium hebben bereikt. Het Amerikaanse leger waarschuwt bovendien schepen te zullen onderscheppen die de blokkade van Iraanse havens omzeilen via overslag op zee. Admiraal Brad Cooper van CENTCOM sprak in Israël met de top van de veiligheidsdiensten, terwijl Israël volgens berichten overweegt opnieuw militair op te treden.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/american-intel-chief-says-iranian-threats-to-citizens-have-substantially-increased/">Times of Israel</a></p></article>
+<article><h3>Houthi’s beschieten Riyad; Saoedi-Arabië bereidt zich voor op lange oorlog</h3><p>In de Saoedische hoofdstad was donderdag een luide knal te horen na een Houthi-raketdreiging; volgens de door Saoedi-Arabië geleide coalitie viel puin neer en was er materiële schade. De Houthi’s claimen aanvallen op de internationale luchthaven en een financieel centrum in Riyad; Saoedische vliegtuigen bombardeerden Sanaa. Volgens Times of Israel bereidt Riyad zich voor op een oorlog die tot ver in 2027 kan duren.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/liveblog_entry/houthi-missile-threat-towards-riyadh-causes-damage-saudi-led-coalition-says/">Times of Israel (liveblog)</a> · <a href="https://www.timesofisrael.com/saudi-arabia-said-readying-for-war-against-yemens-houthis-to-last-well-into-2027/">Times of Israel</a></p></article>
+<article><h3>Israëlische grenspolitie arresteert twee Fatah-activisten</h3><p>Agenten van de Grenspolitie hielden in een undercoveractie op de Westelijke Jordaanoever twee Fatah-activisten aan. Daarnaast sloopten het leger en COGAT tientallen illegale bouwwerken in Gebied C, onder meer nabij Hebron.</p><p class="bron">Bron: <a href="https://www.jpost.com/israel-news/article-915389">Jerusalem Post</a> · <a href="https://www.jpost.com/israel-news/defense-news/article-915339">Jerusalem Post (sloop)</a></p></article>
+</section>
+<section><h2 class="blok">💻 Techniek &amp; Economie</h2>
+<article><h3>Amazon bijna rond met overname van Decart voor maximaal $7,5 miljard</h3><p>Amazon staat volgens CTech op het punt de Israëlische AI-startup Decart over te nemen voor maximaal 7,5 miljard dollar, deels in contanten, aandelen en uitgestelde betalingen. De oprichters Dean en Orian Leitersdorf en Moshe Shalev blijven vijf jaar bij Amazon. Eerder voerde Anthropic gesprekken voor 6 miljard dollar, maar die werden in september afgebroken. Decart maakt software voor het wisselen tussen AI-chips en interactieve 3D-wereldmodellen.</p><p class="bron">Bron: <a href="https://www.calcalistech.com/ctechnews/article/uckadwd7r">CTech</a></p></article>
+<article><h3>Palo Alto Networks stijgt na cijfers en AI-overname van $4,5 miljard</h3><p>Het cybersecuritybedrijf, dat eerder het Israëlische CyberArk overnam, boekte betere cijfers dan verwacht en kondigde een overname van 4,5 miljard dollar op AI-gebied aan; het aandeel steeg. CyberArk-oprichter Udi Mokady zegt dat het bedrijf nooit wilde verkopen, “maar Palo Alto bleef zijn bod verhogen”.</p><p class="bron">Bron: <a href="https://www.calcalistech.com/ctechnews/article/8eqgzc6t6">CTech</a> · <a href="https://www.calcalistech.com/ctechnews/article/eivt8eggx">CTech (CyberArk)</a></p></article>
+<article><h3>Nvidia’s Israëlische netwerkdivisie draait $21 miljard per kwartaal</h3><p>Het in 2019 voor 6,9 miljard dollar gekochte Mellanox genereert volgens CTech nu ruim drie keer de aankoopprijs in één kwartaal, grotendeels met ontwikkeling in Israël. Tegelijk hangt er onzekerheid: Nvidia’s voorzitter sloot een terugkeer van de afgetreden topman Jensen Huang uit na een onderzoek naar persoonlijk gedrag, terwijl de omzet 103% steeg tot $116 miljard. Analisten waarschuwen voor een groeiend “Nvidia-risico” voor de Israëlische economie.</p><p class="bron">Bron: <a href="https://www.calcalistech.com/ctechnews/article/ii50dry6n">CTech</a> · <a href="https://www.calcalistech.com/ctechnews/article/rkw00qlcrgg">CTech (Nvidia)</a> · <a href="https://www.timesofisrael.com/amid-scandal-nvidias-israel-networking-business-tops-21-billion-as-revenue-doubles/">Times of Israel</a> · <a href="https://www.calcalistech.com/ctechnews/article/jj9klwr9d">CTech (risico)</a></p></article>
+<article><h3>Elbit: luchtgebaseerde lasers naderen productie; Zim wint $830 miljoen</h3><p>Elbit streeft ernaar de helikoptergebonden laser “Sting” eerder gereed te hebben dan de pod-versie XCalibur voor gevechtsvliegtuigen; de divisie ISTAR en EW groeide 32%. Elbit boekte 17% meer omzet in het derde kwartaal. Rederij Zim meldde een winst van 830 miljoen dollar terwijl Hapag-Lloyd zich opmaakt voor een nieuwe overnameaanvraag; Israëlische inflatie daalde naar 1,1%.</p><p class="bron">Bron: <a href="https://www.calcalistech.com/ctechnews/article/e006t53ti">CTech (Elbit)</a> · <a href="https://www.calcalistech.com/ctechnews/article/67hgymcue">CTech (Zim)</a> · <a href="https://www.calcalistech.com/ctechnews/article/w7hqdh5of">CTech (inflatie)</a></p></article>
+</section>
+<section><h2 class="blok">✡️ Religieus Nieuws</h2>
+<article><h3>Mamdani verdedigt kritische verklaring over 7 oktober</h3><p>De burgemeester van New York, Zohran Mamdani, verdedigde op de DealBook-top van de New York Times zijn verklaring bij de 7-oktoberherdenking, die grotendeels uit kritiek op Israël bestond en in de Joodse gemeenschap voor ophef zorgde. Hij zegt “ruimte te willen om iedereen te rouwen” en noemt 7 oktober een oorlogsmisdaad, maar ook een dag die als rechtvaardiging voor wat volgde is gebruikt. Hij beschuldigt Israël van genocide; internationale rechtbanken hebben daar nog geen uitspraak over gedaan.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/liveblog_entry/mamdani-defends-his-anti-israel-oct-7-statement-as-a-politics-of-universality/">Times of Israel (liveblog)</a></p></article>
+<article><h3>Demonstratie in New York tegen komst Yoav Gallant</h3><p>Pro-Palestijnse activisten demonstreerden bij Penn Station tegen een optreden van oud-minister van Defensie Yoav Gallant, tegen wie het Internationaal Strafhof een arrestatiebevel heeft uitgevaardigd. Ze eisten dat de Amerikaanse overheid hem arresteert. Er waren ook tegendemonstranten; er vielen geen arrestaties.</p><p class="bron">Bron: <a href="https://www.jta.org/2026/11/19/ny/pro-palestinian-activists-protest-the-arrival-of-yoav-gallant-in-nyc">JTA</a></p></article>
+<article><h3>Italië neemt antisemitismewet aan te midden van debat over kritiek op Israël</h3><p>Het Italiaanse parlement nam een wet tegen antisemitisme aan, terwijl een discussie oplaait over waar legitieme kritiek op Israël overgaat in antisemitisme.</p><p class="bron">Bron: <a href="https://www.jta.org/2026/11/18/global/italy-passes-antisemitism-law-amid-flaring-debate-over-criticizing-israel">JTA</a></p></article>
+<article><h3>Dak van synagoge in Florida stort in door zware regenval</h3><p>Door een slow-moving stormsysteem in Zuid-Florida stortte het dak van Temple Sinai in Hollywood in; er vielen geen gewonden. De stad riep de noodtoestand uit na tot circa 30 cm regen in 24 uur.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/liveblog_entry/heavy-rains-flood-roads-collapse-roof-of-synagogue-in-south-florida/">Times of Israel (liveblog)</a></p></article>
+</section>
+<section><h2 class="blok">🌟 Positief Nieuws</h2>
+<article><h3>Ministerie van Gezondheid wil Israëlische artsen terughalen na opleiding in het buitenland</h3><p>Het ministerie lanceert een initiatief om artsen die een fellowship in het buitenland afronden aan te moedigen terug te keren. Het gaat volgens het ministerie niet alleen om stimuleren, maar ook om voorwaarden scheppen waarin ze hun opgedane kennis kunnen inzetten.</p><p class="bron">Bron: <a href="https://www.jpost.com/israel-news/article-915394">Jerusalem Post</a></p></article>
+<article><h3>Hapoel Jerusalem blijft ongeslagen in EuroCup</h3><p>Hapoel Jerusalem versloeg Rostock met 91-80 en staat 8-0 in de EuroCup; Kenny Lofton Jr. scoorde 29 punten. Hapoel Tel Aviv brak een reeks nederlagen in de Euroleague, terwijl Maccabi Tel Aviv na verlenging nipt verloor van Olympiacos.</p><p class="bron">Bron: <a href="https://www.jpost.com/israel-news/sports/article-915359">Jerusalem Post</a></p></article>
+</section>
+
+<script>
+(function () {
+  var editie = document.body.getAttribute('data-editie-datum');
+  if (!editie) return;
+
+  var nu = new Date();
+  var vandaag = nu.getFullYear() + '-' +
+                String(nu.getMonth() + 1).padStart(2, '0') + '-' +
+                String(nu.getDate()).padStart(2, '0');
+
+  var balk = document.getElementById('stale');
+  var knop = document.getElementById('refreshBtn');
+  var melding = document.getElementById('staleMelding');
+
+  var netGeprobeerd = false;
+  try {
+    netGeprobeerd = sessionStorage.getItem('nbRefresh') === '1';
+    sessionStorage.removeItem('nbRefresh');
+  } catch (e) {}
+
+  if (editie < vandaag) {
+    var d = editie.split('-');
+    var leesbaar = d[2] + '-' + d[1] + '-' + d[0];
+    document.getElementById('staleDatum').textContent = leesbaar;
+    balk.style.display = 'block';
+    if (netGeprobeerd && melding) {
+      melding.textContent = 'Opnieuw opgehaald: er is nog geen nieuwere editie gepubliceerd. ' +
+                            'De laatste blijft die van ' + leesbaar + '.';
+      melding.style.display = 'block';
+    }
+  } else if (netGeprobeerd && balk) {
+    balk.style.display = 'none';
+  }
+
+  if (knop) {
+    knop.addEventListener('click', function () {
+      knop.disabled = true;
+      knop.textContent = 'Bezig met ophalen\u2026';
+      if (melding) { melding.textContent = ''; melding.style.display = 'none'; }
+      try { sessionStorage.setItem('nbRefresh', '1'); } catch (e) {}
+      var url = location.pathname + '?v=' + Date.now();
+      setTimeout(function () { location.replace(url); }, 150);
+      setTimeout(function () { location.reload(); }, 2500);
+    });
+  }
+})();
+</script>
+<script>
+(function () {
+  var knop = document.getElementById('pdfBtn');
+  if (!knop) return;
+  knop.addEventListener('click', function () {
+    var titel = document.title;
+    var datum = document.body.getAttribute('data-editie-datum') || '';
+    if (datum) { document.title = 'Israel-Nieuwsbrief-' + datum; }
+    window.print();
+    setTimeout(function () { document.title = titel; }, 1000);
+  });
+})();
+</script>
+</body>
+</html>
