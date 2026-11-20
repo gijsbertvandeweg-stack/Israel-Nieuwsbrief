@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0038b8">
+<meta name="color-scheme" content="light">
+<meta name="apple-mobile-web-app-title" content="Israël Nieuwsbrief">
+<meta name="format-detection" content="telephone=no">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23fff'/%3E%3Crect y='8' width='64' height='7' fill='%230038b8'/%3E%3Crect y='49' width='64' height='7' fill='%230038b8'/%3E%3Cpath d='M32 20l10 17H22z' fill='none' stroke='%230038b8' stroke-width='4'/%3E%3Cpath d='M32 44L22 27h20z' fill='none' stroke='%230038b8' stroke-width='4'/%3E%3C/svg%3E">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Israël Nieuwsbrief – vrijdag 20 november 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'M PLUS 1p', 'Leelawadee UI', Leelawadee, Arial, sans-serif; max-width: 760px; margin: 0 auto; padding: 24px 20px; color: #1a1a2e; background: #fdfcf8; line-height: 1.6; }
+  header { border-bottom: 3px solid #0038b8; padding-bottom: 14px; margin-bottom: 24px; }
+  h1 { margin: 0; font-size: 1.9em; color: #0038b8; }
+  .datum { color: #666; font-size: 0.95em; margin-top: 4px; }
+  .intro { background: #eef3ff; border-left: 4px solid #0038b8; padding: 14px 18px; border-radius: 0 8px 8px 0; margin-bottom: 28px; }
+  .intro h2 { margin: 0 0 8px; font-size: 1.1em; color: #0038b8; }
+  section { margin-bottom: 32px; }
+  h2.blok { font-size: 1.35em; border-bottom: 2px solid #d9d4c5; padding-bottom: 6px; color: #22223b; }
+  article { margin-bottom: 18px; }
+  h3 { margin: 0 0 4px; font-size: 1.08em; }
+  p { margin: 0; }
+  .bron { font-size: 0.85em; color: #777; }
+  .bron a { color: #0038b8; text-decoration: none; }
+  .verssig { font-size: 0.8em; color: #999; margin-top: 6px; }
+  #stale { display: none; background: #fff4e5; border-left: 4px solid #d9822b; color: #7a4a12; padding: 12px 16px; border-radius: 0 8px 8px 0; margin-bottom: 20px; font-size: 0.92em; }
+  #stale strong { color: #b35c00; }
+  #stale button { margin-top: 8px; font: inherit; background: #0038b8; color: #fff; border: 0; border-radius: 6px; padding: 7px 14px; cursor: pointer; }
+  #staleMelding { display: none; margin-top: 8px; font-weight: 500; color: #7a4a12; }
+  #stale button:disabled { opacity: .6; cursor: default; }
+  .acties { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: -8px 0 26px; }
+  .acties button { font: inherit; font-size: 0.92em; background: #fff; color: #0038b8; border: 1.5px solid #0038b8; border-radius: 6px; padding: 8px 14px; cursor: pointer; }
+  .acties button:hover { background: #0038b8; color: #fff; }
+  .acties .hint { font-size: 0.8em; color: #999; }
+  footer { border-top: 1px solid #d9d4c5; margin-top: 30px; padding-top: 12px; font-size: 0.85em; color: #888; }
+
+
+/* --- Mobiel (iPhone) --- */
+html { -webkit-text-size-adjust: 100%; }
+body { overflow-wrap: break-word; }
+a { overflow-wrap: break-word; }
+button { min-height: 44px; touch-action: manipulation; }
+
+@media (max-width: 640px) {
+  body {
+    font-size: 17px;
+    padding: 16px max(16px, env(safe-area-inset-right)) calc(28px + env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+  }
+  h1 { font-size: 1.45em; line-height: 1.25; }
+  .datum { font-size: 0.9em; }
+  h2.blok { font-size: 1.18em; }
+  h3 { font-size: 1.03em; line-height: 1.35; }
+  .intro { padding: 12px 14px; }
+  section { margin-bottom: 26px; }
+  article { margin-bottom: 22px; }
+  .acties { flex-direction: column; align-items: stretch; margin: 0 0 24px; }
+  .acties button { width: 100%; padding: 13px 16px; font-size: 1em; }
+  .acties .hint { font-size: 0.78em; text-align: center; }
+  #stale button { width: 100%; padding: 13px 16px; }
+  .bron { font-size: 0.82em; }
+}
+
+@media print {
+  @page { margin: 16mm 14mm; }
+  body { background: #fff; max-width: none; margin: 0; padding: 0; font-size: 10.5pt; line-height: 1.45; }
+  #stale, .acties { display: none !important; }
+  header { border-bottom: 2px solid #0038b8; }
+  h1 { font-size: 1.5em; }
+  .intro { background: #fff; border-left: 3px solid #0038b8; }
+  a { color: #0038b8; text-decoration: none; }
+  article, .intro, footer { break-inside: avoid; page-break-inside: avoid; }
+  h2.blok { break-after: avoid; page-break-after: avoid; }
+}
+</style>
+</head>
+<body data-editie-datum="2026-11-20">
+<header>
+  <h1>🇮🇱 Israël Nieuwsbrief</h1>
+  <div class="datum">Vrijdag 20 november 2026 · Editie 101</div>
+  <div class="verssig">Bijgewerkt: 20-11-2026 05:34 UTC</div>
+</header>
+
+<div id="stale">
+  <strong>Let op: dit is niet de editie van vandaag.</strong><br>
+  Je leest de editie van <span id="staleDatum"></span>. De nieuwe editie is nog niet gepubliceerd,
+  of je telefoon toont een opgeslagen versie.
+  <div id="staleMelding"></div>
+  <button id="refreshBtn" type="button">Opnieuw ophalen</button>
+</div>
+
+<div class="acties">
+  <button id="pdfBtn" type="button">📄 Opslaan als pdf</button>
+  <span class="hint">Kies in het printvenster &lsquo;Bewaar als pdf&rsquo; &mdash; daarna kun je hem doorsturen.</span>
+</div>
+
+<div class="intro"><h2>In het kort</h2><p>Eisenkot overweegt zijn regering vóór 6 december ter stemming te brengen, zelfs als het een minderheidskabinet wordt, terwijl Likud zondag een tweede gespreksronde houdt en Bennett Netanyahu verraste met een lang overleg. Netanyahu zou een nieuwe Iran-oorlog “onvermijdelijk” noemen, maar Trump zegt zich niet te haasten. Het leger rondde een tunneloperatie in Gaza af en trof een Hezbollah-raketdepot in de Bekaa-vallei; in Beit Shemesh liepen protesten tegen de dienstplicht uit op rellen. Techniek: Wix wil $19 miljoen aan bonussen voor zijn co-CEO’s, en Pew voorspelt dat 62% van alle Joden in 2070 in Israël woont.</p></div>
+
+<section><h2 class="blok">🏛️ Politiek</h2>
+<article><h3>Eisenkot wil nieuwe regering ter stemming brengen, desnoods zonder meerderheid</h3><p>Yashar-leider Gadi Eisenkot zou van plan zijn zijn kabinet vóór het verstrijken van zijn mandaat op 6 december aan de Knesset voor te leggen, zelfs als het een minderheidsregering is die op Arabische partijen steunt. Zijn blok won bij de verkiezingen van 27 oktober 48 van de 120 zetels, de Arabische partijen 19 en de coalitie van Netanyahu 53. Likud veroordeelt het plan, maar houdt zondag een tweede gespreksronde met Yashar; Sa'ar beschuldigt het Eisenkot-blok ervan niet serieus over een eenheidsregering te willen praten. Intussen draagt het blok oud-rechter Yosef Elron voor als staatscontroleur.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/eisenkot-said-planning-vote-on-new-government-before-mandate-ends-even-without-majority/">Times of Israel</a> · <a href="https://www.jpost.com/israel-news/2026-11-20/live-updates-915560">Jerusalem Post (liveblog)</a> · <a href="https://www.jpost.com/israel-news/politics-and-diplomacy/article-915520">Jerusalem Post (Elron)</a></p></article>
+<article><h3>Bennett had langdurig gesprek met Netanyahu en overrompelde bondgenoten</h3><p>Naftali Bennett sprak woensdag ruim twee uur met Netanyahu in de Knesset. Bondgenoten in het Eisenkot-blok werden volledig verrast, wat de vrees voor een politieke overloper voedt op een gevoelig moment in de coalitiebesprekingen. Israelnieuws meldt dat Netanyahu intussen probeert een wig te drijven tussen de oppositieleiders, die het onderling oneens zijn over de route naar de macht.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/bennett-holds-lengthy-meeting-with-netanyahu-blindsiding-allies/">Times of Israel</a> · <a href="https://www.israelnieuws.nl/post/netanyahu-drijft-een-wig-tussen-rivalen-terwijl-oppositieleiders-botsen-over-de-weg-naar-de-macht">Israelnieuws</a></p></article>
+<article><h3>Rellen in Beit Shemesh en Bnei Brak na arrestatiepoging van Haredi-tiener</h3><p>In Beit Shemesh braken donderdagavond rellen uit nadat de politie een 16-jarige ultraorthodoxe jongen wilde aanhouden. Betogers dachten dat het om een dienstweigeraar ging, maar hij werd volgens het bericht aangehouden voor rijden zonder rijbewijs. Demonstranten blokkeerden de politie en gooiden stenen, agenten zetten flitsgranaten in. Ook in Bnei Brak greep de politie in om een protest uiteen te drijven.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/liveblog_entry/protesters-clash-with-police-in-beit-shemesh-after-attempted-arrest-of-haredi-draft-dodger/">Times of Israel</a> · <a href="https://www.jpost.com/israel-news/article-915517">Jerusalem Post</a></p></article>
+<article><h3>ICJ-vonnis over Myanmar bemoeilijkt volgens deskundigen Israëls verdediging</h3><p>Het Internationaal Gerechtshof oordeelde dat Myanmar zich schuldig maakte aan genocide op de Rohingya. Volgens commentatoren zijn drie aspecten van het vonnis lastig voor Israël in de zaak van Zuid-Afrika: het hof weegt de bredere context mee bij het vaststellen van genocidale opzet, terrorismebestrijding en genocide sluiten elkaar niet uit, en naleving van het oorlogsrecht sluit opzet niet uit. Rechtsgeleerde Yuval Shany noemt het vonnis een slecht voorteken. Dit is de lezing van Israëlische analisten; Israël ontkent de genocidebeschuldiging.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/icj-ruling-on-myanmar-presents-new-difficulties-for-israels-fight-against-genocide-charges/">Times of Israel</a> · <a href="https://www.israelnieuws.nl/post/de-uitspraak-van-het-internationaal-gerechtshof-over-de-myanmar-de-definitie-van-genocide-vertroebe">Israelnieuws</a></p></article>
+</section>
+<section><h2 class="blok">⚔️ Oorlog &amp; Veiligheid</h2>
+<article><h3>Netanyahu: nieuwe oorlog met Iran “onvermijdelijk”; Trump zegt niet te haasten</h3><p>Volgens Times of Israel zei Netanyahu tegen medewerkers dat een hernieuwde oorlog met Iran onvermijdelijk is. Trump zou het Pentagon en de inlichtingendiensten hebben gevraagd te onderzoeken of Iran kan worden aangevallen zonder dat Iraanse tegenaanvallen op energie-infrastructuur in de Golf volgen; zelf zegt hij “ik haast me niet”. Republikeinen in de Amerikaanse Senaat stemden een resolutie over oorlogsbevoegdheden weg, en het Internationaal Energieagentschap waarschuwt voor de grootste bedreiging voor de energiezekerheid ooit. Iran noemt de beschuldigingen over chemische wapens “frauduleus”.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/netanyahu-reportedly-tells-aides-renewed-war-with-iran-unavoidable-as-trump-weighs-options/">Times of Israel</a> · <a href="https://www.timesofisrael.com/liveblog-november-19-2026/">Times of Israel (liveblog)</a></p></article>
+<article><h3>Netanyahu vroeg Mossad-chef om geheime Iran-operatie, zonder IDF-chef in te lichten</h3><p>Netanyahu zou Mossad-directeur Roman Gofman hebben gevraagd een geheime operatie tegen Iran voor te bereiden zonder stafchef Eyal Zamir te informeren. Zender Channel 12 meldde op 6 november al dat Netanyahu en Gofman gezamenlijk een operatie planden die werd geblokkeerd door Zamir en Trump. Het premierskantoor is hierover in de berichtgeving niet aan het woord gekomen.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/netanyahu-said-to-have-asked-mossad-chief-to-plan-covert-iran-op-without-telling-idf/">Times of Israel</a> · <a href="https://www.jpost.com/israel-news/defense-news/article-915529">Jerusalem Post</a></p></article>
+<article><h3>Gaza: tunneloperatie voorbij de Gele Lijn afgerond; Hamas beschuldigt Israël van schending</h3><p>Het Israëlische leger rondde na ruim twaalf uur een operatie af om een Hamas-tunnel in centraal Gaza (bij Nuseirat en Bureij) te vernietigen. COGAT had bewoners opgeroepen het gebied te verlaten. Hamas spreekt van schending van het staakt-het-vuren en roept de regering-Trump op in te grijpen; Israël zegt Hamas-commandanten te blijven treffen omdat de groep haar gelederen probeert te herstellen.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/idf-ends-one-day-tunnel-demolition-operation-inside-hamas-controlled-part-of-gaza/">Times of Israel</a> · <a href="https://www.timesofisrael.com/israel-steps-up-strikes-on-hamas-commanders-as-terror-group-tries-to-rebuild-ranks/">Times of Israel (Hamas-commandanten)</a> · <a href="https://www.israelnieuws.nl/post/idf-vernietigt-hamas-tunnel-in-gaza-terwijl-de-spanningen-rond-het-staakt-het-vuren-toenemen">Israelnieuws</a></p></article>
+<article><h3>Luchtmacht bombardeert ingangen van Hezbollah-raketdepot in Libanon</h3><p>Het leger trof de ingangen van een ondergrondse Hezbollah-opslagplaats voor raketten en wapens in de Bekaa-vallei, nadat operatieven daar waren gesignaleerd. Volgens het leger schendt het gebruik van de locatie het staakt-het-vuren; de plek is eerder al vaker getroffen. Ook in de bufferzone in Zuid-Libanon vond een routine-aanval plaats.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/air-force-bombs-entrances-to-underground-hezbollah-missile-site-in-east-lebanon-idf/">Times of Israel</a> · <a href="https://www.jpost.com/israel-news/defense-news/article-915527">Jerusalem Post</a></p></article>
+</section>
+<section><h2 class="blok">💻 Techniek &amp; Economie</h2>
+<article><h3>Wix wil $19 miljoen aan aandelenbonussen voor co-CEO’s na ontslag van 1.000 mensen</h3><p>Avishai Abrahami en Nir Zohar vragen aandeelhouders om jaarlijkse aandelenpakketten van elk $9,5 miljoen (samen $19 miljoen) voor een periode van twee jaar. De stemming is op de aandeelhoudersvergadering van 23 december, nadat Wix eerder de afslanking met ongeveer 1.000 banen bekendmaakte.</p><p class="bron">Bron: <a href="https://www.calcalistech.com/ctechnews/article/rkde50ncfx">CTech</a></p></article>
+<article><h3>Defensie-industrie: Anduril wil Israël beleveren, VS zoekt bunkers, India tekent met IAI</h3><p>Het Amerikaanse Anduril doet volgens CTech mee aan de race om Israël te beleveren. Het Amerikaanse leger zoekt met spoed zeventien nieuwe bunkers in het Midden-Oosten, waarvan tien in Israël. India tekende een deal van $220 miljoen met Israel Aerospace Industries voor het moderniseren van Israëlische raketsystemen op zijn marineschepen. Tsjechisch premier Babiš bezocht intussen de Arrow-raketafweer van Israël.</p><p class="bron">Bron: <a href="https://www.calcalistech.com/ctechnews/article/ttqngzywy">CTech (Anduril)</a> · <a href="https://www.calcalistech.com/ctechnews/article/hyipyahcme">CTech (bunkers)</a> · <a href="https://www.calcalistech.com/ctechnews/article/l4o2voa1n">CTech (India)</a> · <a href="https://www.jpost.com/israel-news/article-915559">Jerusalem Post (Babiš)</a></p></article>
+<article><h3>AI neemt banen over bij Leumi; Microsoft zet Israëlisch R&amp;D centraal</h3><p>Bank Leumi schrapt 25 functies in zijn technologie-afdeling, omdat AI het werk overneemt. Microsoft zet daarentegen zijn Israëlische R&amp;D volgens CTech in het hart van zijn volgende generatie AI-tools. Mega Or breidt bovendien zijn samenwerking met Nebius uit met twee nieuwe datacenters in Israël.</p><p class="bron">Bron: <a href="https://www.calcalistech.com/ctechnews/article/1oxmx29no">CTech (Leumi)</a> · <a href="https://www.calcalistech.com/ctechnews/article/27vy3bw85">CTech (Microsoft)</a> · <a href="https://www.calcalistech.com/ctechnews/article/zrt5oaw9s">CTech (Mega Or)</a></p></article>
+<article><h3>Wederopbouw na Iraanse raketaanval op Tel Aviv stuit op bureaucratie; GTA 6 drukt netwerk</h3><p>Een onderzoek van CTech laat zien dat de wederopbouw na de Iraanse raketinslag in Tel Aviv vertraging oploopt door financiële en bureaucratische hindernissen. Lichter nieuws: door de lancering van GTA 6 steeg het lokale internetverkeer bij HOT en Bezeq met 30%, en het internationale verkeer van Bezeq met 50%.</p><p class="bron">Bron: <a href="https://www.calcalistech.com/ctechnews/article/b1jlbn3rfe">CTech (wederopbouw)</a> · <a href="https://www.calcalistech.com/ctechnews/article/fu142u772">CTech (GTA 6)</a></p></article>
+</section>
+<section><h2 class="blok">✡️ Religieus Nieuws</h2>
+<article><h3>Pew: aandeel van Israël in de wereldwijde Joodse bevolking stijgt naar 62% in 2070</h3><p>Volgens een nieuwe demografische studie van het Pew Research Center groeit de wereldwijde Joodse bevolking van 15 miljoen in 2020 naar bijna 18 miljoen in 2070. Het aandeel dat in Israël woont stijgt van 46% naar 62%. Pew verwacht ook dat de islam het christendom rond 2035 inhaalt als grootste religie.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/israels-share-of-world-jewry-to-rise-to-62-by-2070-pew-study-finds/">Times of Israel</a> · <a href="https://www.timesofisrael.com/islam-to-surpass-christianity-as-worlds-largest-religion-by-2035-pew-data-shows/">Times of Israel (islam)</a></p></article>
+<article><h3>Van Gogh verkocht voor recordbedrag van $190,4 miljoen na geschil met Joodse erfgenamen</h3><p>Sotheby’s verkocht “Châtaigniers en fleurs” voor een recordbedrag van $190,4 miljoen. Nazaten van de Joodse eigenaren hadden gevraagd het werk uit de veiling te halen, omdat het onder nazibewind was verkocht. De verkoop ging toch door na een geschil tussen de verkoper en de erfgenamen.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/van-gogh-sells-for-record-190-4m-after-dispute-with-heirs-of-jewish-former-owner/">Times of Israel</a> · <a href="https://www.israelnieuws.nl/post/van-gogh-verkocht-voor-recordbedrag-van-190-4-miljoen-na-geschil-met-erfgenamen-van-joodse-voormali">Israelnieuws</a></p></article>
+<article><h3>Joodse Amerikaanse wetgevers waarschuwen voor bekeringsrisico in defensiewet; Mamdani steunt koosjer en halal</h3><p>Joodse leden van het Amerikaanse Congres waarschuwen dat een bepaling in de defensiewet kan leiden tot bekeringsdruk binnen het leger. Joodse organisaties prezen daarnaast een bevel van New Yorks burgemeester Mamdani dat koosjere en halal voedselprogramma’s in de publieke sector ondersteunt.</p><p class="bron">Bron: <a href="https://www.timesofisrael.com/us-jewish-lawmakers-warn-that-defense-bill-provision-could-cause-proselytizing/">Times of Israel</a> · <a href="https://www.timesofisrael.com/jewish-groups-praise-mamdani-order-backing-kosher-and-halal-public-food-programs/">Times of Israel (Mamdani)</a></p></article>
+</section>
+<section><h2 class="blok">🌟 Positief Nieuws</h2>
+<article><h3>Israëlische ingenieurs bouwen hulpmiddelencentrum voor kinderen in Ghana</h3><p>Israëlische ingenieurs en revalidatiespecialisten leerden Ghanese studenten om maatwerkhulpmiddelen voor gehandicapte kinderen te maken van lokaal bamboe, hout en gerecycled plastic. Het doel is een permanent innovatiecentrum in Winneba, zodat Ghana zelf hulpmiddelen kan maken en repareren.</p><p class="bron">Bron: <a href="https://www.jpost.com/israel-news/article-915557">Jerusalem Post</a></p></article>
+<article><h3>Israëlische startup haalt $2,5 miljoen op om industrieel gasafval te hergebruiken</h3><p>CoolVOC wil industrieel afvalgas recyclen in plaats van het te verbranden en haalde daarvoor $2,5 miljoen op.</p><p class="bron">Bron: <a href="https://www.calcalistech.com/ctechnews/article/bglkwnk9f">CTech</a></p></article>
+</section>
+
+<script>
+(function () {
+  var editie = document.body.getAttribute('data-editie-datum');
+  if (!editie) return;
+
+  var nu = new Date();
+  var vandaag = nu.getFullYear() + '-' +
+                String(nu.getMonth() + 1).padStart(2, '0') + '-' +
+                String(nu.getDate()).padStart(2, '0');
+
+  var balk = document.getElementById('stale');
+  var knop = document.getElementById('refreshBtn');
+  var melding = document.getElementById('staleMelding');
+
+  var netGeprobeerd = false;
+  try {
+    netGeprobeerd = sessionStorage.getItem('nbRefresh') === '1';
+    sessionStorage.removeItem('nbRefresh');
+  } catch (e) {}
+
+  if (editie < vandaag) {
+    var d = editie.split('-');
+    var leesbaar = d[2] + '-' + d[1] + '-' + d[0];
+    document.getElementById('staleDatum').textContent = leesbaar;
+    balk.style.display = 'block';
+    if (netGeprobeerd && melding) {
+      melding.textContent = 'Opnieuw opgehaald: er is nog geen nieuwere editie gepubliceerd. ' +
+                            'De laatste blijft die van ' + leesbaar + '.';
+      melding.style.display = 'block';
+    }
+  } else if (netGeprobeerd && balk) {
+    balk.style.display = 'none';
+  }
+
+  if (knop) {
+    knop.addEventListener('click', function () {
+      knop.disabled = true;
+      knop.textContent = 'Bezig met ophalen\u2026';
+      if (melding) { melding.textContent = ''; melding.style.display = 'none'; }
+      try { sessionStorage.setItem('nbRefresh', '1'); } catch (e) {}
+      var url = location.pathname + '?v=' + Date.now();
+      setTimeout(function () { location.replace(url); }, 150);
+      setTimeout(function () { location.reload(); }, 2500);
+    });
+  }
+})();
+</script>
+<script>
+(function () {
+  var knop = document.getElementById('pdfBtn');
+  if (!knop) return;
+  knop.addEventListener('click', function () {
+    var titel = document.title;
+    var datum = document.body.getAttribute('data-editie-datum') || '';
+    if (datum) { document.title = 'Israel-Nieuwsbrief-' + datum; }
+    window.print();
+    setTimeout(function () { document.title = titel; }, 1000);
+  });
+})();
+</script>
+</body>
+</html>
