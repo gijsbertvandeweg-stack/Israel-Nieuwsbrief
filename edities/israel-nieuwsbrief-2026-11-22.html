@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0038b8">
+<meta name="color-scheme" content="light">
+<meta name="apple-mobile-web-app-title" content="Israël Nieuwsbrief">
+<meta name="format-detection" content="telephone=no">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23fff'/%3E%3Crect y='8' width='64' height='7' fill='%230038b8'/%3E%3Crect y='49' width='64' height='7' fill='%230038b8'/%3E%3Cpath d='M32 20l10 17H22z' fill='none' stroke='%230038b8' stroke-width='4'/%3E%3Cpath d='M32 44L22 27h20z' fill='none' stroke='%230038b8' stroke-width='4'/%3E%3C/svg%3E">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Israël Nieuwsbrief – zondag 22 november 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'M PLUS 1p', 'Leelawadee UI', Leelawadee, Arial, sans-serif; max-width: 760px; margin: 0 auto; padding: 24px 20px; color: #1a1a2e; background: #fdfcf8; line-height: 1.6; }
+  header { border-bottom: 3px solid #0038b8; padding-bottom: 14px; margin-bottom: 24px; }
+  h1 { margin: 0; font-size: 1.9em; color: #0038b8; }
+  .datum { color: #666; font-size: 0.95em; margin-top: 4px; }
+  .intro { background: #eef3ff; border-left: 4px solid #0038b8; padding: 14px 18px; border-radius: 0 8px 8px 0; margin-bottom: 28px; }
+  .intro h2 { margin: 0 0 8px; font-size: 1.1em; color: #0038b8; }
+  section { margin-bottom: 32px; }
+  h2.blok { font-size: 1.35em; border-bottom: 2px solid #d9d4c5; padding-bottom: 6px; color: #22223b; }
+  article { margin-bottom: 18px; }
+  h3 { margin: 0 0 4px; font-size: 1.08em; }
+  p { margin: 0; }
+  .bron { font-size: 0.85em; color: #777; }
+  .bron a { color: #0038b8; text-decoration: none; }
+  .verssig { font-size: 0.8em; color: #999; margin-top: 6px; }
+  #stale { display: none; background: #fff4e5; border-left: 4px solid #d9822b; color: #7a4a12; padding: 12px 16px; border-radius: 0 8px 8px 0; margin-bottom: 20px; font-size: 0.92em; }
+  #stale strong { color: #b35c00; }
+  #stale button { margin-top: 8px; font: inherit; background: #0038b8; color: #fff; border: 0; border-radius: 6px; padding: 7px 14px; cursor: pointer; }
+  #staleMelding { display: none; margin-top: 8px; font-weight: 500; color: #7a4a12; }
+  #stale button:disabled { opacity: .6; cursor: default; }
+  .acties { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: -8px 0 26px; }
+  .acties button { font: inherit; font-size: 0.92em; background: #fff; color: #0038b8; border: 1.5px solid #0038b8; border-radius: 6px; padding: 8px 14px; cursor: pointer; }
+  .acties button:hover { background: #0038b8; color: #fff; }
+  .acties .hint { font-size: 0.8em; color: #999; }
+  footer { border-top: 1px solid #d9d4c5; margin-top: 30px; padding-top: 12px; font-size: 0.85em; color: #888; }
+
+
+/* --- Mobiel (iPhone) --- */
+html { -webkit-text-size-adjust: 100%; }
+body { overflow-wrap: break-word; }
+a { overflow-wrap: break-word; }
+button { min-height: 44px; touch-action: manipulation; }
+
+@media (max-width: 640px) {
+  body {
+    font-size: 17px;
+    padding: 16px max(16px, env(safe-area-inset-right)) calc(28px + env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+  }
+  h1 { font-size: 1.45em; line-height: 1.25; }
+  .datum { font-size: 0.9em; }
+  h2.blok { font-size: 1.18em; }
+  h3 { font-size: 1.03em; line-height: 1.35; }
+  .intro { padding: 12px 14px; }
+  section { margin-bottom: 26px; }
+  article { margin-bottom: 22px; }
+  .acties { flex-direction: column; align-items: stretch; margin: 0 0 24px; }
+  .acties button { width: 100%; padding: 13px 16px; font-size: 1em; }
+  .acties .hint { font-size: 0.78em; text-align: center; }
+  #stale button { width: 100%; padding: 13px 16px; }
+  .bron { font-size: 0.82em; }
+}
+
+@media print {
+  @page { margin: 16mm 14mm; }
+  body { background: #fff; max-width: none; margin: 0; padding: 0; font-size: 10.5pt; line-height: 1.45; }
+  #stale, .acties { display: none !important; }
+  header { border-bottom: 2px solid #0038b8; }
+  h1 { font-size: 1.5em; }
+  .intro { background: #fff; border-left: 3px solid #0038b8; }
+  a { color: #0038b8; text-decoration: none; }
+  article, .intro, footer { break-inside: avoid; page-break-inside: avoid; }
+  h2.blok { break-after: avoid; page-break-after: avoid; }
+}
+</style>
+</head>
+<body data-editie-datum="2026-11-22">
+<header>
+  <h1>🇮🇱 Israël Nieuwsbrief</h1>
+  <div class="datum">Zondag 22 november 2026 · Editie 103</div>
+  <div class="verssig">Bijgewerkt: 22-11-2026 05:33 UTC</div>
+</header>
+
+<div id="stale">
+  <strong>Let op: dit is niet de editie van vandaag.</strong><br>
+  Je leest de editie van <span id="staleDatum"></span>. De nieuwe editie is nog niet gepubliceerd,
+  of je telefoon toont een opgeslagen versie.
+  <div id="staleMelding"></div>
+  <button id="refreshBtn" type="button">Opnieuw ophalen</button>
+</div>
+
+<div class="acties">
+  <button id="pdfBtn" type="button">📄 Opslaan als pdf</button>
+  <span class="hint">Kies in het printvenster &lsquo;Bewaar als pdf&rsquo; &mdash; daarna kun je hem doorsturen.</span>
+</div>
+
+<div class="intro"><h2>In het kort</h2><p>De formatie blijft de hoofdlijn: Bennett steunt een eenheidsregering onder Eisenkot en Netanyahu mag volgens hem niet terugkeren, terwijl Eisenkot het Likud uitnodigt voor marathongesprekken. Rond Iran loopt de spanning op in de Golf, met Iraanse aanvallen op Bahrein en incidenten in Hormuz, terwijl diplomatiek ook gesproken wordt. In Gaza zorgt een aanval in Gaza-Stad voor tegenstrijdige lezingen. In de techwereld staan gesprekken tussen CrowdStrike en Zscaler in de belangstelling.</p></div>
+<section><h2 class="blok">🏛️ Politiek</h2>
+<article><h3>Bennett steunt eenheidsregering onder Eisenkot en sluit overlopen uit</h3><p>In zijn eerste verklaring na een lang gesprek met Netanyahu zegt Naftali Bennett een eenheidsregering onder Gadi Eisenkot te steunen. Netanyahu mag volgens hem niet de volgende premier zijn en overlopen naar het Likud-kamp sluit hij 'onder geen enkele omstandigheid' uit. Daarmee lijkt de vrees onder bondgenoten na zijn ontmoeting van woensdag weggenomen.</p><div class="bron">Bron: <a href="https://www.timesofisrael.com/liveblog_entry/in-first-statement-since-netanyahu-meeting-bennett-backs-unity-government-under-eisenkot-rules-out-defection-under-any-circumstances/">Times of Israel</a></div></article>
+<article><h3>Eisenkot nodigt Likud uit voor marathongesprekken</h3><p>Eisenkot wil een brede regering vormen en nodigt het Likud uit voor urenlange coalitiegesprekken. Nieuw is dat Liberman stelt dat het Netanyahu-blok alleen te ontmantelen is met een coalitie met Shas en Verenigd Thora-Jodendom, en dat die laatste partij een nieuw voorstel over de dienstplicht van Haredim verwacht. Ook zegt Golan niet te zullen blokkeren dat Haredische partijen aanschuiven.</p><div class="bron">Bron: <a href="https://www.timesofisrael.com/liveblog_entry/eisenkot-invites-likud-to-marathon-coalition-talks-in-bid-to-form-broad-government/">Times of Israel</a> · <a href="https://www.timesofisrael.com/liveblog_entry/liberman-only-way-to-dismantle-netanyahu-bloc-is-a-coalition-with-shas-united-torah-judaism/">Times of Israel</a></div></article>
+<article><h3>Shin Bet-chef botst met justitiële top over onderzoek naar Arabische Knessetleden</h3><p>Volgens N12 eiste Shin Bet-chef David Zini dat Knessetleden van Arabische partijen worden onderzocht en dat publicatie van de verkiezingsuitslag wordt geblokkeerd vanwege vermeende buitenlandse inmenging. Dat leidde tot een scherpe confrontatie met hoge functionarissen in het rechtssysteem. De publicatie is gebaseerd op één bron en nog niet door anderen bevestigd.</p><div class="bron">Bron: <a href="https://www.israelnieuws.nl/post/n12news-de-felle-confrontatie-tussen-het-hoofd-van-de-shin-bet-en-hoge-justiti%C3%ABle-functionarissen">Israelnieuws.nl</a></div></article></section>
+<section><h2 class="blok">⚔️ Oorlog &amp; Veiligheid</h2>
+<article><h3>Iran en VS: spanning rond Hormuz en Bahrein, diplomatie sluimert</h3><p>Bahrein meldt twee Iraanse aanvallen op één avond; de IRGC zegt Amerikaanse bases met raketten en drones te hebben getroffen, Bahrein spreekt van schade aan een civiele industriële site. In de Straat van Hormuz werden tankers getroffen, en een Iraans vaartuig vloog volgens het leger in brand na een mijn. Tegelijk zegt Irans minister van Buitenlandse Zaken dat een 'eerlijke oplossing' mogelijk is, maar trekt hij een rode lijn bij verrijkt uranium; een Qatarese delegatie bezocht Teheran.</p><div class="bron">Bron: <a href="https://www.timesofisrael.com/liveblog_entry/bahrain-reports-2nd-iranian-attack-tonight-irgc-says-it-launched-combined-missile-and-drone-attack-on-us-bases/">Times of Israel</a> · <a href="https://www.timesofisrael.com/liveblog_entry/irans-fm-sets-red-line-on-enriched-uranium-while-claiming-fair-solution-can-be-reached-with-us/">Times of Israel</a> · <a href="https://www.timesofisrael.com/liveblog_entry/qatari-delegation-visited-tehran-last-night-for-talks-iranian-official-says/">Times of Israel</a></div></article>
+<article><h3>Amerikaanse militaire aanwezigheid onder druk, IDF bereidt zich voor op onconventionele Iraanse wapens</h3><p>Volgens de Financial Times, aangehaald door Israelnieuws, waarschuwt het Amerikaanse Centcom dat de grote militaire aanwezigheid na eind december de operationele capaciteit kan uithollen. Ook bevestigde IDF-chef Eyal Zamir in een besloten overleg dat het leger zich voorbereidt op mogelijke onconventionele dreigingen uit Iran.</p><div class="bron">Bron: <a href="https://www.israelnieuws.nl/post/n12news-de-oefening-die-iran-in-hormuz-plant-en-de-angst-binnen-het-amerikaanse-leger-omdat-de-oper">Israelnieuws.nl</a> · <a href="https://www.israelnieuws.nl/post/n12news-de-idf-stafchef-bevestigt-in-een-besloten-vergadering-voorbereidingen-voor-de-onconventione">Israelnieuws.nl</a></div></article>
+<article><h3>Gaza: omstreden aanval in Gaza-Stad</h3><p>De IDF zegt dat een aanval in Gaza-Stad gericht was op Palestijnse Islamitische Jihad-strijders die zich als hulpverleners voordeden. Ooggetuigen zeggen dat het getroffen voertuig hulp vervoerde; drie mensen kwamen om. Beide lezingen zijn niet onafhankelijk bevestigd. Daarnaast meldt Ynet dat Hamas volgens Israëlische analyses zijn bestuursinstellingen in Gaza herstelt.</p><div class="bron">Bron: <a href="https://www.timesofisrael.com/liveblog_entry/idf-says-gaza-city-strike-targeted-terror-operatives-witnesses-say-struck-vehicle-was-carrying-aid-3-people-killed/">Times of Israel</a> · <a href="https://www.timesofisrael.com/liveblog_entry/idf-says-targets-of-earlier-gaza-city-strike-were-pij-operatives-falsely-presented-as-aid-workers/">Times of Israel</a> · <a href="https://www.israelnieuws.nl/post/hamas-herstelt-zijn-greep-op-gaza-drie-jaar-na-het-begin-van-de-oorlog">Israelnieuws.nl</a></div></article>
+<article><h3>Oost-Jeruzalem: verdachte van moord op 13-jarige aangehouden</h3><p>Na een klopjacht heeft de grenspolitie volgens berichten de verdachte van de dood van een 13-jarige jongen in Shuafat gearresteerd. Details over het motief zijn nog niet bekend.</p><div class="bron">Bron: <a href="https://www.timesofisrael.com/liveblog_entry/report-after-manhunt-suspect-in-killing-of-13-year-old-in-east-jerusalem-arrested-by-border-police/">Times of Israel</a></div></article>
+<article><h3>IDF houdt grote oefening in het zuiden</h3><p>Het leger kondigt voor de komende dagen een grote oefening aan, inclusief een simulatie van infiltratie op Israëlisch grondgebied.</p><div class="bron">Bron: <a href="https://www.timesofisrael.com/liveblog_entry/idf-to-hold-large-drill-in-south-over-the-coming-days-including-simulation-of-infiltration-of-israeli-territory/">Times of Israel</a></div></article></section>
+<section><h2 class="blok">💻 Techniek &amp; Economie</h2>
+<article><h3>CrowdStrike en Zscaler in gesprek: twee grote Israëlische cyberdivisies in beeld</h3><p>Beide bedrijven hebben via overnames omvangrijke R&amp;D-activiteiten in Israël opgebouwd. Mogelijke samenwerking of overname zou dus ook gevolgen hebben voor de Israëlische cybersector.</p><div class="bron">Bron: <a href="https://www.calcalistech.com/ctechnews/article/bkvossjkxl">CTech</a></div></article>
+<article><h3>Lapid: 'Goed dat er wat lucht uit de markten gaat'</h3><p>Oud-premier Yair Lapid reageert in CTech op marktcorrecties en de economische situatie.</p><div class="bron">Bron: <a href="https://www.calcalistech.com/ctechnews/article/s1a111l117e">CTech</a></div></article>
+<article><h3>Cisco schrapt opnieuw banen</h3><p>De nieuwe ontslagronde van Cisco kan honderden medewerkers raken, meldt CTech.</p><div class="bron">Bron: <a href="https://www.calcalistech.com/ctechnews/article/vc174f5ek">CTech</a></div></article></section>
+<section><h2 class="blok">✡️ Religieus Nieuws</h2>
+<article><h3>Haredische partijen en de dienstplicht centraal in coalitiegesprekken</h3><p>Verenigd Thora-Jodendom verwacht volgens berichten een nieuw voorstel van Eisenkot over de dienstplicht van Haredim, een van de gevoeligste punten in de formatie.</p><div class="bron">Bron: <a href="https://www.timesofisrael.com/liveblog_entry/utj-expects-new-haredi-enlistment-proposal-from-eisenkot-amid-coalition-talks-report/">Times of Israel</a></div></article>
+<article><h3>Joodse rechtsen in de VS bezinnen zich na zware midterms</h3><p>JTA beschrijft hoe Joodse rechtse figuren hun verlies verwerken en koersen op 2028.</p><div class="bron">Bron: <a href="https://www.jta.org/2026/11/20/politics/after-devastating-midterms-jewish-right-wingers-lick-wounds-and-plan-for-2028">JTA</a></div></article></section>
+<footer>Samengesteld uit Times of Israel, Israelnieuws.nl, JTA en CTech. Geautomatiseerde editie.</footer>
+
+<script>
+(function () {
+  var editie = document.body.getAttribute('data-editie-datum');
+  if (!editie) return;
+
+  var nu = new Date();
+  var vandaag = nu.getFullYear() + '-' +
+                String(nu.getMonth() + 1).padStart(2, '0') + '-' +
+                String(nu.getDate()).padStart(2, '0');
+
+  var balk = document.getElementById('stale');
+  var knop = document.getElementById('refreshBtn');
+  var melding = document.getElementById('staleMelding');
+
+  var netGeprobeerd = false;
+  try {
+    netGeprobeerd = sessionStorage.getItem('nbRefresh') === '1';
+    sessionStorage.removeItem('nbRefresh');
+  } catch (e) {}
+
+  if (editie < vandaag) {
+    var d = editie.split('-');
+    var leesbaar = d[2] + '-' + d[1] + '-' + d[0];
+    document.getElementById('staleDatum').textContent = leesbaar;
+    balk.style.display = 'block';
+    if (netGeprobeerd && melding) {
+      melding.textContent = 'Opnieuw opgehaald: er is nog geen nieuwere editie gepubliceerd. ' +
+                            'De laatste blijft die van ' + leesbaar + '.';
+      melding.style.display = 'block';
+    }
+  } else if (netGeprobeerd && balk) {
+    balk.style.display = 'none';
+  }
+
+  if (knop) {
+    knop.addEventListener('click', function () {
+      knop.disabled = true;
+      knop.textContent = 'Bezig met ophalen\u2026';
+      if (melding) { melding.textContent = ''; melding.style.display = 'none'; }
+      try { sessionStorage.setItem('nbRefresh', '1'); } catch (e) {}
+      var url = location.pathname + '?v=' + Date.now();
+      setTimeout(function () { location.replace(url); }, 150);
+      setTimeout(function () { location.reload(); }, 2500);
+    });
+  }
+})();
+</script>
+<script>
+(function () {
+  var knop = document.getElementById('pdfBtn');
+  if (!knop) return;
+  knop.addEventListener('click', function () {
+    var titel = document.title;
+    var datum = document.body.getAttribute('data-editie-datum') || '';
+    if (datum) { document.title = 'Israel-Nieuwsbrief-' + datum; }
+    window.print();
+    setTimeout(function () { document.title = titel; }, 1000);
+  });
+})();
+</script>
+</body>
+</html>
