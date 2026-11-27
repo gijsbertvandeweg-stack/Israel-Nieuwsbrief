@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0038b8">
+<meta name="color-scheme" content="light">
+<meta name="apple-mobile-web-app-title" content="Israël Nieuwsbrief">
+<meta name="format-detection" content="telephone=no">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23fff'/%3E%3Crect y='8' width='64' height='7' fill='%230038b8'/%3E%3Crect y='49' width='64' height='7' fill='%230038b8'/%3E%3Cpath d='M32 20l10 17H22z' fill='none' stroke='%230038b8' stroke-width='4'/%3E%3Cpath d='M32 44L22 27h20z' fill='none' stroke='%230038b8' stroke-width='4'/%3E%3C/svg%3E">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Israël Nieuwsbrief – vrijdag 27 november 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'M PLUS 1p', 'Leelawadee UI', Leelawadee, Arial, sans-serif; max-width: 760px; margin: 0 auto; padding: 24px 20px; color: #1a1a2e; background: #fdfcf8; line-height: 1.6; }
+  header { border-bottom: 3px solid #0038b8; padding-bottom: 14px; margin-bottom: 24px; }
+  h1 { margin: 0; font-size: 1.9em; color: #0038b8; }
+  .datum { color: #666; font-size: 0.95em; margin-top: 4px; }
+  .intro { background: #eef3ff; border-left: 4px solid #0038b8; padding: 14px 18px; border-radius: 0 8px 8px 0; margin-bottom: 28px; }
+  .intro h2 { margin: 0 0 8px; font-size: 1.1em; color: #0038b8; }
+  section { margin-bottom: 32px; }
+  h2.blok { font-size: 1.35em; border-bottom: 2px solid #d9d4c5; padding-bottom: 6px; color: #22223b; }
+  article { margin-bottom: 18px; }
+  h3 { margin: 0 0 4px; font-size: 1.08em; }
+  p { margin: 0; }
+  .bron { font-size: 0.85em; color: #777; }
+  .bron a { color: #0038b8; text-decoration: none; }
+  .verssig { font-size: 0.8em; color: #999; margin-top: 6px; }
+  #stale { display: none; background: #fff4e5; border-left: 4px solid #d9822b; color: #7a4a12; padding: 12px 16px; border-radius: 0 8px 8px 0; margin-bottom: 20px; font-size: 0.92em; }
+  #stale strong { color: #b35c00; }
+  #stale button { margin-top: 8px; font: inherit; background: #0038b8; color: #fff; border: 0; border-radius: 6px; padding: 7px 14px; cursor: pointer; }
+  #staleMelding { display: none; margin-top: 8px; font-weight: 500; color: #7a4a12; }
+  #stale button:disabled { opacity: .6; cursor: default; }
+  .acties { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: -8px 0 26px; }
+  .acties button { font: inherit; font-size: 0.92em; background: #fff; color: #0038b8; border: 1.5px solid #0038b8; border-radius: 6px; padding: 8px 14px; cursor: pointer; }
+  .acties button:hover { background: #0038b8; color: #fff; }
+  .acties .hint { font-size: 0.8em; color: #999; }
+  footer { border-top: 1px solid #d9d4c5; margin-top: 30px; padding-top: 12px; font-size: 0.85em; color: #888; }
+
+
+/* --- Mobiel (iPhone) --- */
+html { -webkit-text-size-adjust: 100%; }
+body { overflow-wrap: break-word; }
+a { overflow-wrap: break-word; }
+button { min-height: 44px; touch-action: manipulation; }
+
+@media (max-width: 640px) {
+  body {
+    font-size: 17px;
+    padding: 16px max(16px, env(safe-area-inset-right)) calc(28px + env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+  }
+  h1 { font-size: 1.45em; line-height: 1.25; }
+  .datum { font-size: 0.9em; }
+  h2.blok { font-size: 1.18em; }
+  h3 { font-size: 1.03em; line-height: 1.35; }
+  .intro { padding: 12px 14px; }
+  section { margin-bottom: 26px; }
+  article { margin-bottom: 22px; }
+  .acties { flex-direction: column; align-items: stretch; margin: 0 0 24px; }
+  .acties button { width: 100%; padding: 13px 16px; font-size: 1em; }
+  .acties .hint { font-size: 0.78em; text-align: center; }
+  #stale button { width: 100%; padding: 13px 16px; }
+  .bron { font-size: 0.82em; }
+}
+
+@media print {
+  @page { margin: 16mm 14mm; }
+  body { background: #fff; max-width: none; margin: 0; padding: 0; font-size: 10.5pt; line-height: 1.45; }
+  #stale, .acties { display: none !important; }
+  header { border-bottom: 2px solid #0038b8; }
+  h1 { font-size: 1.5em; }
+  .intro { background: #fff; border-left: 3px solid #0038b8; }
+  a { color: #0038b8; text-decoration: none; }
+  article, .intro, footer { break-inside: avoid; page-break-inside: avoid; }
+  h2.blok { break-after: avoid; page-break-after: avoid; }
+}
+</style>
+</head>
+<body data-editie-datum="2026-11-27">
+<header>
+  <h1>🇮🇱 Israël Nieuwsbrief</h1>
+  <div class="datum">Vrijdag 27 november 2026 · Editie 108</div>
+  <div class="verssig">Bijgewerkt: 27-11-2026 05:33 UTC</div>
+</header>
+
+<div id="stale">
+  <strong>Let op: dit is niet de editie van vandaag.</strong><br>
+  Je leest de editie van <span id="staleDatum"></span>. De nieuwe editie is nog niet gepubliceerd,
+  of je telefoon toont een opgeslagen versie.
+  <div id="staleMelding"></div>
+  <button id="refreshBtn" type="button">Opnieuw ophalen</button>
+</div>
+
+<div class="acties">
+  <button id="pdfBtn" type="button">📄 Opslaan als pdf</button>
+  <span class="hint">Kies in het printvenster &lsquo;Bewaar als pdf&rsquo; &mdash; daarna kun je hem doorsturen.</span>
+</div>
+
+<div class="intro"><h2>In het kort</h2><p>Eisenkot komt dichter bij een regering: akkoord met de Democrats en groen licht van Degel HaTorah voor gesprekken. Hamas overweegt een reactie op de Israëlische liquidaties, terwijl Katz met een nieuw Gaza-offensief dreigt en Trump zegt dat 'de overwinning in Iran binnen handbereik' is. Een Kan-documentaire over menselijke schilden in Gaza zorgt voor politiek vuurwerk, en Israëlische tech scoort met $100 miljoen voor chipmaker Altair.</p></div>
+<section><h2 class="blok">🏛️ Politiek</h2>
+<article><h3>Eisenkot sluit coalitieakkoord met Democrats; Degel HaTorah geeft groen licht voor gesprekken</h3><p>Eisenkots partij Yashar kondigde een coalitieakkoord aan met Yair Golans Democrats: zij krijgen vier ministeries, waaronder een uitgebreid veiligheidsportefeuille en Communicatie, en beloven de rechterlijke hervorming terug te draaien. Yashar zou bovendien bereid zijn haredische studenten vrij te stellen van dienst in het leger als opmaat naar onderhandelingen, en de rabbijnen van Degel HaTorah (UTJ) gaven toestemming om de gesprekken openlijk te voeren. Ra'am-leider Abbas verwacht dat zijn partij en UTJ in de coalitie komen; Bennett praat nog met Likud, maar sluit steun van Arabische partijen niet expliciet uit. Het Witte Huis probeert intussen een ontmoeting tussen Trump en Eisenkot te regelen zodra er een regering is.</p><div class="bron">Bron: <a href="https://www.timesofisrael.com/eisenkot-edges-closer-to-government-as-his-party-announces-coalition-deal-with-democrats/">Times of Israel</a> · <a href="https://www.jpost.com/israel-news/politics-and-diplomacy/article-916291">Jerusalem Post</a> · <a href="https://www.jpost.com/israel-election-2026/2026-11-27/live-updates-916307">Jerusalem Post (live)</a> · <a href="https://www.jpost.com/israel-news/politics-and-diplomacy/article-916296">Jerusalem Post – Trump-Eisenkot</a></div></article>
+<article><h3>Waarom Eisenkots blok vier wetten van Netanyahu snel wil schrappen</h3><p>Volgens een uitleg van de Jerusalem Post zijn alle vier de wetten uit de vorige coalitie met uitgestelde ingangsdatum aangenomen of door het Hooggerechtshof bevroren. Intrekken nu zou ze dus stoppen voordat ze iets veranderen. Eisenkot hoopt zijn regering volgende week beëdigd te krijgen, ook al blijft het Netanyahu-proces het nieuws domineren.</p><div class="bron">Bron: <a href="https://www.jpost.com/israel-news/politics-and-diplomacy/article-916298">Jerusalem Post</a> · <a href="https://www.timesofisrael.com/eisenkot-hopes-to-get-his-government-sworn-in-next-week-regardless-of-netanyahu-trial-drama/">Times of Israel</a></div></article>
+<article><h3>Netanyahu: 'dit proces moet onmiddellijk stoppen'</h3><p>Na het advies van de rechters om de zwaarste aanklacht te laten vallen (zie gisteren) eiste Netanyahu een direct einde van een proces dat volgens hem 'het volk uit elkaar scheurde'; ministers sloten zich daarbij aan. De Jerusalem Post bepleit in een hoofdartikel dat het publiek uitleg verdient over de reden om het proces voort te zetten, terwijl Times of Israel-analisten opmerken dat een einde mogelijk verder weg ligt dan het lijkt. Nieuw is dus de politieke reactie, niet het rechterlijke advies zelf.</p><div class="bron">Bron: <a href="https://www.timesofisrael.com/netanyahu-demands-end-of-trial-that-tore-the-people-apart-after-court-urges-dropping-most-charges/">Times of Israel</a> · <a href="https://www.jpost.com/opinion/article-916289">Jerusalem Post – hoofdartikel</a></div></article>
+</section>
+<section><h2 class="blok">⚔️ Oorlog &amp; Veiligheid</h2>
+<article><h3>Hamas overweegt reactie op Israëlische gerichte aanvallen; Katz dreigt met nieuw offensief</h3><p>Hamas-leider Khalil al-Hayya noemde de voortgezette Israëlische aanvallen in Gaza 'onaanvaardbaar' en zei dat de beweging een reactie overweegt, zonder maatregelen te noemen. Defensieminister Katz dreigde eerder met een nieuw groot offensief en ontheemding van 'een miljoen Gazanen' als Hamas zich niet vrijwillig ontwapent. De VS en de Board of Peace dringen juist aan op wederopbouwplannen; de Board zegt bemoedigd te zijn door recente gesprekken met Netanyahu, die Israël koppelt aan eerdere ontwapening.</p><div class="bron">Bron: <a href="https://www.jpost.com/israel-news/defense-news/article-916264">Jerusalem Post</a> · <a href="https://www.timesofisrael.com/hamas-chief-continued-israeli-strike-in-gaza-unacceptable-response-being-weighed/">Times of Israel</a> · <a href="https://www.timesofisrael.com/katz-threatens-to-launch-fresh-gaza-offensive-bucking-board-of-peace-push/">Times of Israel – Katz</a> · <a href="https://www.timesofisrael.com/gazas-board-of-peace-says-it-is-encouraged-by-recent-conversations-with-netanyahu/">Times of Israel – Board of Peace</a></div></article>
+<article><h3>Trump: 'overwinning binnen handbereik' in Iran, Pickaxe Mountain het doelwit bij nieuwe aanval</h3><p>Vanuit Mar-a-Lago zei Trump op Thanksgiving dat Iran nog een kans heeft op een deal, en dat de VS bij een nieuwe aanval 'absoluut Pickaxe Mountain' zouden raken, al zag hij daar nog geen echte activiteit. Satellietbeelden tonen intussen dat Iran snel een nieuwe ondergrondse faciliteit bouwt bij Behjatabad, tussen Isfahan en Pickaxe Mountain; het doel is onduidelijk, een nucleair doel wordt niet uitgesloten. Daarnaast meldt Times of Israel een dodelijke Iraanse drone-aanval in Koeweit (twee Italiaanse technici) en indirecte VS-Iran-contacten via Qatar en Pakistan over de Straat van Hormuz.</p><div class="bron">Bron: <a href="https://www.jpost.com/middle-east/iran-news/article-916297">Jerusalem Post</a> · <a href="https://www.timesofisrael.com/iran-said-racing-to-build-underground-facility-between-key-nuclear-sites/">Times of Israel</a> · <a href="https://www.jpost.com/middle-east/iran-news/article-916159">Jerusalem Post – satellietbeelden</a></div></article>
+<article><h3>Kan-documentaire: soldaten gebruikten Palestijnse burgers als menselijk schild</h3><p>Een Kan-onderzoeksprogramma beschrijft hoe eenheden aan het begin van de oorlog gedetineerde Gazanen dwongen gebouwen te doorzoeken voordat troepen binnengingen; de praktijk eindigde grotendeels op initiatief van soldaten, niet van commandanten. Het leger zegt dat zijn orders dit verbieden en dat het 'ervan zal leren'. Defensieminister Katz wilde de uitzending laten censureren en oppositieleider Liberman riep Kan op haar terug te trekken om 'bloedleugens' tegen soldaten te voorkomen.</p><div class="bron">Bron: <a href="https://www.timesofisrael.com/in-tv-documentary-soldiers-detail-use-of-palestinian-civilians-as-human-shields/">Times of Israel</a> · <a href="https://www.timesofisrael.com/defense-minister-seeks-to-censor-kan-report-on-idf-use-of-human-shields-in-gaza/">Times of Israel – Katz</a></div></article>
+<article><h3>IDF raakt Hezbollah-wapens in Libanon; Shin Bet houdt terreurverdachte aan</h3><p>De luchtmacht trof tientallen raketten en lanceerinrichtingen op een trainingskamp van Hezbollahs Radwan-eenheid in Libanon, die volgens het leger bedoeld waren voor aanvallen op burgers en troepen. Ook meldt de Jerusalem Post dat de Shin Bet en politie in het noorden een man arresteerden die een aanslag zou voorbereiden; Times of Israel schrijft over een man die wordt aangeklaagd voor door IS geïnspireerde aanslagplannen tegen een agent en soldaten.</p><div class="bron">Bron: <a href="https://www.jpost.com/israel-news/defense-news/article-916285">Jerusalem Post</a> · <a href="https://www.jpost.com/israel-news/defense-news/article-916292">Jerusalem Post – arrestatie</a> · <a href="https://www.timesofisrael.com/man-charged-with-plotting-islamic-state-inspired-attacks-on-cop-soldiers-in-north/">Times of Israel</a></div></article>
+</section>
+<section><h2 class="blok">💻 Techniek &amp; Economie</h2>
+<article><h3>Israëlische chipmaker Altair haalt $100 miljoen op</h3><p>Altair, dit jaar afgesplitst van Sony, haalde $100 miljoen op in een Series A onder leiding van Maverick Silicon met deelname van Pitango. Het geld is bedoeld voor massaproductie vanaf 2027 van de zuinige ALT1550-modem voor slimme brillen, wearables en industriële apparaten.</p><div class="bron">Bron: <a href="https://www.calcalistech.com/ctechnews/article/m3h4xzamw">CTech</a></div></article>
+<article><h3>Iron Beam in beeld tijdens groot Israëlisch-Amerikaans anti-drone-oefening</h3><p>Rafael publiceerde beelden van het laserwapen Iron Beam tijdens de oefening 'Black Sands', waarin Israël en de VS zo'n 20 systemen tegen drones testten. Het systeem werd in december 2025 aan het leger geleverd, maar de integratie liep vertraging op en het is nog niet operationeel.</p><div class="bron">Bron: <a href="https://www.calcalistech.com/ctechnews/article/k4a17j661">CTech</a> · <a href="https://www.jpost.com/defense-and-tech/article-916186">Jerusalem Post</a></div></article>
+<article><h3>Flydubai keert terug naar Tel Aviv; busritten gaan naar NIS 10</h3><p>Flydubai mag weer op Tel Aviv vliegen, met tot 42 vluchten per week, twee maanden na een verijdelde gijzelingspoging, en met 'nieuwe beveiliging'. Los daarvan stijgen de lokale busprijzen naar NIS 10 per rit nu de overheidssubsidie afloopt.</p><div class="bron">Bron: <a href="https://www.timesofisrael.com/flydubai-to-renew-tel-aviv-route-next-week-with-new-security-2-months-after-hijacking/">Times of Israel</a> · <a href="https://www.jpost.com/israel-news/article-916279">Jerusalem Post</a> · <a href="https://www.jpost.com/israel-news/article-916304">Jerusalem Post – bus</a></div></article>
+</section>
+<section><h2 class="blok">✡️ Religieus Nieuws</h2>
+<article><h3>Aish Discovery Seminar passeert 200.000 deelnemers wereldwijd</h3><p>De Joodse leerorganisatie Aish houdt in Jeruzalem haar Discovery Seminar over de oorsprong van de Torah; het wereldwijde aantal deelnemers is volgens de Jerusalem Post inmiddels boven de 200.000 uitgekomen.</p><div class="bron">Bron: <a href="https://www.jpost.com/judaism/article-916255">Jerusalem Post</a></div></article>
+<article><h3>Australië sanctioneert twee mannen om Iraanse brandaanslagen op synagoge</h3><p>Australië legde sancties op aan twee mannen voor door Iran aangestuurde brandstichtingen bij een synagoge in Melbourne en een restaurant in Sydney. In de VS klagen Joodse organisaties over een Thanksgiving-reclamespot van NBC tegen Amerikaanse militaire steun aan Israël, betaald door een pro-Palestijnse groep.</p><div class="bron">Bron: <a href="https://www.jpost.com/diaspora/article-916308">Jerusalem Post</a> · <a href="https://www.timesofisrael.com/liveblog_entry/australia-sanctions-two-people-over-antisemitic-attacks-it-says-were-linked-to-iran/">Times of Israel</a> · <a href="https://www.jpost.com/diaspora/antisemitism/article-916300">Jerusalem Post – NBC</a></div></article>
+</section>
+<section><h2 class="blok">🌟 Positief Nieuws</h2>
+<article><h3>Buitenlandse vrijwilligers keren terug naar kibboetsen aan de Libanese grens</h3><p>Voor het eerst sinds 7 oktober 2023 werken buitenlandse vrijwilligers weer in kibboetsen langs de noordgrens, onder wie een 24-jarige uit Warschau en een 19-jarige uit North Carolina. Ynet noemt het een stap naar herstel van het normale leven in geëvacueerde gemeenschappen.</p><div class="bron">Bron: <a href="https://www.israelnieuws.nl/post/buitenlandse-vrijwilligers-keren-voor-het-eerst-sinds-7-oktober-terug-naar-kibboetsen-langs-de-grens">Israelnieuws</a></div></article>
+<article><h3>Weizmann-onderzoekers vinden mogelijk de zwakste supernova ooit</h3><p>Een internationaal team onder leiding van het Weizmann Institute meldt in Nature Astronomy supernova SN 2024vjm, 30 miljoen lichtjaar ver en 70 dagen zichtbaar, veel langzamer vervagend dan voorspeld. De ontdekking, gedaan met de BlackGEM-telescoop in Chili, kan volgens de onderzoekers wijzen op een explosie van een witte dwerg-systeem.</p><div class="bron">Bron: <a href="https://www.timesofisrael.com/stellar-discovery-israeli-researchers-may-have-found-faintest-supernova-ever-recorded/">Times of Israel</a></div></article>
+<article><h3>Gaza-oorlogsamputé mikt op Paralympische Spelen 2028</h3><p>De Jerusalem Post portretteert een Israëlische oorlogsgewonde die zich richt op deelname aan de Paralympics van 2028. Ook kreeg een Syrisch peuter in Israël een tweede levensreddende hartingreep via de organisatie Save a Child's Heart.</p><div class="bron">Bron: <a href="https://www.jpost.com/israel-news/article-916280">Jerusalem Post</a> · <a href="https://www.jpost.com/health-and-wellness/article-916165">Jerusalem Post – Save a Child's Heart</a></div></article>
+</section>
+
+<script>
+(function () {
+  var editie = document.body.getAttribute('data-editie-datum');
+  if (!editie) return;
+
+  var nu = new Date();
+  var vandaag = nu.getFullYear() + '-' +
+                String(nu.getMonth() + 1).padStart(2, '0') + '-' +
+                String(nu.getDate()).padStart(2, '0');
+
+  var balk = document.getElementById('stale');
+  var knop = document.getElementById('refreshBtn');
+  var melding = document.getElementById('staleMelding');
+
+  var netGeprobeerd = false;
+  try {
+    netGeprobeerd = sessionStorage.getItem('nbRefresh') === '1';
+    sessionStorage.removeItem('nbRefresh');
+  } catch (e) {}
+
+  if (editie < vandaag) {
+    var d = editie.split('-');
+    var leesbaar = d[2] + '-' + d[1] + '-' + d[0];
+    document.getElementById('staleDatum').textContent = leesbaar;
+    balk.style.display = 'block';
+    if (netGeprobeerd && melding) {
+      melding.textContent = 'Opnieuw opgehaald: er is nog geen nieuwere editie gepubliceerd. ' +
+                            'De laatste blijft die van ' + leesbaar + '.';
+      melding.style.display = 'block';
+    }
+  } else if (netGeprobeerd && balk) {
+    balk.style.display = 'none';
+  }
+
+  if (knop) {
+    knop.addEventListener('click', function () {
+      knop.disabled = true;
+      knop.textContent = 'Bezig met ophalen\u2026';
+      if (melding) { melding.textContent = ''; melding.style.display = 'none'; }
+      try { sessionStorage.setItem('nbRefresh', '1'); } catch (e) {}
+      var url = location.pathname + '?v=' + Date.now();
+      setTimeout(function () { location.replace(url); }, 150);
+      setTimeout(function () { location.reload(); }, 2500);
+    });
+  }
+})();
+</script>
+<script>
+(function () {
+  var knop = document.getElementById('pdfBtn');
+  if (!knop) return;
+  knop.addEventListener('click', function () {
+    var titel = document.title;
+    var datum = document.body.getAttribute('data-editie-datum') || '';
+    if (datum) { document.title = 'Israel-Nieuwsbrief-' + datum; }
+    window.print();
+    setTimeout(function () { document.title = titel; }, 1000);
+  });
+})();
+</script>
+</body>
+</html>
